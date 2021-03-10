@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { GlobalStyle } from "../styles/styles";
+import LandingPage from "../landing-page/landing-page";
+import State from "../state/state";
 const LayoutWrapper = styled.div`
     /* padding: 1rem; */
     padding-top: 0;
@@ -14,6 +16,9 @@ const Layout = (props) => {
   return (
     <LayoutWrapper>
       <GlobalStyle />
+      <State />
+      <LandingPage />
+
       {props.children}
     </LayoutWrapper>
   )
