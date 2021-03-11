@@ -1,9 +1,9 @@
 import React from "react"
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import styled from 'styled-components';
-import Img from "gatsby-image"
-import { size } from "../index.styles";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { ContentSectionModelType } from "../models/ContentSectionModel";
+import { size } from "../components/styles/styles";
 
 const PARAGRAPH = styled.p`
   margin-bottom: 1.5rem;
@@ -34,42 +34,27 @@ export const ModalTypes = {
   CONTACT: 'CONTACT'
 }
 
-const Image = styled(Img)``
-const ImageWrapper = styled.div`
-  padding-bottom: 0.5rem;
-  @media (max-width: ${size.mobileL}) {
-    padding-bottom: 0.25rem;
-  }
-`
 const TextWrapper = styled.div`
-  /* width: 90%; */
-  text-align: center;
 `
 export const GenerateContentSection = (section, index) => {
     let render
     console.log('INFO', section)
 
     switch (section.type) {
-      case "images":
-        if (section.images) {
-            render = (
-                <div key={index}>
-                  {section.images.map((img, ind) => (
-                       <ImageWrapper key={ind}>
-                          <Image backgroundColor={"white"} fluid={img.fluid} />
-                        </ImageWrapper>
-                  ))}
-                </div>
-            )
-        }
-        break;
-      case "text":
+      case ContentSectionModelType.BACKGROUND_IMAGE:
         render = (
           <TextWrapper key={index}>
-            {documentToReactComponents(
-              JSON.parse(section.text.raw),
-              richTextOptions
-            )}
+            <p> Images</p>
+          </TextWrapper>
+        )
+        break;
+      case ContentSectionModelType.TEXT:
+        render = (
+          <TextWrapper key={index} dangerouslySetInnerHTML={{__html: documentToHtmlString(
+            JSON.parse(section.text.raw),
+            richTextOptions
+          )}}>
+            {}
           </TextWrapper>
         )
         break;

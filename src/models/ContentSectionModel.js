@@ -14,5 +14,6 @@ export class ContentSectionModel {
 export const ContentSectionModelType = {
     TEXT: 'TEXT',
     AUDIO: 'AUDIO',
-    BACKGROUND_IMAGE: 'BACKGROUND_IMAGE'
+    BACKGROUND_IMAGE: 'BACKGROUND_IMAGE',
+    SUBSCRIPTION_FORM: 'SUBSCRIPTION_FORM'
 }

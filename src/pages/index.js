@@ -4,17 +4,16 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout/layout"
 import HorizontalScrollContainer from "../components/horizontal-scroll-container/horizontal-scroll-container"
 import { connect } from "react-redux"
+import PageContent from "../components/page-content/page-content";
 
 const IndexPage = (props) => {
   let mainPage = props.pages.find(pg => {
     return pg.title === "Home"
   })
 
-  console.log('MI', mainPage)
-
   return (
-    <Layout>
-      {mainPage && mainPage.hasHorizontalScroll ? <HorizontalScrollContainer sections={mainPage.content} /> : <p>..</p>}
+    <Layout isHome>
+      {mainPage ? <PageContent page={mainPage} /> : <p>..</p>}
     </Layout>
   )
 }

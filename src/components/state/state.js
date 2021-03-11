@@ -39,7 +39,6 @@ const State = props => {
     let { allContentfulPage } = data
 
     let pages = Convert.toModelArray(allContentfulPage, Convert.toPageModel)
-    console.log("PAGES", pages)
 
     props.setPages(pages)
     props.loaded()

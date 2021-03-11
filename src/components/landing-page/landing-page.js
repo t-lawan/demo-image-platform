@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import Navbar from "../navbar/navbar";
 import { connect } from "react-redux"
 import { hideLandingPage } from "../../store/action";
-
+import VideoPlayer from "../videoplayer/videoPlayer";
+import Video from '../../assets/video/VIDEO.mp4'
 const LandingPageWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: yellow;
+    background: black;
     display: ${props => (props.show ? "inherit" : "none")};
 `
 
@@ -22,8 +22,8 @@ const LandingPageContainer = styled.div`
 const LandingPage = (props) => {
 
   return (
-    <LandingPageWrapper onClick={() => props.hideLandingPage()} show={props.showLandingPage}>    
-        <p> VIDEO </p>
+    <LandingPageWrapper onClick={() => props.hideLandingPage()} show={props.showLandingPage && props.isHome}>    
+        <VideoPlayer autoPlay={true} showControls={false} fullScreen={true}  videoUrl={Video} />
     </LandingPageWrapper>
   )
 }

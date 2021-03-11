@@ -17,7 +17,7 @@ const Layout = (props) => {
     <LayoutWrapper>
       <GlobalStyle />
       <State />
-      <LandingPage />
+      <LandingPage isHome={props.isHome} />
 
       {props.children}
     </LayoutWrapper>
@@ -26,6 +26,10 @@ const Layout = (props) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isHome: PropTypes.bool
 }
 
+Layout.defaultProps = {
+  isHome: false
+};
 export default Layout

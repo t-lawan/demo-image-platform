@@ -3,6 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import Navbar from "../navbar/navbar";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { TwoColumnWrapper } from "../page-content/page-content";
 
 const HorizontalScrollContainerWrapper = styled.div`
     height: 100vh;
@@ -25,11 +26,18 @@ const Container = styled.div`
     flex: 0 0 auto;
 `
 
-const ContainerY = styled.div`
+const PageSectionWrapper = styled.div`
+    background: red;
     height: 100vh;
-    width: 100vw;
-    background: transparent;
-    flex: 0 0 auto;
+`
+
+const SocialMediaWrapper = styled.div`
+    background: blue;
+`
+
+const ThreeColumnWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 6.5fr 0.5fr;
 `
 
 const ImageBackground = styled.div`
@@ -47,12 +55,19 @@ console.log('PROPS', props.sections[0])
   return (
     <HorizontalScrollContainerWrapper>
         <Container>
-            <Navbar />
             <ImageBackground>
                 <GatsbyImage  image={image} alt={'Hi'} />
             </ImageBackground>
+            <ThreeColumnWrapper>
+                <Navbar />
+                <PageSectionWrapper>
+
+                </PageSectionWrapper>
+                <SocialMediaWrapper>
+
+                </SocialMediaWrapper>
+            </ThreeColumnWrapper>
         </Container>
-        {/* <ContainerY></ContainerY> */}
     </HorizontalScrollContainerWrapper>
   )
 }
