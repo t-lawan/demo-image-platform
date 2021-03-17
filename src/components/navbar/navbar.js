@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-
 const NavbarWrapper = styled.div`
+  height: 100%;
+`
+const NavbarLinkWrapper = styled.div`
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -16,13 +18,15 @@ const NavbarLink = styled(Link)``
 
 const Navbar = props => {
   return (
-      <NavbarWrapper>
+    <NavbarWrapper>
+      <NavbarLinkWrapper>
         <NavbarLink to={"/"}>home</NavbarLink>
         <NavbarLink to={"/about"}>about</NavbarLink>
         <NavbarLink to={'/subscribe'}> subscribe</NavbarLink>
         <NavbarLink to={'/'}> archive</NavbarLink>
         <NavbarLink to={'/'}> upcoming</NavbarLink>
-      </NavbarWrapper>
+      </NavbarLinkWrapper>
+    </NavbarWrapper>
   )
 }
 

@@ -6,7 +6,6 @@ import axios from 'axios'
 const SubscriptionFormWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background: red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +18,14 @@ const InputsWrapper = styled.div`
   height: 100%;
   justify-content: space-around;
   align-items: center;
+`
+
+const SubscribeButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  /* justify-content: center; */
 `
 
 const InputWrapper = styled.div`
@@ -150,9 +157,9 @@ const SubscriptionForm = (props) => {
                 <ErrorLabel hide={errors.email}> {errors.email ? errors.email : '.'}</ErrorLabel>
               </InputWrapper>
             </InputsWrapper>
-            <InputsWrapper>
+            <SubscribeButtonWrapper>
               <SubscribeButton type="submit" disabled={hasErrors || !hasTouched}> Subscribe </SubscribeButton>
-            </InputsWrapper>
+            </SubscribeButtonWrapper>
           </form>
         </SubscriptionFormWrapper>
   )
