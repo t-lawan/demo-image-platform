@@ -1,4 +1,5 @@
 export const SET_PAGES = "SET_PAGES";
+export const SET_PAGE_INFO = "SET_PAGE_INFO";
 export const SET_NAVBAR_LINKS = "SET_NAVBAR_LINKS";
 
 export const IS_LOADED = "IS_LOADED";
@@ -10,6 +11,13 @@ export const setPages = (pages) => {
     return {
         type:SET_PAGES,
         pages: pages
+    }
+}
+
+export const setPageInfo = (page_info) => {
+    return {
+        type: SET_PAGE_INFO,
+        page_info: page_info
     }
 }
 

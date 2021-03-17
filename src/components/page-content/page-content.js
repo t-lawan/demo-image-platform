@@ -30,7 +30,6 @@ export const PageContent = props => {
   let page = props.page
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
 
-  console.log("PAGE", image)
   return (
     <PageWrapper>
       {image ? (

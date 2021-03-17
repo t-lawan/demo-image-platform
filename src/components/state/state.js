@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 import { Convert } from "../../utility/convert"
-import { isLoaded, setPages, setNavbarLinks } from "../../store/action"
+import { isLoaded, setPages, setNavbarLinks, setPageInfo } from "../../store/action"
 
 const State = props => {
   const data = useStaticQuery(
@@ -35,14 +35,28 @@ const State = props => {
             }
           }
         }
+        contentfulPageInfo {
+          contentful_id
+          tickerImage {
+            gatsbyImageData(layout: FULL_WIDTH, resizingBehavior: FILL)
+          }
+          title
+          description {
+            description
+          }
+          tickerText {
+            tickerText
+          }
+        }
       }
     `
   )
   if (!props.isLoaded) {
-    let { allContentfulPage } = data
+    let { allContentfulPage,  contentfulPageInfo} = data;
 
     let pages = Convert.toModelArray(allContentfulPage, Convert.toPageModel)
-
+    let pageInfo = Convert.toPageInfoModel(contentfulPageInfo);
+    props.setPageInfo(pageInfo)
     props.setPages(pages)
     props.loaded()
   }
@@ -60,6 +74,7 @@ const mapDispatchToProps = dispatch => {
   return {
     setNavbarLinks: navbar_links => dispatch(setNavbarLinks(navbar_links)),
     setPages: pages => dispatch(setPages(pages)),
+    setPageInfo: page_info => dispatch(setPageInfo(page_info)),
     loaded: () => dispatch(isLoaded())
   }
 }
