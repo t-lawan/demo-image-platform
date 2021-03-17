@@ -11,6 +11,7 @@ const LandingPageWrapper = styled.div`
     height: 100vh;
     width: 100vw;
     background: black;
+    z-index: 1000;
     display: ${props => (props.show ? "inherit" : "none")};
 `
 

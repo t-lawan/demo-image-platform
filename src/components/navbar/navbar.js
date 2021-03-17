@@ -12,10 +12,6 @@ const NavbarWrapper = styled.div`
   margin: 2rem;
 `
 
-const NavbarFixedWrapper = styled.div`
-  position: fixed;
-`
-
 const NavbarLink = styled(Link)``
 
 const Navbar = props => {
@@ -23,9 +19,9 @@ const Navbar = props => {
       <NavbarWrapper>
         <NavbarLink to={"/"}>home</NavbarLink>
         <NavbarLink to={"/about"}>about</NavbarLink>
-        <p> subscribe</p>
-        <p> archive</p>
-        <p> upcoming</p>
+        <NavbarLink to={'/subscribe'}> subscribe</NavbarLink>
+        <NavbarLink to={'/'}> archive</NavbarLink>
+        <NavbarLink to={'/'}> upcoming</NavbarLink>
       </NavbarWrapper>
   )
 }

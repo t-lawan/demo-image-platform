@@ -30,30 +30,33 @@ exports.createPages = ({ graphql, actions }) => {
     return graphql(
       `
         {
-            allContentfulPage {
-                edges {
-                  node {
-                    contentful_id
-                    title
-                    url
-                    hasHorizontalScroll
-                    contentSections {
-                      backgroundImage {
-                        gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-                      }
-                      audioFile {
-                        file {
-                          url
-                        }
-                      }
-                      text {
-                        raw
-                      }
-                      type
+          allContentfulPage {
+            edges {
+              node {
+                contentful_id
+                title
+                url
+                hasHorizontalScroll
+                contentSections {
+                  backgroundImage {
+                    gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                  }
+                  audioFile {
+                    file {
+                      url
                     }
                   }
+                  text {
+                    raw
+                  }
+                  type
+                }
+                backgroundImage {
+                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
                 }
               }
+            }
+          }
         }
       `,
       { limit: 1000 }

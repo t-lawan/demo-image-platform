@@ -16,7 +16,8 @@ export class Convert {
       contentfulModel.title, 
       contentfulModel.url, 
       contentfulModel.hasHorizontalScroll,
-      content
+      content,
+      contentfulModel.backgroundImage
     )
   }
 

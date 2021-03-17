@@ -1,11 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components"
-import { Link } from "gatsby";
-import GaramondBold from './assets/fonts/AppleGaramond-Bold.ttf'
-import GaramondBoldItalic from './assets/fonts/AppleGaramond-BoldItalic.ttf'
-import GaramondItalic from './assets/fonts/AppleGaramond-Italic.ttf'
-import GaramondLight from './assets/fonts/AppleGaramond-Light.ttf'
-import GaramondLightItalic from './assets/fonts/AppleGaramond-LightItalic.ttf'
-import Garamond from './assets/fonts/AppleGaramond.ttf'
+import { Link } from "gatsby"
+import GaramondBold from "./assets/fonts/AppleGaramond-Bold.ttf"
+import GaramondBoldItalic from "./assets/fonts/AppleGaramond-BoldItalic.ttf"
+import GaramondItalic from "./assets/fonts/AppleGaramond-Italic.ttf"
+import GaramondLight from "./assets/fonts/AppleGaramond-Light.ttf"
+import GaramondLightItalic from "./assets/fonts/AppleGaramond-LightItalic.ttf"
+import Garamond from "./assets/fonts/AppleGaramond.ttf"
 
 export const size = {
   mobileS: "320px",
@@ -126,7 +126,7 @@ img {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-p, a{
+p, a, button{
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -159,6 +159,46 @@ li {
     transform: rotate(1deg);
 
   }
+  @keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}
+
+@-moz-keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+            }
+        }
+        
+        @-webkit-keyframes scroll-left {
+            0% {
+                -webkit-transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-100%);
+            }
+        }
+        
+        @keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+        }
 `
 
 export const TwoColumnSection = styled.div`

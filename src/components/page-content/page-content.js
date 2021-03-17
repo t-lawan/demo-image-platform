@@ -4,9 +4,10 @@ import { size } from "../styles/styles"
 import HorizontalScrollContainer from "../horizontal-scroll-container/horizontal-scroll-container"
 import Navbar from "../navbar/navbar"
 import { GenerateContentSection } from "../../utility/richtext"
+import Ticker from "../ticker/ticker"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-export const PageWrapper = styled.div`
-`
+export const PageWrapper = styled.div``
 
 export const PageSectionWrapper = styled.div`
   margin-top: 2rem;
@@ -17,10 +18,26 @@ export const TwoColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 7fr;
 `
+
+const ImageBackground = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+`
+
 export const PageContent = props => {
   let page = props.page
+  let image = page.backgroundImage ? getImage(page.backgroundImage) : null
+
+  console.log("PAGE", image)
   return (
     <PageWrapper>
+      {image ? (
+        <ImageBackground>
+          <GatsbyImage image={image} alt={"Image"} />
+        </ImageBackground>
+      ) : null}
       {page.hasHorizontalScroll ? (
         <HorizontalScrollContainer sections={page.content} />
       ) : (
@@ -35,6 +52,7 @@ export const PageContent = props => {
           </PageSectionWrapper>
         </TwoColumnWrapper>
       )}
+      <Ticker />
     </PageWrapper>
   )
 }

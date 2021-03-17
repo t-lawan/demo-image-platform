@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import Navbar from "../navbar/navbar";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { TwoColumnWrapper } from "../page-content/page-content";
+import SocialMedia from "../social-media/social-media";
 
 const HorizontalScrollContainerWrapper = styled.div`
     height: 100vh;
@@ -27,7 +28,7 @@ const Container = styled.div`
 `
 
 const PageSectionWrapper = styled.div`
-    background: red;
+    /* background: red; */
     height: 100vh;
 `
 
@@ -51,21 +52,18 @@ const HorizontalScrollContainer = (props) => {
 
     let image = getImage(props.sections[0].backgroundImage)
     
-console.log('PROPS', props.sections[0])
   return (
     <HorizontalScrollContainerWrapper>
         <Container>
-            <ImageBackground>
-                <GatsbyImage  image={image} alt={'Hi'} />
-            </ImageBackground>
+            {/* <ImageBackground>
+                <GatsbyImage  image={image} alt={'Image'} />
+            </ImageBackground> */}
             <ThreeColumnWrapper>
                 <Navbar />
                 <PageSectionWrapper>
 
                 </PageSectionWrapper>
-                <SocialMediaWrapper>
-
-                </SocialMediaWrapper>
+                <SocialMedia />
             </ThreeColumnWrapper>
         </Container>
     </HorizontalScrollContainerWrapper>

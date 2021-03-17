@@ -29,6 +29,9 @@ const State = props => {
                 }
                 type
               }
+              backgroundImage {
+                gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+              }
             }
           }
         }

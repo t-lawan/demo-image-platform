@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { ContentSectionModelType } from "../models/ContentSectionModel";
 import { size } from "../components/styles/styles";
+import SubscriptionForm from "../components/subscription/subscription-form";
 
 const PARAGRAPH = styled.p`
   margin-bottom: 1.5rem;
@@ -57,6 +58,10 @@ export const GenerateContentSection = (section, index) => {
             {}
           </TextWrapper>
         )
+      case ContentSectionModelType.SUBSCRIPTION_FORM:
+            render = (
+              <SubscriptionForm />
+            )
         break;
       default:
         break
