@@ -79,6 +79,11 @@ const SubscriptionForm = (props) => {
       setHasSubmitted(true);
     })
   }
+  function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  }
 
   const handleInputChange = event => {
     if (!hasTouched) {
@@ -128,7 +133,10 @@ const SubscriptionForm = (props) => {
     axios({
       method: 'post',
       url: '/',
-      body: new URLSearchParams(formData).toString(),
+      body: encode({
+        "form-name": "subscription_test",
+        ...formData
+      }),
       data: new URLSearchParams(formData).toString(),
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     }).then((response) => {
@@ -140,6 +148,7 @@ const SubscriptionForm = (props) => {
   return (
         <SubscriptionFormWrapper ref={formDataRef}>
           <form name="subscription_test" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="subscription_test" />
             <InputsWrapper>
               <InputWrapper>
                 <Label>First Name</Label>
