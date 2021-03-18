@@ -137,7 +137,7 @@ const SubscriptionForm = (props) => {
         "form-name": "subscription_test",
         ...formData
       }),
-      data: new URLSearchParams(formData).toString(),
+      // data: new URLSearchParams(formData).toString(),
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     }).then((response) => {
       console.log('Response', response)
