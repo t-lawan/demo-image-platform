@@ -10,13 +10,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 export const PageWrapper = styled.div``
 
 export const PageSectionWrapper = styled.div`
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding: 0 0.5rem;
 `
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 7fr;
+  height: 100vh;
 `
 
 const ImageBackground = styled.div`

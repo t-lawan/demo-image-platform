@@ -37,7 +37,9 @@ export const ModalTypes = {
   CONTACT: "CONTACT"
 }
 
-const TextWrapper = styled.div``
+const TextWrapper = styled.div`
+  padding-top: 2rem;
+`
 export const GenerateContentSection = (section, index) => {
   let render;
 

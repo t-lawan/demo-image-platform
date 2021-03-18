@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
+import { DateManager } from "../../utility/date-manager";
 
 const UpcomingWrapper = styled.div`
   padding: 0.5rem 1rem;
@@ -14,6 +15,10 @@ const UpcomingWrapper = styled.div`
   margin: 2rem;
 `
 
+const ProjectTitle = styled.li`
+  list-style-type: inherit;
+`
+
 
 const UpcomingProjects = props => {
     let projects = props.projects;
@@ -22,11 +27,11 @@ const UpcomingProjects = props => {
     })
 
     
-    console.log('PRO', projects)
+    // console.log('PRO', projects)
   return (
     <UpcomingWrapper>
         {projects.map((project,index) => (
-            <p key={index}> {project.artist}, {project.title}</p>
+            <ProjectTitle key={index}> {project.artist}, {project.title}, {DateManager.createStartAndEndDateString(project.startDate, project.endDate)} </ProjectTitle>
         ))}
     </UpcomingWrapper>
   )

@@ -5,13 +5,14 @@ const NavbarWrapper = styled.div`
   height: 100%;
 `
 const NavbarLinkWrapper = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 0 2rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  height: 30%;
+  height: 40%;
   justify-content: space-between;
   align-items: baseline;
-  margin: 2rem;
+  /* margin: 2rem; */
 `
 
 const NavbarLink = styled(Link)``

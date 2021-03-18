@@ -8,7 +8,8 @@ const SubscriptionFormWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-top: 3rem;
 `
 
 const InputsWrapper = styled.div`
@@ -80,7 +81,6 @@ const SubscriptionForm = (props) => {
   }
 
   const handleInputChange = event => {
-    console.log('HI');
     if (!hasTouched) {
       setHasTouched(true);
     }
@@ -120,7 +120,6 @@ const SubscriptionForm = (props) => {
   }
 
   const sendPostRequest = async () => {
-    console.log('FDR', formDataRef)
     let formData = new FormData()
     formData.append('first_name', firstName)
     formData.set('last_name', lastName);
