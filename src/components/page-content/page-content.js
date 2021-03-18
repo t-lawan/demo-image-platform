@@ -30,7 +30,6 @@ const ImageBackground = styled.div`
 export const PageContent = props => {
   let page = props.page
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
-  console.log('PAGE', page)
   return (
     <PageWrapper>
       {image ? (

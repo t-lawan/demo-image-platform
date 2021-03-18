@@ -26,8 +26,6 @@ const UpcomingProjects = props => {
         return project.type === ProjectType.UPCOMING;
     })
 
-    
-    // console.log('PRO', projects)
   return (
     <UpcomingWrapper>
         {projects.map((project,index) => (
