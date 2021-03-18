@@ -128,6 +128,7 @@ const SubscriptionForm = (props) => {
     axios({
       method: 'post',
       url: '/',
+      body: new URLSearchParams(formData).toString(),
       data: new URLSearchParams(formData).toString(),
       headers: { "Content-Type": "application/x-www-form-urlencoded" }
     }).then((response) => {
