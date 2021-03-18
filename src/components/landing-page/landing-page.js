@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { connect } from "react-redux"
 import { hideLandingPage } from "../../store/action";
-import VideoPlayer from "../videoplayer/videoPlayer";
+import VideoPlayer from "../videoplayer/videoplayer";
 import Video from '../../assets/video/VIDEO.mp4'
 const LandingPageWrapper = styled.div`
     position: fixed;
