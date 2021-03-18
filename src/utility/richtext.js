@@ -5,6 +5,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { ContentSectionModelType } from "../models/ContentSectionModel"
 import { size } from "../components/styles/styles"
 import SubscriptionForm from "../components/subscription/subscription-form"
+import UpcomingProjects from "../components/projects/upcoming-projects";
 
 const PARAGRAPH = styled.p``
 
@@ -67,7 +68,11 @@ export const GenerateContentSection = (section, index) => {
       break
     }
     case ContentSectionModelType.SUBSCRIPTION_FORM: {
-      render = <SubscriptionForm />
+      render = <SubscriptionForm key={index}/>
+      break
+    }
+    case ContentSectionModelType.UPCOMING_PROJECTS: {
+      render = <UpcomingProjects key={index} />
       break
     }
     default:

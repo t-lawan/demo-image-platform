@@ -1,10 +1,18 @@
 export const SET_PAGES = "SET_PAGES";
+export const SET_PROJECTS = "SET_PROJECTS";
 export const SET_PAGE_INFO = "SET_PAGE_INFO";
 export const SET_NAVBAR_LINKS = "SET_NAVBAR_LINKS";
 
 export const IS_LOADED = "IS_LOADED";
 export const HIDE_LANDING_PAGE = "HIDE_LANDING_PAGE";
 
+
+export const setProjects = (projects) => {
+    return {
+        type: SET_PROJECTS,
+        projects: projects
+    }
+}
 
 
 export const setPages = (pages) => {

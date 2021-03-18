@@ -50,7 +50,6 @@ const ImageBackground = styled.div`
 const Ticker = props => {
   let page_info = props.page_info;
   let image = page_info.tickerImage ? getImage(page_info.tickerImage) : null;
-  console.log("PAGE", image)
 
   return (
     <TickerWrapper>

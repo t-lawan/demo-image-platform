@@ -24,7 +24,7 @@ const Navbar = props => {
         <NavbarLink to={"/about"}>about</NavbarLink>
         <NavbarLink to={'/subscribe'}> subscribe</NavbarLink>
         <NavbarLink to={'/'}> archive</NavbarLink>
-        <NavbarLink to={'/'}> upcoming</NavbarLink>
+        <NavbarLink to={'/upcoming'}> upcoming</NavbarLink>
       </NavbarLinkWrapper>
     </NavbarWrapper>
   )
