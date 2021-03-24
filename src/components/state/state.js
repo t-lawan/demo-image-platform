@@ -37,6 +37,9 @@ const State = props => {
               }
               backgroundImage {
                 gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                file {
+                  url
+                }
               }
             }
           }
@@ -73,7 +76,10 @@ const State = props => {
     let { allContentfulPage, contentfulPageInfo, allContentfulProject } = data
 
     let pages = Convert.toModelArray(allContentfulPage, Convert.toPageModel)
-    let projects = Convert.toModelArray(allContentfulProject, Convert.toProjectModel)
+    let projects = Convert.toModelArray(
+      allContentfulProject,
+      Convert.toProjectModel
+    )
     let pageInfo = Convert.toPageInfoModel(contentfulPageInfo)
     props.setPageInfo(pageInfo)
     props.setProjects(projects)

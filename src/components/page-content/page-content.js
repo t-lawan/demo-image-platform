@@ -35,9 +35,9 @@ const ImageBackground = styled.div`
 export const PageContent = props => {
   let page = props.page
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
-  console.log('WOOP BACKGROUND IMAGE', image)
+  console.log('WOOP BACKGROUND IMAGE', page.backgroundImage)
   return (
-    <PageWrapper image={IMAGE}>
+    <PageWrapper image={page.backgroundImage? page.backgroundImage.file.url : null}>
       {/* {image ? (
         <ImageBackground>
           <GatsbyImage image={image} alt={"Image"} />

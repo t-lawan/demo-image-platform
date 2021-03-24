@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image";
-import TransparentStar from '../../assets/TransparentStar.png'
+import Favicon from '../../assets/favicon.png'
 const NavbarWrapper = styled.div`
   height: 100%;
 `
@@ -18,7 +18,6 @@ const NavbarLinkWrapper = styled.div`
 `
 const HomeNavbarImage = styled.img`
   width: 20%;
-  background: green;
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -29,9 +28,8 @@ const Navbar = props => {
     <NavbarWrapper>
 
       <NavbarLinkWrapper>
-      <HomeNavbarImage src={TransparentStar} alt="Transparent Star" />
-
-        <NavbarLink to={"/"}>home</NavbarLink>
+        <HomeNavbarImage src={Favicon} alt="Transparent Star" />
+        {/* <NavbarLink to={"/"}>home</NavbarLink> */}
         <NavbarLink to={"/about"}>about</NavbarLink>
         <NavbarLink to={'/subscribe'}> subscribe</NavbarLink>
         <NavbarLink to={'/'}> archive</NavbarLink>
