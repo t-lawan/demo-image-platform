@@ -50,6 +50,13 @@ exports.createPages = ({ graphql, actions }) => {
                     raw
                   }
                   type
+                  credits {
+                    title
+                    name
+                  }
+                  mediaPartners {
+                    gatsbyImageData(resizingBehavior: FILL)
+                  }
                 }
                 backgroundImage {
                   gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)

@@ -40,6 +40,18 @@ export const ModalTypes = {
 const TextWrapper = styled.div`
   padding-top: 2rem;
 `
+
+const CreditsWrapper = styled.div`
+  padding: 2rem 0;
+
+`
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+`
 export const GenerateContentSection = (section, index) => {
   let render;
 
@@ -77,6 +89,23 @@ export const GenerateContentSection = (section, index) => {
       render = <UpcomingProjects key={index} />
       break
     }
+    case ContentSectionModelType.CREDITS: {
+      render = (<CreditsWrapper key={index}>
+          {section.credits.map((credit, i) => (
+            <FlexWrapper key={i}>
+              <p> {credit.title} </p>
+              <p> {credit.name} </p>
+
+            </FlexWrapper>
+          ))}
+      </CreditsWrapper>)
+      break;
+    }
+    case ContentSectionModelType.MEDIA_PARTNERS: {
+        render = <p key={index}> Media Partners</p>
+        break;
+    }
+
     default:
       break
   }

@@ -1,9 +1,13 @@
 import styled, { createGlobalStyle } from "styled-components"
+import Swiss721 from '../../assets/fonts/Swis721_Lt_BT_Light.ttf'
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
-
-
+  @font-face {
+    font-family: 'Swiss721';
+    src: url(${Swiss721}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
     * {
   box-sizing: border-box;
   ::-webkit-scrollbar {
@@ -15,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 html,
 body {
-  font-family: 'East Sea Dokdo', cursive;
+  font-family: 'Swiss721';
   width: 100vw;
   width: 100%;
   height: 100%;

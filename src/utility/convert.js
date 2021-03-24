@@ -29,6 +29,8 @@ export class Convert {
       contentfulModel.backgroundImage,
       contentfulModel.text,
       contentfulModel.type,
+      contentfulModel.mediaPartners,
+      contentfulModel.credits
     )
   }
 
