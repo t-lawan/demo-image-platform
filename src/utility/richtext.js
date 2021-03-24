@@ -43,7 +43,21 @@ const TextWrapper = styled.div`
 
 const CreditsWrapper = styled.div`
   padding: 2rem 0;
+`
+const FlexImagesWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content:flex-end;
+  /* align-items: flex-end; */
 
+`
+const ImageWrapper = styled.div`
+
+`
+
+const MediaWrapper = styled.div`
+  padding: 2rem 0;
 `
 
 const FlexWrapper = styled.div`
@@ -102,7 +116,19 @@ export const GenerateContentSection = (section, index) => {
       break;
     }
     case ContentSectionModelType.MEDIA_PARTNERS: {
-        render = <p key={index}> Media Partners</p>
+      console.log('MEDIA PARTNERS', section)
+        render = (
+          <MediaWrapper key={index}>
+
+              <p> Media Partners </p>
+              <FlexImagesWrapper>
+              <p> IMAGE </p>
+              {/* <p> IMAGE </p>
+              <p> IMAGE </p>
+              <p> IMAGE </p> */}
+              </FlexImagesWrapper>
+          </MediaWrapper>
+        )
         break;
     }
 

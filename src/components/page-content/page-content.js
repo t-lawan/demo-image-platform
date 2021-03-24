@@ -12,6 +12,7 @@ export const PageWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 10rem;
 `
 
 export const PageSectionWrapper = styled.div`
