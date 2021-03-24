@@ -1,28 +1,42 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import Twitter from  '../../assets/Twitter.png'
+import Instagram from  '../../assets/Instagram.png'
+import Facebook from '../../assets/Facebook.png'
 
 const SocialMediaLinkWrapper = styled.div`
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  height: 15%;
-  justify-content: space-between;
+  height: 30%;
+  justify-content: center;
   align-items: baseline;
-  margin: 2rem;
+  margin: 1rem 0;
 `
 
 const SocialMediaWrapper = styled.div``
 
 const SocialMediaLink = styled(Link)``
 
+const SocialMediaImage = styled.img`
+  width: 50%;
+`
+
 const SocialMedia = props => {
   return (
     <SocialMediaWrapper>
       <SocialMediaLinkWrapper>
-        <SocialMediaLink to={"/"}>twitter</SocialMediaLink>
-        <SocialMediaLink to={"/about"}>instagram</SocialMediaLink>
-        <SocialMediaLink to={"/subscribe"}> facebook</SocialMediaLink>
+        <SocialMediaLink to={"/"}>
+          <SocialMediaImage src={Twitter} alt="Twitter" />
+        </SocialMediaLink>
+        <SocialMediaLink to={"/about"}>
+          <SocialMediaImage src={Instagram} alt="Instagram" />
+        </SocialMediaLink>
+        <SocialMediaLink to={"/subscribe"}> 
+        {/* Facebook */}
+          <SocialMediaImage src={Facebook} alt="Facebook" />
+        </SocialMediaLink>
       </SocialMediaLinkWrapper>
     </SocialMediaWrapper>
   )
