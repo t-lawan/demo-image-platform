@@ -8,8 +8,9 @@ const TickerWrapper = styled.div`
   bottom: 0;
   width: 100%;
   height: 7.5%;
-  background: rgba(0, 255, 0, 0.6);
+  /* background: rgba(0, 255, 0, 0.6); */
   z-index: 100;
+  mix-blend-mode: difference;
   /* padding: 0.5rem; */
 `
 
@@ -36,7 +37,7 @@ const TickerText = styled.h1`
   -moz-animation: scroll-left 2s linear infinite;
   -webkit-animation: scroll-left 2s linear infinite;
   animation: scroll-left 20s linear infinite;
-  mix-blend-mode: saturation;
+  /* mix-blend-mode: saturation; */
 `
 const ImageBackground = styled.div`
     z-index: -1;
@@ -44,7 +45,6 @@ const ImageBackground = styled.div`
     bottom: 0;
     width: 100%;
     height: 7.5%;
-    /* background-blend-mode: difference; */
 
 `
 const Ticker = props => {

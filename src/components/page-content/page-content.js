@@ -6,8 +6,13 @@ import Navbar from "../navbar/navbar"
 import { GenerateContentSection } from "../../utility/richtext"
 import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
-export const PageWrapper = styled.div``
+import IMAGE from '../../assets/IMAGE.jpg'
+export const PageWrapper = styled.div`
+  background-image: url(${props => props.image || "unset"});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`
 
 export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
@@ -30,13 +35,14 @@ const ImageBackground = styled.div`
 export const PageContent = props => {
   let page = props.page
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
+  console.log('WOOP BACKGROUND IMAGE', image)
   return (
-    <PageWrapper>
-      {image ? (
+    <PageWrapper image={IMAGE}>
+      {/* {image ? (
         <ImageBackground>
           <GatsbyImage image={image} alt={"Image"} />
         </ImageBackground>
-      ) : null}
+      ) : null} */}
       {page.hasHorizontalScroll ? (
         <HorizontalScrollContainer sections={page.content} />
       ) : (
