@@ -49,15 +49,10 @@ const ImageBackground = styled.div`
 `
 
 const HorizontalScrollContainer = (props) => {
-
-    let image = getImage(props.sections[0].backgroundImage)
-    
+ 
   return (
     <HorizontalScrollContainerWrapper>
         <Container>
-            {/* <ImageBackground>
-                <GatsbyImage  image={image} alt={'Image'} />
-            </ImageBackground> */}
             <ThreeColumnWrapper>
                 <Navbar />
                 <PageSectionWrapper>

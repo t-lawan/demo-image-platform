@@ -56,6 +56,9 @@ const State = props => {
           tickerText {
             tickerText
           }
+          instagramUrl
+          facebookUrl
+          twitterUrl
         }
         allContentfulProject {
           edges {

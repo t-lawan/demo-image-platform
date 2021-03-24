@@ -50,6 +50,9 @@ export class Convert {
       contentfulModel.description.description,
       contentfulModel.tickerImage,
       contentfulModel.tickerText.tickerText,
+      contentfulModel.twitterUrl,
+      contentfulModel.facebookUrl,
+      contentfulModel.instagramUrl,
     )
   }
 

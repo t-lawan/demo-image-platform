@@ -17,7 +17,7 @@ const NavbarLinkWrapper = styled.div`
   /* margin: 2rem; */
 `
 const HomeNavbarImage = styled.img`
-  width: 20%;
+  width: 30%;
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -28,8 +28,9 @@ const Navbar = props => {
     <NavbarWrapper>
 
       <NavbarLinkWrapper>
-        <HomeNavbarImage src={Favicon} alt="Transparent Star" />
-        {/* <NavbarLink to={"/"}>home</NavbarLink> */}
+        <NavbarLink to={"/"}>
+          <HomeNavbarImage src={Favicon} alt="Favicon" />
+        </NavbarLink>
         <NavbarLink to={"/about"}>about</NavbarLink>
         <NavbarLink to={'/subscribe'}> subscribe</NavbarLink>
         <NavbarLink to={'/'}> archive</NavbarLink>
