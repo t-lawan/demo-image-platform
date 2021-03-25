@@ -22,6 +22,10 @@ const NavbarLink = styled(Link)`
   padding-left: 1rem;
 `
 
+const NavbarTitle = styled.li`
+  list-style-type: inherit;
+`
+
 const Navbar = props => {
   return (
     <NavbarWrapper>
@@ -30,10 +34,18 @@ const Navbar = props => {
         <NavbarLink to={"/"}>
           <HomeNavbarImage src={Favicon} alt="Favicon" />
         </NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={"/about"}>about</NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/subscribe'}> subscribe</NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/archive'}> archive</NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/upcoming'}> upcoming</NavbarLink>
+        <NavbarLink activeClassName={'active-link'} to={"/about"}>
+          <NavbarTitle> about </NavbarTitle>
+        </NavbarLink>
+        <NavbarLink activeClassName={'active-link'} to={'/subscribe'}> 
+          <NavbarTitle> subscribe </NavbarTitle>
+        </NavbarLink>
+        <NavbarLink activeClassName={'active-link'} to={'/archive'}> 
+          <NavbarTitle> archive </NavbarTitle>
+        </NavbarLink>
+        <NavbarLink activeClassName={'active-link'} to={'/upcoming'}> 
+          <NavbarTitle> upcoming </NavbarTitle>
+        </NavbarLink>
       </NavbarLinkWrapper>
     </NavbarWrapper>
   )
