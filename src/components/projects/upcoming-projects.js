@@ -9,7 +9,7 @@ export const UpcomingWrapper = styled.div`
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   justify-content: space-between;
   align-items: center;
   margin: 2rem;
