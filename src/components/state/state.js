@@ -7,8 +7,10 @@ import {
   setPages,
   setNavbarLinks,
   setPageInfo,
-  setProjects
+  setProjects,
+  setCurrentProject
 } from "../../store/action"
+import { ProjectType } from "../../models/ProjectModel";
 
 const State = props => {
   const data = useStaticQuery(
@@ -79,6 +81,27 @@ const State = props => {
               startDate
               title
               type
+              contentSection {
+                backgroundImage {
+                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                }
+                audioFile {
+                  file {
+                    url
+                  }
+                }
+                text {
+                  raw
+                }
+                type
+                credits {
+                  title
+                  name
+                }
+                mediaPartners {
+                  gatsbyImageData(resizingBehavior: FILL)
+                }
+              }
             }
           }
         }
@@ -96,6 +119,14 @@ const State = props => {
     let pageInfo = Convert.toPageInfoModel(contentfulPageInfo)
     props.setPageInfo(pageInfo)
     props.setProjects(projects)
+    let currentProject = projects.find((project) => {
+      return project.type === ProjectType.CURRENT
+    })
+    if(currentProject) {
+      console.log('PROJECT', currentProject)
+      props.setCurrentProject(currentProject)
+    }
+
     props.setPages(pages)
     props.loaded()
   }
@@ -114,6 +145,7 @@ const mapDispatchToProps = dispatch => {
     setNavbarLinks: navbar_links => dispatch(setNavbarLinks(navbar_links)),
     setPages: pages => dispatch(setPages(pages)),
     setProjects: projects => dispatch(setProjects(projects)),
+    setCurrentProject : project => dispatch(setCurrentProject(project)),
     setPageInfo: page_info => dispatch(setPageInfo(page_info)),
     loaded: () => dispatch(isLoaded())
   }

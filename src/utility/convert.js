@@ -35,13 +35,20 @@ export class Convert {
   }
 
   static toProjectModel = contentfulModel => {
+    let content = []
+    if(contentfulModel.contentSection){
+      contentfulModel.contentSection.forEach((cn) => {
+        content.push(Convert.toContentSectionModel(cn));
+      })
+    }
     return new ProjectModel(
       contentfulModel.contentful_id,
       contentfulModel.title,
       contentfulModel.artist,
       contentfulModel.startDate,
       contentfulModel.endDate,
-      contentfulModel.type
+      contentfulModel.type,
+      content
     )
   }
 

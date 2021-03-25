@@ -5,7 +5,8 @@ import {
   IS_LOADED,
   SET_NAVBAR_LINKS,
   SET_PAGE_INFO,
-  SET_PROJECTS
+  SET_PROJECTS,
+  SET_CURRENT_PROJECT
 } from "./action"
 
 const initalState = {
@@ -13,6 +14,7 @@ const initalState = {
   navbar_links: [],
   projects: [],
   page_info: null,
+  currentProject: null,
   isLoaded: false,
   showLandingPage: true
 }
@@ -26,6 +28,10 @@ const reducer = (state = initalState, action) => {
     case SET_PROJECTS:
       return Object.assign({}, state, {
         projects: action.projects
+      })
+    case SET_CURRENT_PROJECT:
+      return Object.assign({}, state, {
+        currentProject: action.project
       })
     case SET_NAVBAR_LINKS:
       return Object.assign({}, state, {

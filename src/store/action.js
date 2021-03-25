@@ -6,6 +6,7 @@ export const SET_NAVBAR_LINKS = "SET_NAVBAR_LINKS";
 export const IS_LOADED = "IS_LOADED";
 export const HIDE_LANDING_PAGE = "HIDE_LANDING_PAGE";
 
+export const SET_CURRENT_PROJECT = 'SET_CURRENT_PROJECT'
 
 export const setProjects = (projects) => {
     return {
@@ -13,6 +14,13 @@ export const setProjects = (projects) => {
         projects: projects
     }
 }
+
+export const setCurrentProject = (project) => {
+    return {
+        type: SET_CURRENT_PROJECT,
+        project: project
+    }
+}  
 
 
 export const setPages = (pages) => {
