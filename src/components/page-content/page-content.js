@@ -12,7 +12,7 @@ export const PageWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
 `
 
 export const PageSectionWrapper = styled.div`
@@ -24,7 +24,7 @@ export const PageSectionWrapper = styled.div`
 export const TwoColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 7fr;
-  height: 100vh;
+  /* height: 100vh; */
 `
 
 const ImageBackground = styled.div`

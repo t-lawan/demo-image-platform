@@ -15,7 +15,6 @@ const ProjectTitle = styled.li`
 
 const ArchiveProjects = props => {
     let projects = props.projects;
-    console.log('PROJ', projects)
     projects = projects.filter(project => {
         return project.type === ProjectType.ARCHIVE;
     })

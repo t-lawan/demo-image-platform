@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Favicon from '../../assets/favicon.png'
 const NavbarWrapper = styled.div`
-  height: 100vw;
+  height: 100vh;
 `
 const NavbarLinkWrapper = styled.div`
   padding: 0 2rem;
