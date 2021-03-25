@@ -123,7 +123,6 @@ const State = props => {
       return project.type === ProjectType.CURRENT
     })
     if(currentProject) {
-      console.log('PROJECT', currentProject)
       props.setCurrentProject(currentProject)
     }
 

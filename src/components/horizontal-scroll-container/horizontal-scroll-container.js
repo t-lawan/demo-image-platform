@@ -44,8 +44,7 @@ const ThreeColumnWrapper = styled.div`
 `
 
 const HorizontalScrollContainer = props => {
-  let currentProject = props.currentProject
-  console.log("PROJECT", currentProject)
+  let currentProject = props.currentProject;
   return (
     <HorizontalScrollContainerWrapper>
       <Container>
