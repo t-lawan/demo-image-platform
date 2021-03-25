@@ -1,7 +1,6 @@
 import * as React from "react"
 import { connect } from "react-redux"
 import styled from "styled-components"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const TickerWrapper = styled.div`
   position: fixed;
@@ -11,11 +10,11 @@ const TickerWrapper = styled.div`
   /* background: rgba(0, 255, 0, 0.6); */
   z-index: 100;
   mix-blend-mode: difference;
+  background-image: url(${props => props.image || "unset"});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   /* padding: 0.5rem; */
-`
-
-const TickerImage = styled(GatsbyImage)`
-
 `
 
 const MarqueeWrapper = styled.div`
@@ -39,23 +38,10 @@ const TickerText = styled.h1`
   animation: scroll-left 20s linear infinite;
   /* mix-blend-mode: saturation; */
 `
-const ImageBackground = styled.div`
-    z-index: -1;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 7.5%;
-
-`
 const Ticker = props => {
   let page_info = props.page_info;
-  let image = page_info.tickerImage ? getImage(page_info.tickerImage) : null;
-
   return (
-    <TickerWrapper>
-        <ImageBackground>
-            <TickerImage image={image} alt={'Image'} />
-        </ImageBackground>
+    <TickerWrapper image={page_info.tickerImage? page_info.tickerImage.file.url : null}>
       <MarqueeWrapper>
         {/* <MarqueeInnerWrapper> */}
         <TickerText> {page_info.tickerText} </TickerText>

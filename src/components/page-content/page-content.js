@@ -18,6 +18,7 @@ export const PageWrapper = styled.div`
 export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
   padding: 0 0.5rem;
+  width: 90%;
 `
 
 export const TwoColumnWrapper = styled.div`

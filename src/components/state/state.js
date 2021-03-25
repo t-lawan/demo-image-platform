@@ -55,6 +55,9 @@ const State = props => {
           contentful_id
           tickerImage {
             gatsbyImageData(layout: FULL_WIDTH, resizingBehavior: FILL)
+            file {
+              url
+            }
           }
           title
           description {
