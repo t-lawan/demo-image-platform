@@ -6,6 +6,7 @@ import { ContentSectionModelType } from "../models/ContentSectionModel"
 import { size } from "../components/styles/styles"
 import SubscriptionForm from "../components/subscription/subscription-form"
 import UpcomingProjects from "../components/projects/upcoming-projects";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PARAGRAPH = styled.p``
 
@@ -49,10 +50,15 @@ const FlexImagesWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content:flex-end;
+  flex-wrap: wrap;
   /* align-items: flex-end; */
 
 `
 const ImageWrapper = styled.div`
+  width: 30%;
+`
+
+const Image = styled(GatsbyImage)`
 
 `
 
@@ -122,10 +128,14 @@ export const GenerateContentSection = (section, index) => {
 
               <p> Media Partners </p>
               <FlexImagesWrapper>
-              <p> IMAGE </p>
-              {/* <p> IMAGE </p>
-              <p> IMAGE </p>
-              <p> IMAGE </p> */}
+              {section.mediaPartners.map((mp, i) => {
+                let image = getImage(mp.gatsbyImageData);
+                return (
+                  <ImageWrapper key={i}>
+                    <Image image={image} />
+                  </ImageWrapper>
+                )
+              })}
               </FlexImagesWrapper>
           </MediaWrapper>
         )
