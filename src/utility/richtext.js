@@ -7,6 +7,7 @@ import { size } from "../components/styles/styles"
 import SubscriptionForm from "../components/subscription/subscription-form"
 import UpcomingProjects from "../components/projects/upcoming-projects";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import ArchiveProjects from "../components/projects/archive-projects";
 
 const PARAGRAPH = styled.p``
 
@@ -109,6 +110,10 @@ export const GenerateContentSection = (section, index) => {
       render = <UpcomingProjects key={index} />
       break
     }
+    case ContentSectionModelType.ARCHIVE_PROJECTS: {
+      render = <ArchiveProjects key={index} />
+      break
+    }
     case ContentSectionModelType.CREDITS: {
       render = (<CreditsWrapper key={index}>
           {section.credits.map((credit, i) => (
@@ -122,7 +127,6 @@ export const GenerateContentSection = (section, index) => {
       break;
     }
     case ContentSectionModelType.MEDIA_PARTNERS: {
-      console.log('MEDIA PARTNERS', section)
         render = (
           <MediaWrapper key={index}>
 

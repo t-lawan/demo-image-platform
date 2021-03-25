@@ -98,10 +98,9 @@ li {
 }
 
 .active-link {
-    font-style: italic;
-    transform: rotate(1deg);
-
+    color: green;
   }
+
   @keyframes marquee {
     0% {
         transform: translate3d(var(--move-initial), 0, 0);

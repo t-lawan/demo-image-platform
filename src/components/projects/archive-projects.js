@@ -4,26 +4,20 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
 import { DateManager } from "../../utility/date-manager";
+import { UpcomingWrapper } from "./upcoming-projects";
 
-export const UpcomingWrapper = styled.div`
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  height: 15%;
-  justify-content: space-between;
-  align-items: baseline;
-  margin: 2rem;
-`
+
 
 const ProjectTitle = styled.li`
   list-style-type: inherit;
 `
 
 
-const UpcomingProjects = props => {
+const ArchiveProjects = props => {
     let projects = props.projects;
+    console.log('PROJ', projects)
     projects = projects.filter(project => {
-        return project.type === ProjectType.UPCOMING;
+        return project.type === ProjectType.ARCHIVE;
     })
 
   return (
@@ -45,4 +39,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   null
-)(UpcomingProjects)
+)(ArchiveProjects)
