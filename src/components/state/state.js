@@ -10,7 +10,7 @@ import {
   setProjects,
   setCurrentProject
 } from "../../store/action"
-import { ProjectType } from "../../models/ProjectModel";
+import { ProjectType } from "../../models/ProjectModel"
 
 const State = props => {
   const data = useStaticQuery(
@@ -43,6 +43,13 @@ const State = props => {
                 mediaPartners {
                   gatsbyImageData(resizingBehavior: FILL)
                 }
+                audioDescription {
+                  audioDescription
+                }
+                audioTitle
+                imageGallery {
+                  gatsbyImageData
+                }
               }
               backgroundImage {
                 gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
@@ -73,38 +80,51 @@ const State = props => {
           twitterUrl
         }
         allContentfulProject {
-          edges {
-            node {
-              artist
-              contentful_id
-              endDate
-              startDate
-              title
-              type
-              contentSection {
-                backgroundImage {
-                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-                }
-                audioFile {
-                  file {
-                    url
-                  }
-                }
-                text {
-                  raw
-                }
-                type
-                credits {
-                  title
-                  name
-                }
-                mediaPartners {
-                  gatsbyImageData(resizingBehavior: FILL)
-                }
-              }
+    edges {
+      node {
+        artist
+        contentful_id
+        endDate
+        startDate
+        title
+        type
+        contentSection {
+          backgroundImage {
+            gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+          }
+          audioFile {
+            file {
+              url
             }
           }
+          text {
+            raw
+          }
+          type
+          credits {
+            title
+            name
+          }
+          mediaPartners {
+            gatsbyImageData(resizingBehavior: FILL)
+          }
+          audioDescription {
+            audioDescription
+          }
+          audioTitle
+          imageGallery {
+            gatsbyImageData
+          }
         }
+        backgroundImage {
+          gatsbyImageData
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
       }
     `
   )
@@ -119,10 +139,10 @@ const State = props => {
     let pageInfo = Convert.toPageInfoModel(contentfulPageInfo)
     props.setPageInfo(pageInfo)
     props.setProjects(projects)
-    let currentProject = projects.find((project) => {
+    let currentProject = projects.find(project => {
       return project.type === ProjectType.CURRENT
     })
-    if(currentProject) {
+    if (currentProject) {
       props.setCurrentProject(currentProject)
     }
 
@@ -144,7 +164,7 @@ const mapDispatchToProps = dispatch => {
     setNavbarLinks: navbar_links => dispatch(setNavbarLinks(navbar_links)),
     setPages: pages => dispatch(setPages(pages)),
     setProjects: projects => dispatch(setProjects(projects)),
-    setCurrentProject : project => dispatch(setCurrentProject(project)),
+    setCurrentProject: project => dispatch(setCurrentProject(project)),
     setPageInfo: page_info => dispatch(setPageInfo(page_info)),
     loaded: () => dispatch(isLoaded())
   }

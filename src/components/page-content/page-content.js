@@ -8,7 +8,7 @@ import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import IMAGE from '../../assets/IMAGE.jpg'
 export const PageWrapper = styled.div`
-  background-image: url(${props => props.image || "unset"});
+  background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

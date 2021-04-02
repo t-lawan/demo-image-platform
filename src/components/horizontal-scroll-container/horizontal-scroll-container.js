@@ -4,7 +4,9 @@ import Navbar from "../navbar/navbar"
 import SocialMedia from "../social-media/social-media"
 import { connect } from "react-redux"
 import { GenerateContentSection } from "../../utility/richtext"
-import Image from '../../assets/IMAGE.jpg'
+import Image from "../../assets/IMAGE.jpg"
+import Favicon from "../../assets/favicon.png"
+import { DateManager } from "../../utility/date-manager"
 const HorizontalScrollContainerWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -16,7 +18,7 @@ const HorizontalScrollContainerWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 `
 
 const Container = styled.div`
@@ -24,42 +26,90 @@ const Container = styled.div`
   width: 100vw;
   background: transparent;
   flex: 0 0 auto;
-  background-image: url(${props => props.image || "unset"});
+  background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 `
 const RepeaterContainerWrapper = styled.div`
-    padding: 0 1rem;
+  /* padding: 0 1rem; */
 `
 
 const PageSectionWrapper = styled.div`
   /* background: red; */
-  height: 100vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 `
 
 const ThreeColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 6.5fr 0.5fr;
+  grid-template-columns: 8.5fr 0.5fr;
+`
+
+const NavbarFixedWrapper = styled.div`
+  position: fixed;
+  top: 0;
+`
+
+const JumbotronWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  
+`
+
+const JumbotronTitle = styled.h1`
+  color: green;
+  display: inline-block;
+`
+
+const JumbotronImage = styled.img`
+  width: 2.5%;
 `
 
 const HorizontalScrollContainer = props => {
-  let currentProject = props.currentProject;
+  let currentProject = props.currentProject
+  console.log("PROJECT", currentProject)
+
   return (
     <HorizontalScrollContainerWrapper>
       <Container>
         <ThreeColumnWrapper>
-          <Navbar />
-          <PageSectionWrapper></PageSectionWrapper>
+          <NavbarFixedWrapper>
+            <Navbar />
+          </NavbarFixedWrapper>
+          <PageSectionWrapper>
+            <JumbotronWrapper>
+              <JumbotronTitle>
+                {currentProject.artist}
+              </JumbotronTitle>
+              <JumbotronImage src={Favicon}/>
+              <JumbotronTitle>
+                {currentProject.title}
+              </JumbotronTitle>
+              <JumbotronImage src={Favicon}/>
+              <JumbotronTitle>
+                {DateManager.createStartAndEndDateString(
+                  currentProject.startDate,
+                  currentProject.endDate
+                )}{" "}
+              </JumbotronTitle>
+            </JumbotronWrapper>
+          </PageSectionWrapper>
           <SocialMedia />
         </ThreeColumnWrapper>
       </Container>
       {currentProject
         ? currentProject.content.map((section, index) => (
             <Container key={index} image={Image}>
-                <RepeaterContainerWrapper>
-                     {GenerateContentSection(section, index)}
-                </RepeaterContainerWrapper>
+              <RepeaterContainerWrapper>
+                {GenerateContentSection(section, index)}
+              </RepeaterContainerWrapper>
             </Container>
           ))
         : null}

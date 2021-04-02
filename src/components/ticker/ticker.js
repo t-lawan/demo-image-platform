@@ -10,7 +10,7 @@ const TickerWrapper = styled.div`
   /* background: rgba(0, 255, 0, 0.6); */
   z-index: 100;
   mix-blend-mode: difference;
-  background-image: url(${props => props.image || "unset"});
+  background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -25,7 +25,10 @@ export class Convert {
 
   static toContentSectionModel = contentfulModel => {
     return new ContentSectionModel(
+      contentfulModel.audioTitle,
+      contentfulModel.audioDescription ? contentfulModel.audioDescription.audioDescription : null,
       contentfulModel.audioFile,
+      contentfulModel.imageGallery,
       contentfulModel.backgroundImage,
       contentfulModel.text,
       contentfulModel.type,
@@ -48,7 +51,8 @@ export class Convert {
       contentfulModel.startDate,
       contentfulModel.endDate,
       contentfulModel.type,
-      content
+      content,
+      contentfulModel.backgroundImage
     )
   }
 

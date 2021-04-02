@@ -6,7 +6,8 @@ export class ProjectModel {
     endDate;
     type;
     content;
-    constructor(id,title, artist, startDate, endDate, type, content) {
+    backgroundImage;
+    constructor(id,title, artist, startDate, endDate, type, content, backgroundImage) {
         this.id = id;
         this.title = title;
         this.artist = artist;
@@ -14,6 +15,7 @@ export class ProjectModel {
         this.endDate = endDate;
         this.type = type;
         this.content = content;
+        this.backgroundImage = backgroundImage;
     }
 }
 

@@ -57,6 +57,13 @@ exports.createPages = ({ graphql, actions }) => {
                   mediaPartners {
                     gatsbyImageData(resizingBehavior: FILL)
                   }
+                  audioDescription {
+                    audioDescription
+                  }
+                  audioTitle
+                  imageGallery {
+                    gatsbyImageData
+                  }
                 }
                 backgroundImage {
                   gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)

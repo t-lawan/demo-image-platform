@@ -1,12 +1,18 @@
 export class ContentSectionModel {
+    audioTitle;
+    audioDescription;
     audioFile;
     backgroundImage;
     text;
     type;
     mediaPartners;
     credits;
-    constructor(audioFile,backgroundImage, text, type, mediaPartners, credits) {
+    imageGallery;
+    constructor(audioTitle, audioDescription, audioFile, imageGallery, backgroundImage, text, type, mediaPartners, credits) {
+        this.audioTitle = audioTitle;
+        this.audioDescription = audioDescription;
         this.audioFile = audioFile;
+        this.imageGallery = imageGallery;
         this.backgroundImage = backgroundImage;
         this.text = text;
         this.type = type;
@@ -23,5 +29,6 @@ export const ContentSectionModelType = {
     UPCOMING_PROJECTS: 'UPCOMING_PROJECTS',
     ARCHIVE_PROJECTS: 'ARCHIVE_PROJECTS',
     CREDITS: 'CREDITS',
-    MEDIA_PARTNERS: 'MEDIA_PARTNERS'
+    MEDIA_PARTNERS: 'MEDIA_PARTNERS',
+    IMAGE_GALLERY: 'IMAGE_GALLERY'
 }
