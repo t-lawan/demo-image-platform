@@ -90,7 +90,7 @@ const AudioPlayerWrapper = styled.div`
 `
 
 const TimeProgressBar = styled.progress`
-  width: 55%;
+  width: 90%;
   position:relative;
   background-color: rgba(0,0,0,0.4);
   &[value] {
@@ -184,6 +184,7 @@ class AudioPlayer extends React.Component {
   }
 
   play = () => {
+    console.log('PLAY')
     this.audio_tag.current.play()
     this.setState({
       isPlaying: true,
@@ -191,6 +192,8 @@ class AudioPlayer extends React.Component {
   }
 
   pause = () => {
+    console.log('PAUSE')
+
     this.audio_tag.current.pause()
     this.setState({
       isPlaying: false,

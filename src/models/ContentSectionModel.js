@@ -32,5 +32,6 @@ export const ContentSectionModelType = {
     MEDIA_PARTNERS: 'MEDIA_PARTNERS',
     IMAGE_GALLERY: 'IMAGE_GALLERY',
     PDF: 'PDF',
-    VIDEO: 'VIDEO'
+    VIDEO: 'VIDEO',
+    PROJECT_DESCRIPTION: 'PROJECT_DESCRIPTION'
 }
