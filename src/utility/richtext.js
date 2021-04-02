@@ -9,6 +9,7 @@ import UpcomingProjects from "../components/projects/upcoming-projects"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ArchiveProjects from "../components/projects/archive-projects"
 import AudioPlayer from "../components/audio-player/audio-player"
+import ImageCarousel from "../components/image-carousel/image-carousel";
 
 const PARAGRAPH = styled.p``
 
@@ -95,6 +96,14 @@ const AudioPlayerWrapper = styled.div`
   padding: 1rem;
   border: 1px solid black;
 `
+
+const ImageCarouselWrapper = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 export const GenerateContentSection = (section, index) => {
   let render
 
@@ -173,15 +182,14 @@ export const GenerateContentSection = (section, index) => {
       render = (
         <AudioWrapper key={index}>
         <AudioText>
-            Enchanted Lands (Barbora Dehaen Polcerova The Land Permeated By
-            Spirit{" "}
+            {section.audioTitle}
           </AudioText>
           <AudioPlayerWrapper>
             <AudioPlayer url={section.audioFile.file.url} />
           </AudioPlayerWrapper>
           <AudioDescription>
-            Enchanted Lands (Barbora Dehaen Polcerova), The Land Permeated By
-            Spirit, from the album Cryptic Island Eco-Sanctuary (2020)
+            {section.audioDescription}
+
           </AudioDescription>
 
         </AudioWrapper>
@@ -191,7 +199,11 @@ export const GenerateContentSection = (section, index) => {
 
     case ContentSectionModelType.IMAGE_GALLERY: {
       console.log("IMAGE_GALLERY", section)
-      render = <p> IMAGE_GALLERY</p>
+      render = (
+        <ImageCarouselWrapper>
+          <ImageCarousel images={section.imageGallery} />
+        </ImageCarouselWrapper>
+        )
       break
     }
 
