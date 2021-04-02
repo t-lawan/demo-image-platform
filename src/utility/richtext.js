@@ -98,7 +98,7 @@ const AudioPlayerWrapper = styled.div`
 `
 
 const ImageCarouselWrapper = styled.div`
-  padding: 1rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
