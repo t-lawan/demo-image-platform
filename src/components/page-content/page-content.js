@@ -7,6 +7,8 @@ import { GenerateContentSection } from "../../utility/richtext"
 import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import IMAGE from '../../assets/IMAGE.jpg'
+import { connect } from "react-redux"
+
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
@@ -35,10 +37,12 @@ const ImageBackground = styled.div`
 `
 
 export const PageContent = props => {
-  let page = props.page
+  let page = props.page;
+  let currentProject = props.currentProject
+
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
   return (
-    <PageWrapper image={page.backgroundImage? page.backgroundImage.file.url : null}>
+    <PageWrapper image={currentProject.backgroundImage.file.url}>
       {/* {image ? (
         <ImageBackground>
           <GatsbyImage image={image} alt={"Image"} />
@@ -63,4 +67,13 @@ export const PageContent = props => {
   )
 }
 
-export default PageContent
+const mapStateToProps = state => {
+  return {
+    currentProject: state.currentProject
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(PageContent)
