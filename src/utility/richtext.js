@@ -44,7 +44,9 @@ export const ModalTypes = {
 const TextWrapper = styled.div`
   padding-top: 2rem;
 `
+const ProjectDescriptionWrapper = styled.div`
 
+`
 const CreditsWrapper = styled.div`
   padding: 2rem 0;
 `
@@ -130,6 +132,28 @@ export const GenerateContentSection = (section, index) => {
         >
           {}
         </TextWrapper>
+      )
+      break
+    }
+
+    case ContentSectionModelType.PROJECT_DESCRIPTION: {
+      console.log('TITLE', section)
+      render = (
+        <ProjectDescriptionWrapper>
+        <p> {section.artist}</p>
+        <p> {section.title}</p>
+       <TextWrapper
+          key={index}
+          dangerouslySetInnerHTML={{
+            __html: documentToHtmlString(
+              JSON.parse(section.text.raw),
+              richTextOptions
+            )
+          }}
+        >
+        </TextWrapper>
+        </ProjectDescriptionWrapper>
+ 
       )
       break
     }
