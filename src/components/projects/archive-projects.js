@@ -9,7 +9,7 @@ import { UpcomingWrapper } from "./upcoming-projects";
 
 
 const ProjectTitle = styled.li`
-  list-style-type: inherit;
+  /* list-style-type: inherit; */
 `
 
 

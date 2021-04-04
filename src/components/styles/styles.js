@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components"
 import Swiss721 from '../../assets/fonts/Swis721_Lt_BT_Light.ttf'
-
+import FaviconSVG from '../../assets/favicon.svg'
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';
@@ -94,7 +94,21 @@ p, a, li, button{
   line-height: 1.3;
 }
 li {
-  list-style-type: lower-roman;
+  list-style-type: none;
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 10%;
+    width: 10%;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: inherit;
+    background-size: 20px;
+    background-image: url(${FaviconSVG});
+    background-repeat: no-repeat;
+    margin-right: 10px;
 }
 
 .active-link {

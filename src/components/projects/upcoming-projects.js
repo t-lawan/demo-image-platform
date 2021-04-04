@@ -16,7 +16,7 @@ export const UpcomingWrapper = styled.div`
 `
 
 const ProjectTitle = styled.li`
-  list-style-type: inherit;
+  /* list-style-type: inherit; */
 `
 
 

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Favicon from '../../assets/favicon.png'
+import FaviconSVG from '../../assets/favicon.svg'
 const NavbarWrapper = styled.div`
   height: 100vh;
 `
@@ -23,7 +24,24 @@ const NavbarLink = styled(Link)`
 `
 
 const NavbarTitle = styled.li`
-  list-style-type: inherit;
+  list-style-type: none;
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 10%;
+    width: 10%;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: inherit;
+    background-size: 20px;
+    background-image: url(${FaviconSVG});
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    // background-image: url(${FaviconSVG});
+ }
+
 `
 
 const Navbar = props => {
