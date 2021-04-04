@@ -9,7 +9,7 @@ import UpcomingProjects from "../components/projects/upcoming-projects"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ArchiveProjects from "../components/projects/archive-projects"
 import AudioPlayer from "../components/audio-player/audio-player"
-import ImageCarousel from "../components/image-carousel/image-carousel";
+import ImageCarousel from "../components/image-carousel/image-carousel"
 
 const PARAGRAPH = styled.p``
 
@@ -45,8 +45,21 @@ const TextWrapper = styled.div`
   padding-top: 2rem;
 `
 const ProjectDescriptionWrapper = styled.div`
-
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
+
+const FlexColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+`
+
 const CreditsWrapper = styled.div`
   padding: 2rem 0;
 `
@@ -85,11 +98,9 @@ const AudioWrapper = styled.div`
 
 const AudioText = styled.h1`
   width: 50%;
-
 `
 const AudioDescription = styled.p`
   width: 50%;
-
 `
 
 const AudioPlayerWrapper = styled.div`
@@ -106,7 +117,17 @@ const ImageCarouselWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-export const GenerateContentSection = (section, index) => {
+
+const ProjectArtist = styled.h1`
+  color: white;
+  align-self: flex-start;
+`
+
+const ProjectTitle = styled.h1`
+  color: black;
+  align-self: flex-start;
+`
+export const GenerateContentSection = (section, index, entity) => {
   let render
 
   switch (section.type) {
@@ -137,23 +158,23 @@ export const GenerateContentSection = (section, index) => {
     }
 
     case ContentSectionModelType.PROJECT_DESCRIPTION: {
-      console.log('TITLE', section)
+      console.log("TITLE", section)
       render = (
         <ProjectDescriptionWrapper>
-        <p> {section.artist}</p>
-        <p> {section.title}</p>
-       <TextWrapper
-          key={index}
-          dangerouslySetInnerHTML={{
-            __html: documentToHtmlString(
-              JSON.parse(section.text.raw),
-              richTextOptions
-            )
-          }}
-        >
-        </TextWrapper>
+          <FlexColumnWrapper>
+            <ProjectArtist> {entity.artist}</ProjectArtist>
+            <ProjectTitle> {entity.title}</ProjectTitle>
+            <TextWrapper
+              key={index}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(
+                  JSON.parse(section.text.raw),
+                  richTextOptions
+                )
+              }}
+            ></TextWrapper>
+          </FlexColumnWrapper>
         </ProjectDescriptionWrapper>
- 
       )
       break
     }
@@ -205,17 +226,11 @@ export const GenerateContentSection = (section, index) => {
       console.log("AUDIO", section)
       render = (
         <AudioWrapper key={index}>
-        <AudioText>
-            {section.audioTitle}
-          </AudioText>
+          <AudioText>{section.audioTitle}</AudioText>
           <AudioPlayerWrapper>
             <AudioPlayer url={section.audioFile.file.url} />
           </AudioPlayerWrapper>
-          <AudioDescription>
-            {section.audioDescription}
-
-          </AudioDescription>
-
+          <AudioDescription>{section.audioDescription}</AudioDescription>
         </AudioWrapper>
       )
       break
@@ -227,7 +242,7 @@ export const GenerateContentSection = (section, index) => {
         <ImageCarouselWrapper>
           <ImageCarousel images={section.imageGallery} />
         </ImageCarouselWrapper>
-        )
+      )
       break
     }
 

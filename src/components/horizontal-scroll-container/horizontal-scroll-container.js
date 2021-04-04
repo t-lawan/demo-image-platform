@@ -108,7 +108,7 @@ const HorizontalScrollContainer = props => {
         ? currentProject.content.map((section, index) => (
             <Container key={index} image={currentProject.backgroundImage.file.url}>
               <RepeaterContainerWrapper>
-                {GenerateContentSection(section, index)}
+                {GenerateContentSection(section, index, currentProject)}
               </RepeaterContainerWrapper>
             </Container>
           ))

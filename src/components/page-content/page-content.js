@@ -56,7 +56,7 @@ export const PageContent = props => {
           <PageSectionWrapper>
             {page.content
               ? page.content.map((con, index) =>
-                  GenerateContentSection(con, index)
+                  GenerateContentSection(con, index, page)
                 )
               : null}
           </PageSectionWrapper>
