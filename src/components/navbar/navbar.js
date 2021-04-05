@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Favicon from '../../assets/favicon.png'
 import FaviconSVG from '../../assets/favicon.svg'
+import DEMOLOGO from '../../assets/DEMO_LOGO.png'
 const NavbarWrapper = styled.div`
   height: 100vh;
 `
@@ -17,7 +18,7 @@ const NavbarLinkWrapper = styled.div`
   /* margin: 2rem; */
 `
 const HomeNavbarImage = styled.img`
-  width: 30%;
+  width: 15%;
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -50,7 +51,7 @@ const Navbar = props => {
 
       <NavbarLinkWrapper>
         <NavbarLink to={"/"}>
-          <HomeNavbarImage src={Favicon} alt="Favicon" />
+          <HomeNavbarImage src={DEMOLOGO} alt="Favicon" />
         </NavbarLink>
         <NavbarLink activeClassName={'active-link'} to={"/about"}>
           <NavbarTitle> about </NavbarTitle>
