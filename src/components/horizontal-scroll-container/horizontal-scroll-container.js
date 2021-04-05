@@ -50,8 +50,8 @@ const ThreeColumnWrapper = styled.div`
 `
 
 const NavbarFixedWrapper = styled.div`
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
 `
 
 const JumbotronWrapper = styled.div`

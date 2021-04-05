@@ -1,24 +1,76 @@
 import * as React from "react"
 import styled from "styled-components"
 import ReactPlayer from "react-player"
+import PlayButtonImg from '../../assets/PlayButton.png'
+const VideoTextOverlay = styled.div`
+  width: 60%;
+`
 
 const VideoPlayerWrapper = styled.div`
     /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
 `
 
+const VideoBackgroundWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const PlayButton = styled.h1`
+`
+
+const PlayButtonImage = styled.img`
+  cursor: pointer;
+  width: 15%;
+`
+
+const ArtistExhibitionTitle = styled.p`
+  color: green;
+`
+
 class VideoPlayer extends React.Component {
+  state = {
+    showPlayer: false
+  }
+
+  componentDidMount() {
+    if (this.props.autoPlay) {
+      this.setState({
+        showPlayer: true
+      })
+    }
+  }
+
+  playVideo = () => {
+    this.setState({
+      showPlayer: true
+    })
+  }
   render() {
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
-        <ReactPlayer
-          url={this.props.videoUrl}
-          controls={this.props.showControls}
-          style={{ height: "100vh" }}
-          height={"100vh"}
-          width={"100vw"}
-          playing={this.props.autoPlay}
-          muted={!this.props.autoPlay}
-        />
+        {this.state.showPlayer ? (
+          <ReactPlayer
+            url={this.props.videoUrl}
+            controls={this.props.showControls}
+            style={{ height: "100vh" }}
+            height={"100vh"}
+            width={"100vw"}
+            playing={this.props.autoPlay}
+            muted={!this.props.autoPlay}
+          />
+        ) : (
+          <VideoBackgroundWrapper>
+          {/* <PlayButton onClick={() => this.playVideo()}>PLAY</PlayButton> */}
+            <PlayButtonImage src={PlayButtonImg} onClick={() => this.playVideo()} />
+            <VideoTextOverlay>
+              <ArtistExhibitionTitle> {this.props.artist}, {this.props.title}</ArtistExhibitionTitle>
+            </VideoTextOverlay>
+          </VideoBackgroundWrapper>
+        )}
       </VideoPlayerWrapper>
     )
   }

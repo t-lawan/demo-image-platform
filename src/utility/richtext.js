@@ -10,7 +10,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ArchiveProjects from "../components/projects/archive-projects"
 import AudioPlayer from "../components/audio-player/audio-player"
 import ImageCarousel from "../components/image-carousel/image-carousel"
-
+import VideoPlayer from "../components/videoplayer/videoplayer";
+import Video from '../assets/video/VIDEO.mp4'
 const PARAGRAPH = styled.p``
 
 const EXTERNALLINK = styled.a`
@@ -127,6 +128,31 @@ const ProjectTitle = styled.h1`
   color: black;
   align-self: flex-start;
 `
+
+const VideoWrapper = styled.div`
+  background: black;
+
+`
+
+const VideoBackgroundWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+const VideoPlayerWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+
+  /* top: 0;
+  position: fixed; */
+
+`
+const VideoTextOverlay = styled.div`
+  width: 50%;
+`
 export const GenerateContentSection = (section, index, entity) => {
   let render
 
@@ -237,11 +263,29 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.IMAGE_GALLERY: {
-      console.log("IMAGE_GALLERY", section)
       render = (
         <ImageCarouselWrapper>
           <ImageCarousel images={section.imageGallery} />
         </ImageCarouselWrapper>
+      )
+      break
+    }
+
+    case ContentSectionModelType.VIDEO: {
+      render = (
+        <VideoWrapper>
+          {/* <VideoBackgroundWrapper>
+            <VideoTextOverlay>
+              <p> Artist name</p>
+              <p> Exhibition</p>
+            </VideoTextOverlay>
+
+          </VideoBackgroundWrapper> */}
+          {/* <VideoPlayerWrapper> */}
+            <VideoPlayer showControls={true} videoUrl={Video} artist={"Artist Name"} title={"Exhibition"} url={Video} />
+          {/* </VideoPlayerWrapper> */}
+
+        </VideoWrapper>
       )
       break
     }
