@@ -47,7 +47,7 @@ const PageSectionWrapper = styled.div`
 const ThreeColumnWrapper = styled.div`
   display: grid;
   /* grid-template-columns: 2fr 8fr; */
-  grid-template-columns: 8.5fr 0.5fr;
+  /* grid-template-columns: 8.5fr 0.5fr; */
 `
 
 const NavbarFixedWrapper = styled.div`
@@ -103,7 +103,7 @@ const HorizontalScrollContainer = props => {
               </JumbotronTitle>
             </JumbotronWrapper>
           </PageSectionWrapper>
-          <SocialMedia />
+          {/* <SocialMedia /> */}
         </ThreeColumnWrapper>
       </Container>
       {currentProject
