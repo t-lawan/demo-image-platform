@@ -4,8 +4,16 @@ import { Link } from "gatsby"
 import Favicon from '../../assets/favicon.png'
 import FaviconSVG from '../../assets/favicon.svg'
 import DEMOLOGO from '../../assets/DEMO_LOGO.png'
+import SocialMedia from "../social-media/social-media";
 const NavbarWrapper = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
+const SocialMediaWrapper = styled.div`
+  align-self: flex-end;
 `
 const NavbarLinkWrapper = styled.div`
   padding: 0 2rem;
@@ -18,7 +26,8 @@ const NavbarLinkWrapper = styled.div`
   /* margin: 2rem; */
 `
 const HomeNavbarImage = styled.img`
-  width: 15%;
+  /* width: 15%; */
+  width: 100%;
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -66,6 +75,10 @@ const Navbar = props => {
           <NavbarTitle> upcoming </NavbarTitle>
         </NavbarLink>
       </NavbarLinkWrapper>
+      <SocialMediaWrapper>
+        <SocialMedia />
+
+      </SocialMediaWrapper>
     </NavbarWrapper>
   )
 }

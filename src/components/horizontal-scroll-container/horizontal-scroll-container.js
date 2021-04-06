@@ -54,6 +54,7 @@ const NavbarFixedWrapper = styled.div`
   position: fixed;
   top: 0;
   width: 15%;
+  width: 22.22%;
 `
 
 const JumbotronWrapper = styled.div`

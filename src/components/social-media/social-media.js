@@ -8,8 +8,8 @@ import Facebook from '../../assets/Facebook.png'
 const SocialMediaLinkWrapper = styled.div`
   padding: 0.5rem 1rem;
   display: flex;
-  flex-direction: column;
-  height: 30%;
+  flex-direction: row;
+  /* height: 30%; */
   justify-content: center;
   align-items: baseline;
   margin: 1rem 0;
@@ -20,7 +20,7 @@ const SocialMediaWrapper = styled.div``
 const SocialMediaLink = styled(Link)``
 
 const SocialMediaImage = styled.img`
-  width: 50%;
+  width: 25%;
 `
 
 const SocialMedia = props => {
