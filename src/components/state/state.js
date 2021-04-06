@@ -80,51 +80,51 @@ const State = props => {
           twitterUrl
         }
         allContentfulProject {
-    edges {
-      node {
-        artist
-        contentful_id
-        endDate
-        startDate
-        title
-        type
-        contentSection {
-          backgroundImage {
-            gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-          }
-          audioFile {
-            file {
-              url
+          edges {
+            node {
+              artist
+              contentful_id
+              endDate
+              startDate
+              title
+              type
+              contentSection {
+                backgroundImage {
+                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                }
+                audioFile {
+                  file {
+                    url
+                  }
+                }
+                text {
+                  raw
+                }
+                type
+                credits {
+                  title
+                  name
+                }
+                mediaPartners {
+                  gatsbyImageData(resizingBehavior: FILL)
+                }
+                audioDescription {
+                  audioDescription
+                }
+                audioTitle
+                imageGallery {
+                  gatsbyImageData
+                }
+              }
+              backgroundImage {
+                gatsbyImageData
+                file {
+                  url
+                }
+              }
             }
           }
-          text {
-            raw
-          }
-          type
-          credits {
-            title
-            name
-          }
-          mediaPartners {
-            gatsbyImageData(resizingBehavior: FILL)
-          }
-          audioDescription {
-            audioDescription
-          }
-          audioTitle
-          imageGallery {
-            gatsbyImageData
-          }
         }
-        backgroundImage {
-          gatsbyImageData
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
       }
     `
   )

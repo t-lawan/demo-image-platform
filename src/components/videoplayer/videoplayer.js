@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
+import IMAGE from '../../assets/IMAGE.jpg'
 const VideoTextOverlay = styled.div`
   width: 60%;
 `
@@ -17,6 +18,12 @@ const VideoBackgroundWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background: red; */
+  background-image: url(${props => props.image || "none"});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 `
 
 const PlayButton = styled.h1`
@@ -27,7 +34,7 @@ const PlayButtonImage = styled.img`
   width: 15%;
 `
 
-const ArtistExhibitionTitle = styled.p`
+const ArtistExhibitionTitle = styled.h2`
   color: green;
 `
 
@@ -63,7 +70,7 @@ class VideoPlayer extends React.Component {
             muted={!this.props.autoPlay}
           />
         ) : (
-          <VideoBackgroundWrapper>
+          <VideoBackgroundWrapper image={IMAGE}>
           {/* <PlayButton onClick={() => this.playVideo()}>PLAY</PlayButton> */}
             <PlayButtonImage src={PlayButtonImg} onClick={() => this.playVideo()} />
             <VideoTextOverlay>

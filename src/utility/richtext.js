@@ -249,7 +249,6 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.AUDIO: {
-      console.log("AUDIO", section)
       render = (
         <AudioWrapper key={index}>
           <AudioText>{section.audioTitle}</AudioText>
@@ -272,6 +271,8 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.VIDEO: {
+      console.log("VIDEO", entity)
+
       render = (
         <VideoWrapper>
           {/* <VideoBackgroundWrapper>
@@ -282,7 +283,7 @@ export const GenerateContentSection = (section, index, entity) => {
 
           </VideoBackgroundWrapper> */}
           {/* <VideoPlayerWrapper> */}
-            <VideoPlayer showControls={true} videoUrl={Video} artist={"Artist Name"} title={"Exhibition"} url={Video} />
+            <VideoPlayer showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
           {/* </VideoPlayerWrapper> */}
 
         </VideoWrapper>

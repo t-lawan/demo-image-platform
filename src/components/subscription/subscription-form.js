@@ -143,19 +143,26 @@ const SubscriptionForm = props => {
 
   const sendPostRequest = async () => {
     let formData = new FormData()
-    formData.append("first_name", firstName)
-    formData.set("last_name", lastName)
-    formData.set("email", email)
+    // formData.append("first_name", firstName)
+    formData.append("FNAME", firstName)
+    // formData.set("last_name", lastName)
+    formData.set("LNAME", lastName)
+    formData.set("EMAIL", email)
+    // formData.set("email", email)
+    formData.set("b_2248085299b940b0726178ce2_2695e32256", "")
+    formData.set("u", "2248085299b940b0726178ce2")
+    formData.set("id", "2695e32256")
 
     axios({
       method: "post",
-      url: "/",
-      body: encode({
-        "form-name": "subscription_test",
-        ...formData
-      }),
+      url: "https://demomovingimage.us18.list-manage.com/subscribe/post",
+      // body: encode({
+      //   ...formData
+      // }),
       // data: new URLSearchParams(formData).toString(),
-      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+      data:formData,
+      // headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials" :'true' }
+      headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*" }
     })
       .then(response => {
         console.log("Response", response)
@@ -204,7 +211,7 @@ const SubscriptionForm = props => {
           </InputWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>Last Name</LabelInner>
+              <LabelInner>Email</LabelInner>
             </Label>
             <StyledInput
               type="text"
