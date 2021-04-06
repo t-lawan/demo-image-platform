@@ -12,6 +12,8 @@ import AudioPlayer from "../components/audio-player/audio-player"
 import ImageCarousel from "../components/image-carousel/image-carousel"
 import VideoPlayer from "../components/videoplayer/videoplayer";
 import Video from '../assets/video/VIDEO.mp4'
+import AudioSection from "../components/audio-section/audio-section";
+import PDFSection from "../components/pdf-section/pdf-section";
 const PARAGRAPH = styled.p``
 
 const EXTERNALLINK = styled.a`
@@ -88,28 +90,6 @@ const FlexWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
 `
-const AudioWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-`
-
-const AudioText = styled.h1`
-  width: 50%;
-`
-const AudioDescription = styled.p`
-  width: 50%;
-`
-
-const AudioPlayerWrapper = styled.div`
-  width: 50%;
-  background: white;
-  padding: 1rem;
-  border: 1px solid black;
-`
 
 const ImageCarouselWrapper = styled.div`
   padding: 3rem;
@@ -131,27 +111,10 @@ const ProjectTitle = styled.h1`
 
 const VideoWrapper = styled.div`
   background: black;
-
 `
 
-const VideoBackgroundWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`
-const VideoPlayerWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+const PDFWrapper = styled.div`
 
-  /* top: 0;
-  position: fixed; */
-
-`
-const VideoTextOverlay = styled.div`
-  width: 50%;
 `
 export const GenerateContentSection = (section, index, entity) => {
   let render
@@ -164,6 +127,14 @@ export const GenerateContentSection = (section, index, entity) => {
         </TextWrapper>
       )
       break
+    }
+
+    case ContentSectionModelType.PDF: {
+      // console.log('PDF', section)
+      render = (
+        <PDFSection key={index} description={section.pdfDescription} title={section.pdfTitle} image={section.pdfImage} file={section.pdfFile} />
+      )
+      break;
     }
 
     case ContentSectionModelType.TEXT: {
@@ -250,13 +221,7 @@ export const GenerateContentSection = (section, index, entity) => {
 
     case ContentSectionModelType.AUDIO: {
       render = (
-        <AudioWrapper key={index}>
-          <AudioText>{section.audioTitle}</AudioText>
-          <AudioPlayerWrapper>
-            <AudioPlayer url={section.audioFile.file.url} />
-          </AudioPlayerWrapper>
-          <AudioDescription>{section.audioDescription}</AudioDescription>
-        </AudioWrapper>
+        <AudioSection key={index} audioTitle={section.audioTitle} audioUrl={section.audioFile.file.url} audioDescription={section.audioDescription} />
       )
       break
     }

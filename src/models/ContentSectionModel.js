@@ -8,7 +8,11 @@ export class ContentSectionModel {
     mediaPartners;
     credits;
     imageGallery;
-    constructor(audioTitle, audioDescription, audioFile, imageGallery, backgroundImage, text, type, mediaPartners, credits) {
+    pdfFile;
+    pdfImage;
+    pdfTitle;
+    pdfDescription;
+    constructor(audioTitle, audioDescription, audioFile, imageGallery, backgroundImage, text, type, mediaPartners, credits, pdfFile, pdfImage, pdfTitle, pdfDescription) {
         this.audioTitle = audioTitle;
         this.audioDescription = audioDescription;
         this.audioFile = audioFile;
@@ -18,6 +22,10 @@ export class ContentSectionModel {
         this.type = type;
         this.mediaPartners = mediaPartners;
         this.credits = credits;
+        this.pdfFile = pdfFile;
+        this.pdfImage = pdfImage;
+        this.pdfTitle = pdfTitle;
+        this.pdfDescription = pdfDescription;
     }
 }
 

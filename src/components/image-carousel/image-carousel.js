@@ -103,7 +103,7 @@ class ImageCarousel extends React.Component {
             
             return (
               <div key={index}>
-              <GatsbyImage image={img} />
+              <GatsbyImage image={img} alt={'Image Carousel'} />
             </div>
             )
 

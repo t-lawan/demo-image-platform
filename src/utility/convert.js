@@ -33,7 +33,11 @@ export class Convert {
       contentfulModel.text,
       contentfulModel.type,
       contentfulModel.mediaPartners,
-      contentfulModel.credits
+      contentfulModel.credits, 
+      contentfulModel.pdf? contentfulModel.pdf.file.url : null,
+      contentfulModel.pdfImage,
+      contentfulModel.pdfTitle,
+      contentfulModel.pdfDescription ? contentfulModel.pdfDescription.pdfDescription : null,
     )
   }
 
@@ -52,7 +56,7 @@ export class Convert {
       contentfulModel.endDate,
       contentfulModel.type,
       content,
-      contentfulModel.backgroundImage
+      contentfulModel.backgroundImage,
     )
   }
 
