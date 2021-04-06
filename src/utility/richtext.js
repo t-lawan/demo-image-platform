@@ -283,7 +283,7 @@ export const GenerateContentSection = (section, index, entity) => {
 
           </VideoBackgroundWrapper> */}
           {/* <VideoPlayerWrapper> */}
-            <VideoPlayer showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
+            <VideoPlayer isOnLandingPage={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
           {/* </VideoPlayerWrapper> */}
 
         </VideoWrapper>
