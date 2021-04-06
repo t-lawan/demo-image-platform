@@ -59,7 +59,7 @@ class VideoPlayer extends React.Component {
   render() {
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
-        {this.state.showPlayer ? (
+        {this.props.isOnLandingPage || this.state.showPlayer ? (
           <ReactPlayer
             url={this.props.videoUrl}
             controls={this.props.showControls}

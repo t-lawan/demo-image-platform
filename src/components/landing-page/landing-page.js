@@ -24,7 +24,7 @@ const LandingPage = (props) => {
 
   return (
     <LandingPageWrapper onClick={() => props.hideLandingPage()} show={props.showLandingPage && props.isHome}>    
-        <VideoPlayer autoPlay={true} showControls={false} fullScreen={true}  videoUrl={Video} />
+        <VideoPlayer isOnLandingPage={true} autoPlay={true} showControls={false} fullScreen={true}  videoUrl={Video} />
     </LandingPageWrapper>
   )
 }
