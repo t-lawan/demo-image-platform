@@ -38,18 +38,11 @@ const NavbarTitle = styled.li`
   &:before{
     content: '';
     display: inline-block;
-    height: 10%;
-    width: 10%;
-    content: '';
-    display: inline-block;
-    height: 20px;
-    width: 20px;
     color: inherit;
     background-size: 20px;
     background-image: url(${FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    // background-image: url(${FaviconSVG});
  }
 
 `
