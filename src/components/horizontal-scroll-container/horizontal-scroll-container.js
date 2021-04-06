@@ -31,6 +31,10 @@ const Container = styled.div`
   background-position: center;
   background-size: cover;
 `
+
+const RepeaterContainer = styled(Container)`
+  background: lightgray;
+`
 const RepeaterContainerWrapper = styled.div`
   /* padding: 0 1rem; */
 `
@@ -109,11 +113,11 @@ const HorizontalScrollContainer = props => {
       </Container>
       {currentProject
         ? currentProject.content.map((section, index) => (
-            <Container key={index} image={currentProject.backgroundImage.file.url}>
+            <RepeaterContainer key={index} image={currentProject.backgroundImage.file.url}>
               <RepeaterContainerWrapper>
                 {GenerateContentSection(section, index, currentProject)}
               </RepeaterContainerWrapper>
-            </Container>
+            </RepeaterContainer>
           ))
         : null}
     </HorizontalScrollContainerWrapper>
