@@ -12,12 +12,15 @@ export class ContentSectionModel {
     pdfImage;
     pdfTitle;
     pdfDescription;
-    constructor(audioTitle, audioDescription, audioFile, imageGallery, backgroundImage, text, type, mediaPartners, credits, pdfFile, pdfImage, pdfTitle, pdfDescription) {
+    backgroundImages;
+
+    constructor(audioTitle, audioDescription, audioFile, imageGallery, backgroundImage, backgroundImages, text, type, mediaPartners, credits, pdfFile, pdfImage, pdfTitle, pdfDescription) {
         this.audioTitle = audioTitle;
         this.audioDescription = audioDescription;
         this.audioFile = audioFile;
         this.imageGallery = imageGallery;
         this.backgroundImage = backgroundImage;
+        this.backgroundImages = backgroundImages;
         this.text = text;
         this.type = type;
         this.mediaPartners = mediaPartners;

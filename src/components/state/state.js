@@ -78,68 +78,72 @@ const State = props => {
           instagramUrl
           facebookUrl
           twitterUrl
+          showTicker
         }
         allContentfulProject {
-    edges {
-      node {
-        artist
-        contentful_id
-        endDate
-        startDate
-        title
-        type
-        contentSection {
-          backgroundImage {
-            gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-          }
-          audioFile {
-            file {
-              url
+          edges {
+            node {
+              artist
+              contentful_id
+              endDate
+              startDate
+              title
+              type
+              contentSection {
+                backgroundImage {
+                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                }
+                audioFile {
+                  file {
+                    url
+                  }
+                }
+                text {
+                  raw
+                }
+                type
+                credits {
+                  title
+                  name
+                }
+                mediaPartners {
+                  gatsbyImageData(resizingBehavior: FILL)
+                }
+                audioDescription {
+                  audioDescription
+                }
+                audioTitle
+                imageGallery {
+                  gatsbyImageData
+                }
+                pdf {
+                  file {
+                    url
+                  }
+                }
+                pdfImage {
+                  gatsbyImageData
+                  file {
+                    url
+                  }
+                }
+                pdfDescription {
+                  pdfDescription
+                }
+                pdfTitle
+                backgroundImages {
+                  gatsbyImageData
+                }
+              }
+              backgroundImage {
+                gatsbyImageData
+                file {
+                  url
+                }
+              }
             }
           }
-          text {
-            raw
-          }
-          type
-          credits {
-            title
-            name
-          }
-          mediaPartners {
-            gatsbyImageData(resizingBehavior: FILL)
-          }
-          audioDescription {
-            audioDescription
-          }
-          audioTitle
-          imageGallery {
-            gatsbyImageData
-          }
-          pdf {
-            file {
-              url
-            }
-          }
-          pdfImage {
-            gatsbyImageData
-            file {
-              url
-            }
-          }
-          pdfDescription {
-            pdfDescription
-          }
-          pdfTitle
         }
-        backgroundImage {
-          gatsbyImageData
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
       }
     `
   )

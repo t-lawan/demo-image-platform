@@ -14,6 +14,7 @@ import VideoPlayer from "../components/videoplayer/videoplayer";
 import Video from '../assets/video/VIDEO.mp4'
 import AudioSection from "../components/audio-section/audio-section";
 import PDFSection from "../components/pdf-section/pdf-section";
+import ProjectDescriptionSection from "../components/project-description-section/project-description-section";
 const PARAGRAPH = styled.p``
 
 const EXTERNALLINK = styled.a`
@@ -46,21 +47,6 @@ export const ModalTypes = {
 
 const TextWrapper = styled.div`
   padding-top: 2rem;
-`
-const ProjectDescriptionWrapper = styled.div`
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-const FlexColumnWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
 `
 
 const CreditsWrapper = styled.div`
@@ -99,23 +85,10 @@ const ImageCarouselWrapper = styled.div`
   align-items: center;
 `
 
-const ProjectArtist = styled.h1`
-  color: white;
-  align-self: flex-start;
-`
-
-const ProjectTitle = styled.h1`
-  color: black;
-  align-self: flex-start;
-`
-
 const VideoWrapper = styled.div`
   background: black;
 `
 
-const PDFWrapper = styled.div`
-
-`
 export const GenerateContentSection = (section, index, entity) => {
   let render
 
@@ -130,7 +103,6 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.PDF: {
-      // console.log('PDF', section)
       render = (
         <PDFSection key={index} description={section.pdfDescription} title={section.pdfTitle} image={section.pdfImage} file={section.pdfFile} />
       )
@@ -154,24 +126,9 @@ export const GenerateContentSection = (section, index, entity) => {
       break
     }
 
-    case ContentSectionModelType.PROJECT_DESCRIPTION: {
-      console.log("TITLE", section)
+    case ContentSectionModelType.PROJECT_DESCRIPTION: { 
       render = (
-        <ProjectDescriptionWrapper>
-          <FlexColumnWrapper>
-            <ProjectArtist> {entity.artist}</ProjectArtist>
-            <ProjectTitle> {entity.title}</ProjectTitle>
-            <TextWrapper
-              key={index}
-              dangerouslySetInnerHTML={{
-                __html: documentToHtmlString(
-                  JSON.parse(section.text.raw),
-                  richTextOptions
-                )
-              }}
-            ></TextWrapper>
-          </FlexColumnWrapper>
-        </ProjectDescriptionWrapper>
+        <ProjectDescriptionSection key={index} project={entity} section={section} />
       )
       break
     }
@@ -236,21 +193,10 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.VIDEO: {
-      console.log("VIDEO", entity)
 
       render = (
         <VideoWrapper>
-          {/* <VideoBackgroundWrapper>
-            <VideoTextOverlay>
-              <p> Artist name</p>
-              <p> Exhibition</p>
-            </VideoTextOverlay>
-
-          </VideoBackgroundWrapper> */}
-          {/* <VideoPlayerWrapper> */}
-            <VideoPlayer isOnLandingPage={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
-          {/* </VideoPlayerWrapper> */}
-
+          <VideoPlayer isOnLandingPage={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
         </VideoWrapper>
       )
       break

@@ -7,6 +7,7 @@ import { GenerateContentSection } from "../../utility/richtext"
 import Image from "../../assets/IMAGE.jpg"
 import Favicon from "../../assets/favicon.png"
 import { DateManager } from "../../utility/date-manager"
+import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 const HorizontalScrollContainerWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -39,6 +40,14 @@ const RepeaterContainerWrapper = styled.div`
   /* padding: 0 1rem; */
 `
 
+const BottomImageWrapper = styled.div`
+  height: 10%;
+  background: red;
+  width: 100%;
+  bottom: 0;
+  position: sticky;
+`
+
 const PageSectionWrapper = styled.div`
   /* background: red; */
   height: 90vh;
@@ -67,7 +76,6 @@ const JumbotronWrapper = styled.div`
   width: 100%;
   justify-content: center;
   align-items: flex-end;
-  
 `
 
 const JumbotronTitle = styled.h1`
@@ -80,8 +88,7 @@ const JumbotronImage = styled.img`
 `
 
 const HorizontalScrollContainer = props => {
-  let currentProject = props.currentProject
-  console.log("PROJECT", currentProject)
+  let currentProject = props.currentProject;
 
   return (
     <HorizontalScrollContainerWrapper>
@@ -92,14 +99,10 @@ const HorizontalScrollContainer = props => {
           </NavbarFixedWrapper>
           <PageSectionWrapper>
             <JumbotronWrapper>
-              <JumbotronTitle>
-                {currentProject.artist}
-              </JumbotronTitle>
-              <JumbotronImage src={Favicon}/>
-              <JumbotronTitle>
-                {currentProject.title}
-              </JumbotronTitle>
-              <JumbotronImage src={Favicon}/>
+              <JumbotronTitle>{currentProject.artist}</JumbotronTitle>
+              <JumbotronImage src={Favicon} />
+              <JumbotronTitle>{currentProject.title}</JumbotronTitle>
+              <JumbotronImage src={Favicon} />
               <JumbotronTitle>
                 {DateManager.createStartAndEndDateString(
                   currentProject.startDate,
@@ -113,10 +116,16 @@ const HorizontalScrollContainer = props => {
       </Container>
       {currentProject
         ? currentProject.content.map((section, index) => (
-            <RepeaterContainer key={index} image={currentProject.backgroundImage.file.url}>
+            <RepeaterContainer
+              key={index}
+              image={currentProject.backgroundImage.file.url}
+            >
               <RepeaterContainerWrapper>
                 {GenerateContentSection(section, index, currentProject)}
               </RepeaterContainerWrapper>
+              {section.backgroundImages ? (
+                <StickyBackgroundImage images={section.backgroundImages} />
+              ) : null}
             </RepeaterContainer>
           ))
         : null}

@@ -7,6 +7,7 @@ export class ProjectModel {
     type;
     content;
     backgroundImage;
+
     constructor(id,title, artist, startDate, endDate, type, content, backgroundImage) {
         this.id = id;
         this.title = title;

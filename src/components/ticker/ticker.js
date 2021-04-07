@@ -14,6 +14,7 @@ const TickerWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: ${props => props.show ? 'inherit' : 'none'};
   /* padding: 0.5rem; */
 `
 
@@ -41,7 +42,7 @@ const TickerText = styled.h1`
 const Ticker = props => {
   let page_info = props.page_info;
   return (
-    <TickerWrapper image={page_info.tickerImage? page_info.tickerImage.file.url : null}>
+    <TickerWrapper show={!page_info.showTicker} image={page_info.tickerImage? page_info.tickerImage.file.url : null}>
       <MarqueeWrapper>
         {/* <MarqueeInnerWrapper> */}
         <TickerText> {page_info.tickerText} </TickerText>

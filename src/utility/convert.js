@@ -30,6 +30,7 @@ export class Convert {
       contentfulModel.audioFile,
       contentfulModel.imageGallery,
       contentfulModel.backgroundImage,
+      contentfulModel.backgroundImages,
       contentfulModel.text,
       contentfulModel.type,
       contentfulModel.mediaPartners,
@@ -65,6 +66,7 @@ export class Convert {
       contentfulModel.contentful_id,
       contentfulModel.title,
       contentfulModel.description.description,
+      contentfulModel.showTicker,
       contentfulModel.tickerImage,
       contentfulModel.tickerText.tickerText,
       contentfulModel.twitterUrl,
@@ -82,3 +84,4 @@ export class Convert {
     return modelArray
   }
 }
+

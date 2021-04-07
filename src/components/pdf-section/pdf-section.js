@@ -15,9 +15,6 @@ const PDFWrapper = styled.div`
 
 
 const PDFSection = props => {
-    console.log('PDF', props);
-
-
   return (
     // <PDFWrapper image={props.file}>
     <PDFWrapper image={props.image.file.url}>
