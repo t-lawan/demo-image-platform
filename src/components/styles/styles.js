@@ -110,9 +110,10 @@ li {
     background-repeat: no-repeat;
     margin-right: 10px;
 }
+}
 
   .active-link {
-    color: green;
+    color: green !important;
   }
 
   @keyframes marquee {

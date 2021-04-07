@@ -132,7 +132,7 @@ const State = props => {
                 }
                 pdfTitle
                 backgroundImages {
-                  gatsbyImageData
+                  gatsbyImageData(resizingBehavior: FILL)
                 }
               }
               backgroundImage {

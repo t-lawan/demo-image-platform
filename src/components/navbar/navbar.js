@@ -31,6 +31,9 @@ const HomeNavbarImage = styled.img`
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
+  .active-link {
+    color: green !important;
+  }
 `
 
 const NavbarTitle = styled.li`
