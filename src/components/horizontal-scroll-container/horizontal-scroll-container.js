@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import { GenerateContentSection } from "../../utility/richtext"
 import Image from "../../assets/IMAGE.jpg"
 import Favicon from "../../assets/favicon.png"
+import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager"
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 const HorizontalScrollContainerWrapper = styled.div`
@@ -79,7 +80,7 @@ const JumbotronWrapper = styled.div`
 `
 
 const JumbotronTitle = styled.h1`
-  color: green;
+  color: rgb(0,255,0);
   display: inline-block;
 `
 
@@ -100,7 +101,7 @@ const HorizontalScrollContainer = props => {
           <PageSectionWrapper>
             <JumbotronWrapper>
               <JumbotronTitle>{currentProject.artist}</JumbotronTitle>
-              <JumbotronImage src={Favicon} />
+              <JumbotronImage src={GreenFavicon} />
               <JumbotronTitle>{currentProject.title}</JumbotronTitle>
               <JumbotronImage src={Favicon} />
               <JumbotronTitle>

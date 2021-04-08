@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components"
 import Swiss721 from '../../assets/fonts/Swis721_Lt_BT_Light.ttf'
 import FaviconSVG from '../../assets/favicon.svg'
+import GreenFaviconSVG from '../../assets/green-favicon.svg'
+
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';
@@ -113,7 +115,7 @@ li {
 }
 
   .active-link {
-    color: green !important;
+    color: rgb(0,255,0) !important;
   }
 
   @keyframes marquee {

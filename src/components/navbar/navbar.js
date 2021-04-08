@@ -3,8 +3,11 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Favicon from '../../assets/favicon.png'
 import FaviconSVG from '../../assets/favicon.svg'
+import GreenFaviconSVG from '../../assets/green-favicon.svg'
 import DEMOLOGO from '../../assets/DEMO_LOGO.png'
 import SocialMedia from "../social-media/social-media";
+import { useLocation } from "@reach/router";
+import { PageUrls } from "../../utility/helper";
 const NavbarWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -32,7 +35,7 @@ const HomeNavbarImage = styled.img`
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
   .active-link {
-    color: green !important;
+    color: rgb(0,255,0) !important;
   }
 `
 
@@ -43,7 +46,7 @@ const NavbarTitle = styled.li`
     display: inline-block;
     color: inherit;
     background-size: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${props => props.isActive ? GreenFaviconSVG: FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
  }
@@ -51,6 +54,36 @@ const NavbarTitle = styled.li`
 `
 
 const Navbar = props => {
+  let location = useLocation()
+
+
+  const isCurrentUrl = (url) => {
+    console.log('LOCATION', location)
+    let response = false;
+
+    switch(url) {
+      case PageUrls.ABOUT: {
+        response = PageUrls.ABOUT === location.pathname;
+        break
+      }
+      case PageUrls.ARCHIVE: {
+        response = PageUrls.ARCHIVE === location.pathname;
+        break
+      }
+      case PageUrls.SUBSCRIBE: {
+        response = PageUrls.SUBSCRIBE === location.pathname;
+        break
+      }
+      case PageUrls.UPCOMING: {
+        response = PageUrls.UPCOMING === location.pathname;
+        break
+      }
+   
+    }
+
+    return response;
+
+  }
   return (
     <NavbarWrapper>
 
@@ -58,17 +91,17 @@ const Navbar = props => {
         <NavbarLink to={"/"}>
           <HomeNavbarImage src={DEMOLOGO} alt="Favicon" />
         </NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={"/about"}>
-          <NavbarTitle> about </NavbarTitle>
+        <NavbarLink activeClassName={'active-link'} to={PageUrls.ABOUT}>
+          <NavbarTitle isActive={isCurrentUrl(PageUrls.ABOUT)}> about </NavbarTitle>
         </NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/subscribe'}> 
-          <NavbarTitle> subscribe </NavbarTitle>
+        <NavbarLink activeClassName={'active-link'} to={PageUrls.SUBSCRIBE}> 
+          <NavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}> subscribe </NavbarTitle>
         </NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/archive'}> 
-          <NavbarTitle> archive </NavbarTitle>
+        <NavbarLink activeClassName={'active-link'} to={PageUrls.ARCHIVE}> 
+          <NavbarTitle isActive={isCurrentUrl(PageUrls.ARCHIVE)}> archive </NavbarTitle>
         </NavbarLink>
-        <NavbarLink activeClassName={'active-link'} to={'/upcoming'}> 
-          <NavbarTitle> upcoming </NavbarTitle>
+        <NavbarLink activeClassName={'active-link'} to={PageUrls.UPCOMING}> 
+          <NavbarTitle isActive={isCurrentUrl(PageUrls.UPCOMING)}> upcoming </NavbarTitle>
         </NavbarLink>
       </NavbarLinkWrapper>
       <SocialMediaWrapper>

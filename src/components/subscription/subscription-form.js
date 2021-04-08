@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { setErrors } from "@graphql-tools/utils"
 import axios from "axios"
 import FaviconSVG from "../../assets/favicon.svg"
+import GreenFaviconSVG from '../../assets/green-favicon.svg'
 
 const SubscriptionFormWrapper = styled.div`
   width: 100%;
