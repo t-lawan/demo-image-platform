@@ -80,12 +80,14 @@ const JumbotronWrapper = styled.div`
 `
 
 const JumbotronTitle = styled.h1`
-  color: rgb(0,255,0);
+  color: #00D200;
   display: inline-block;
 `
 
 const JumbotronImage = styled.img`
   width: 2.5%;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 `
 
 const HorizontalScrollContainer = props => {
@@ -103,7 +105,7 @@ const HorizontalScrollContainer = props => {
               <JumbotronTitle>{currentProject.artist}</JumbotronTitle>
               <JumbotronImage src={GreenFavicon} />
               <JumbotronTitle>{currentProject.title}</JumbotronTitle>
-              <JumbotronImage src={Favicon} />
+              <JumbotronImage src={GreenFavicon} />
               <JumbotronTitle>
                 {DateManager.createStartAndEndDateString(
                   currentProject.startDate,

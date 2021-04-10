@@ -115,7 +115,7 @@ li {
 }
 
   .active-link {
-    color: rgb(0,255,0) !important;
+    color: #00D200 !important;
   }
 
   @keyframes marquee {

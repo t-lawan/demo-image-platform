@@ -35,7 +35,7 @@ const PlayButtonImage = styled.img`
 `
 
 const ArtistExhibitionTitle = styled.h2`
-  color: rgb(0,255,0);
+  color: #00D200;
 `
 
 class VideoPlayer extends React.Component {

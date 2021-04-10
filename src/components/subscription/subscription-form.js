@@ -150,20 +150,24 @@ const SubscriptionForm = props => {
     formData.set("LNAME", lastName)
     formData.set("EMAIL", email)
     // formData.set("email", email)
-    formData.set("b_2248085299b940b0726178ce2_2695e32256", "")
-    formData.set("u", "2248085299b940b0726178ce2")
-    formData.set("id", "2695e32256")
+    // formData.set("b_2248085299b940b0726178ce2_2695e32256", "")
+    // formData.set("u", "2248085299b940b0726178ce2")
+    // formData.set("id", "2695e32256")
 
     axios({
       method: "post",
-      url: "https://demomovingimage.us18.list-manage.com/subscribe/post",
+      url: "http://demomovingimage.us18.list-manage.com/subscribe/post-json?u=2248085299b940b0726178ce2&id=2695e32256",
       // body: encode({
       //   ...formData
       // }),
+      
       // data: new URLSearchParams(formData).toString(),
+      withCredentials: true,
       data:formData,
       // headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials" :'true' }
-      headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*" }
+      // headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data",  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
+      headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data"},
+      // headers: { "Content-Type": "application/json"}
     })
       .then(response => {
         console.log("Response", response)

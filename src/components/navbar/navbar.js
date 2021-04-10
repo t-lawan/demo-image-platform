@@ -35,7 +35,7 @@ const HomeNavbarImage = styled.img`
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
   .active-link {
-    color: rgb(0,255,0) !important;
+    color: #00D200 !important;
   }
 `
 
