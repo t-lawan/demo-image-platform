@@ -15,7 +15,7 @@ const FlexWrapper = styled.div`
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    align-items: end;
+    align-items: normal;
 `
 
 const StyledImage = styled(GatsbyImage)`
