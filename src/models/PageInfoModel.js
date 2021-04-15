@@ -8,7 +8,8 @@ export class PageInfoModel {
     twitterUrl;
     facebookUrl;
     instagramUrl;
-    constructor(id,title, description, showTicker, tickerImage, tickerText, twitterUrl, facebookUrl, instagramUrl) {
+    loadingVideoUrl;
+    constructor(id,title, description, showTicker, tickerImage, tickerText, twitterUrl, facebookUrl, instagramUrl, loadingVideoUrl) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -18,5 +19,6 @@ export class PageInfoModel {
         this.facebookUrl = facebookUrl;
         this.instagramUrl = instagramUrl;
         this.showTicker = showTicker;
+        this.loadingVideoUrl = loadingVideoUrl;
     }
 }

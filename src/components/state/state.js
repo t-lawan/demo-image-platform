@@ -79,6 +79,7 @@ const State = props => {
           facebookUrl
           twitterUrl
           showTicker
+          loadingVideoUrl
         }
         allContentfulProject {
           edges {
