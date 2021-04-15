@@ -58,7 +58,6 @@ const Navbar = props => {
 
 
   const isCurrentUrl = (url) => {
-    console.log('LOCATION', location)
     let response = false;
 
     switch(url) {

@@ -185,7 +185,7 @@ export const GenerateContentSection = (section, index, entity) => {
 
     case ContentSectionModelType.IMAGE_GALLERY: {
       render = (
-        <ImageCarouselWrapper>
+        <ImageCarouselWrapper key={index}>
           <ImageCarousel images={section.imageGallery} />
         </ImageCarouselWrapper>
       )
@@ -195,8 +195,8 @@ export const GenerateContentSection = (section, index, entity) => {
     case ContentSectionModelType.VIDEO: {
 
       render = (
-        <VideoWrapper>
-          <VideoPlayer isOnLandingPage={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} />
+        <VideoWrapper key={index}>
+          {/* <VideoPlayer isOnLandingPage={false} autoPlay={false}  fullScreen={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} /> */}
         </VideoWrapper>
       )
       break

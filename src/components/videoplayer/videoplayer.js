@@ -43,6 +43,8 @@ class VideoPlayer extends React.Component {
     showPlayer: false
   }
 
+  videoRef = React.createRef();
+
   componentDidMount() {
     if (this.props.autoPlay) {
       this.setState({
@@ -57,17 +59,29 @@ class VideoPlayer extends React.Component {
     })
   }
   render() {
+    console.log('PROPS', this.props)
+    // const onReady = () => {
+    //   // if(this.props.autoPlay) {
+    //     this.videoRef.current.player.muted = true;
+    //     this.videoRef.current.player.isPlaying = true;
+    //     console.log('READY', this.videoRef.current)
+
+    //   // }
+    // }
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
           <ReactPlayer
+            // ref={this.videoRef}
+            playing={this.props.autoPlay}
             url={this.props.videoUrl}
             controls={this.props.showControls}
             style={{ height: "100vh" }}
             height={"100vh"}
             width={"100vw"}
-            playing={this.props.autoPlay}
-            muted={!this.props.autoPlay}
+            muted={true}
+            // onReady={onReady}
+            
           />
         ) : (
           <VideoBackgroundWrapper image={IMAGE}>

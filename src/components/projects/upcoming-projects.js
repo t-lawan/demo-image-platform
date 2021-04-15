@@ -13,7 +13,7 @@ export const UpcomingWrapper = styled.div`
   justify-content: space-between;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  /* margin: 2rem; */
   height: 100vh;
 `
 

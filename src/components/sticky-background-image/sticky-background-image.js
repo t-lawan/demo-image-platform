@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const StickyBackgroundImageWrapper = styled.div`
   height: 15%;
-  background: green;
+  /* background: green; */
   width: 100%;
   bottom: 0;
   position: sticky;
@@ -24,14 +24,13 @@ const StyledImage = styled(GatsbyImage)`
 
 
 const StickyBackgroundImage = props => {
-    console.log('IMAGE', props)
   return (
     <StickyBackgroundImageWrapper>
         <FlexWrapper>
             {props.images.map((img, index) => {
                 let image = getImage(img)
                 return (
-                <StyledImage image={image} />
+                <StyledImage key={index} image={image} alt={'Image'}/>
             )})}
         </FlexWrapper>
     </StickyBackgroundImageWrapper>

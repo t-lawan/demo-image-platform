@@ -184,7 +184,6 @@ class AudioPlayer extends React.Component {
   }
 
   play = () => {
-    console.log('PLAY')
     this.audio_tag.current.play()
     this.setState({
       isPlaying: true,
@@ -192,7 +191,6 @@ class AudioPlayer extends React.Component {
   }
 
   pause = () => {
-    console.log('PAUSE')
 
     this.audio_tag.current.pause()
     this.setState({
