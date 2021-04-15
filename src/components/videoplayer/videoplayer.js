@@ -36,6 +36,14 @@ const PlayButtonImage = styled.img`
 
 const ArtistExhibitionTitle = styled.h2`
   color: #00D200;
+  font-family: 'FreightBigBook';
+  font-style: normal;
+  font-weight: normal;
+
+`
+
+const Description = styled.p`
+  color: white;
 `
 
 class VideoPlayer extends React.Component {
@@ -89,6 +97,7 @@ class VideoPlayer extends React.Component {
             <PlayButtonImage src={PlayButtonImg} onClick={() => this.playVideo()} />
             <VideoTextOverlay>
               <ArtistExhibitionTitle> {this.props.artist}, {this.props.title}</ArtistExhibitionTitle>
+              <Description> {this.props.description }</Description>
             </VideoTextOverlay>
           </VideoBackgroundWrapper>
         )}

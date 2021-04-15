@@ -103,26 +103,19 @@ p, a, li, button{
   line-height: 1.3;
 }
 li {
-  list-style-type: none;
-  &:before{
-    content: '';
-    display: inline-block;
-    height: 10%;
-    width: 10%;
-    content: '';
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    color: inherit;
-    background-size: 20px;
-    background-image: url(${FaviconSVG});
-    background-repeat: no-repeat;
-    margin-right: 10px;
+
 }
-}
+
+
 
   .active-link {
     color: #00D200 !important;
+  }
+
+  .slide {
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
   @keyframes marquee {

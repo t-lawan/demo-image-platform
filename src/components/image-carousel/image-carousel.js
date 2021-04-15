@@ -7,13 +7,14 @@ import ArrowLeft from "../../assets/arrow_left.png"
 import ArrowRight from "../../assets/arrow_right.png"
 import { connect } from "react-redux"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { size } from "../styles/styles";
+import { size } from "../styles/styles"
 
 const StyledCarousel = styled(Carousel)``
 
 const StyledCarouselWrapper = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 9fr 0.5fr;
+  grid-column-gap: 1rem;
   @media (max-width: ${size.tablet}) {
     grid-template-columns: 1fr;
   }
@@ -28,6 +29,14 @@ const NavigationButtons = styled.img`
     padding: 0;
     display: none;
   }
+`
+
+const ImageWrapper = styled.div`
+  padding: 2rem;
+`
+
+const ImageDescription = styled.p`
+  text-align: left;
 `
 
 // const Image = styled(Img)`
@@ -51,30 +60,29 @@ class ImageCarousel extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentSlide: 0,
+      currentSlide: 0
     }
   }
 
   previousSlide = () => {
     if (this.state.currentSlide >= 0) {
       this.setState({
-        currentSlide: this.state.currentSlide - 1,
+        currentSlide: this.state.currentSlide - 1
       })
     }
   }
 
   nextSlide = () => {
     this.setState({
-      currentSlide: this.state.currentSlide + 1,
+      currentSlide: this.state.currentSlide + 1
     })
   }
 
   onChange(slideNumber) {
     this.setState({
-      currentSlide: slideNumber,
+      currentSlide: slideNumber
     })
   }
-
 
   render() {
     return (
@@ -100,13 +108,13 @@ class ImageCarousel extends React.Component {
         >
           {this.props.images.map((im, index) => {
             let img = getImage(im.gatsbyImageData)
-            
-            return (
-              <div key={index}>
-              <GatsbyImage image={img} alt={'Image Carousel'} />
-            </div>
-            )
 
+            return (
+              <ImageWrapper key={index}>
+                <GatsbyImage image={img} alt={"Image Carousel"} />
+                <ImageDescription> Text</ImageDescription>
+              </ImageWrapper>
+            )
           })}
         </StyledCarousel>
         <NavigationButtons
@@ -119,10 +127,11 @@ class ImageCarousel extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-    currentProject: state.currentProject,
+    currentProject: state.currentProject
   }
 }
 
-
-
-export default connect(mapStateToProps, null)(ImageCarousel)
+export default connect(
+  mapStateToProps,
+  null
+)(ImageCarousel)

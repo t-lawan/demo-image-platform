@@ -115,7 +115,7 @@ const State = props => {
                 }
                 audioTitle
                 imageGallery {
-                  gatsbyImageData
+                  gatsbyImageData(resizingBehavior: FILL)
                 }
                 pdf {
                   file {
@@ -134,6 +134,10 @@ const State = props => {
                 pdfTitle
                 backgroundImages {
                   gatsbyImageData(resizingBehavior: FILL)
+                }
+                videoUrl
+                videoText {
+                  videoText
                 }
               }
               backgroundImage {

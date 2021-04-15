@@ -78,11 +78,12 @@ const FlexWrapper = styled.div`
 `
 
 const ImageCarouselWrapper = styled.div`
-  padding: 3rem;
+  padding: 3rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 `
 
 const VideoWrapper = styled.div`
@@ -193,10 +194,10 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.VIDEO: {
-
+      console.log('VIDEO', section)
       render = (
         <VideoWrapper key={index}>
-          {/* <VideoPlayer isOnLandingPage={false} autoPlay={false}  fullScreen={false} showControls={true} videoUrl={Video} artist={entity.artist} title={entity.title} url={Video} /> */}
+          <VideoPlayer isOnLandingPage={false} autoPlay={false}  fullScreen={false} showControls={true} artist={entity.artist} title={entity.title} videoUrl={section.videoUrl} description={section.videoText} />
         </VideoWrapper>
       )
       break
