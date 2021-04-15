@@ -1,12 +1,19 @@
 import styled, { createGlobalStyle } from "styled-components"
-import Swiss721 from '../../assets/fonts/Swis721_Lt_BT_Light.ttf'
-import FaviconSVG from '../../assets/favicon.svg'
-import GreenFaviconSVG from '../../assets/green-favicon.svg'
+import Swiss721 from "../../assets/fonts/Swis721_Lt_BT_Light.ttf"
+import FreightBigBook from "../../assets/fonts/Freight_Big_Book.otf"
+import FaviconSVG from "../../assets/favicon.svg"
+import GreenFaviconSVG from "../../assets/green-favicon.svg"
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';
     src: url(${Swiss721}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FreightBigBook';
+    src: url(${FreightBigBook}) format('opentype');
     font-weight: normal;
     font-style: normal;
 }

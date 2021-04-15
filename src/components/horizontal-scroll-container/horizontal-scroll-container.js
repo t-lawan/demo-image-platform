@@ -59,13 +59,14 @@ const PageSectionWrapper = styled.div`
 `
 
 const ThreeColumnWrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: row;
   /* grid-template-columns: 2fr 8fr; */
   /* grid-template-columns: 8.5fr 0.5fr; */
 `
 
 const NavbarFixedWrapper = styled.div`
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 15%;
   width: 22.22%;

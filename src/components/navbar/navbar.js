@@ -26,6 +26,8 @@ const NavbarLinkWrapper = styled.div`
   height: 20%;
   justify-content: space-between;
   align-items: baseline;
+  font-family: 'FreightBigBook';
+
   /* margin: 2rem; */
 `
 const HomeNavbarImage = styled.img`
