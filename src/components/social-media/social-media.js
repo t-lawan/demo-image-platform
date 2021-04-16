@@ -21,7 +21,7 @@ const SocialMediaWrapper = styled.div``
 const SocialMediaLink = styled(Link)``
 
 const SocialMediaImage = styled.img`
-  width: 25%;
+  width: 25% !important;
 `
 
 const SocialMedia = props => {

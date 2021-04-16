@@ -6,8 +6,8 @@ import Navbar from "../navbar/navbar"
 import { GenerateContentSection } from "../../utility/richtext"
 import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import IMAGE from '../../assets/IMAGE.jpg'
 import { connect } from "react-redux"
+import SectionCarousel from "../section-carousel/section-carousel";
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -39,7 +39,8 @@ const ImageBackground = styled.div`
 export const PageContent = props => {
   let page = props.page;
   let currentProject = props.currentProject
-
+        // {/* <HorizontalScrollContainer sections={page.content} /> */}
+  console.log('PAGE', page)
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
@@ -49,7 +50,7 @@ export const PageContent = props => {
         </ImageBackground>
       ) : null} */}
       {page.hasHorizontalScroll ? (
-        <HorizontalScrollContainer sections={page.content} />
+        <SectionCarousel content={page.content} />
       ) : (
         <TwoColumnWrapper>
           <Navbar />
