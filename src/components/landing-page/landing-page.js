@@ -21,7 +21,6 @@ const LandingPageContainer = styled.div`
 
 
 const LandingPage = (props) => {
-    console.log('PAGE INFO', props)
   return (
     <LandingPageWrapper onClick={() => props.hideLandingPage()} show={props.showLandingPage && props.isHome}>    
         {props.page_info && props.page_info.loadingVideoUrl ? <VideoPlayer isOnLandingPage={true} autoPlay={true} showControls={false} fullScreen={true}  videoUrl={props.page_info.loadingVideoUrl} /> : null}
