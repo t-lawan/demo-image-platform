@@ -42,7 +42,7 @@ const TickerText = styled.h1`
 const Ticker = props => {
   let page_info = props.page_info;
   return (
-    <TickerWrapper show={!page_info.showTicker} image={page_info.tickerImage? page_info.tickerImage.file.url : null}>
+    <TickerWrapper show={page_info.showTicker} image={page_info.tickerImage? page_info.tickerImage.file.url : null}>
       <MarqueeWrapper>
         {/* <MarqueeInnerWrapper> */}
         <TickerText> {page_info.tickerText} </TickerText>

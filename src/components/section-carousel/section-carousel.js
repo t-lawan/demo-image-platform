@@ -27,8 +27,7 @@ const Container = styled.div`
 `
 const NavbarWrapper = styled.div`
   top: 0;
-  width: 15%;
-  width: 22.22%;
+  width: 25%;
 `
 const RepeaterContainer = styled(Container)`
   background: lightgray;
@@ -49,7 +48,8 @@ const NavigationFlexRowWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0 1rem;
+  
 `
 
 const NavigationText = styled.p`
@@ -100,8 +100,7 @@ class SectionCarousel extends React.Component {
   }
 
   render() {
-    let currentProject = this.props.currentProject
-    console.log('PROJECTS', this.props)
+    let currentProject = this.props.currentProject;
     return (
       <SectionCarouselWrapper>
         <StyledCarousel

@@ -118,6 +118,14 @@ li {
     display: flex;
   }
 
+  ${'' /* .carousel .slide img {
+    width: unset !important;
+  }
+
+  .carousel img {
+    width: unset !important;
+  } */}
+
   @keyframes marquee {
     0% {
         transform: translate3d(var(--move-initial), 0, 0);

@@ -33,6 +33,9 @@ const UpcomingProjects = props => {
         {projects.map((project,index) => (
             <ProjectTitle key={index}> {project.artist}, {project.title}, {DateManager.createStartAndEndDateString(project.startDate, project.endDate)} </ProjectTitle>
         ))}
+        {projects.length === 0 ? (
+          <p> There are no upcoming projects</p>
+        ) : null}
     </UpcomingWrapper>
   )
 }

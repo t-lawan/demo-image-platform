@@ -38,9 +38,9 @@ const ImageBackground = styled.div`
 
 export const PageContent = props => {
   let page = props.page;
+  console.log('PAGE', page)
   let currentProject = props.currentProject
         // {/* <HorizontalScrollContainer sections={page.content} /> */}
-  console.log('PAGE', page)
   let image = page.backgroundImage ? getImage(page.backgroundImage) : null
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>

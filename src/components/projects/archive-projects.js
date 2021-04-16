@@ -16,7 +16,8 @@ const ProjectTitle = styled.li`
 const ArchiveProjects = props => {
     let projects = props.projects;
     projects = projects.filter(project => {
-        return project.type === ProjectType.ARCHIVE;
+        // return project.type === ProjectType.ARCHIVE;
+        return project.type === 'x';
     })
 
   return (
@@ -24,6 +25,10 @@ const ArchiveProjects = props => {
         {projects.map((project,index) => (
             <ProjectTitle key={index}> {project.artist}, {project.title}, {DateManager.createStartAndEndDateString(project.startDate, project.endDate)} </ProjectTitle>
         ))}
+
+        {projects.length === 0 ? (
+          <p> There are no archived projects</p>
+        ) : null}
     </UpcomingWrapper>
   )
 }

@@ -5,6 +5,7 @@ import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
 const VideoTextOverlay = styled.div`
   width: 60%;
+  text-align: justify;
 `
 
 const VideoPlayerWrapper = styled.div`
@@ -31,7 +32,7 @@ const PlayButton = styled.h1`
 
 const PlayButtonImage = styled.img`
   cursor: pointer;
-  width: 15%;
+  width: 15% !important;
 `
 
 const ArtistExhibitionTitle = styled.h2`
@@ -67,15 +68,6 @@ class VideoPlayer extends React.Component {
     })
   }
   render() {
-    console.log('PROPS', this.props)
-    // const onReady = () => {
-    //   // if(this.props.autoPlay) {
-    //     this.videoRef.current.player.muted = true;
-    //     this.videoRef.current.player.isPlaying = true;
-    //     console.log('READY', this.videoRef.current)
-
-    //   // }
-    // }
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
