@@ -111,6 +111,8 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.TEXT: {
+      console.log(' TEXT', section)
+
       render = (
         <TextWrapper
           key={index}

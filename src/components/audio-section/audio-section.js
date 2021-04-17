@@ -38,7 +38,7 @@ const AudioDescription = styled.p`
 
 const AudioPlayerWrapper = styled.div`
   /* width: 50%; */
-  background: white;
+  /* background: white; */
   padding: 1rem;
   border: 1px solid black;
 `
