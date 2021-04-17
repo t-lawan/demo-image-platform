@@ -9,6 +9,7 @@ import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager";
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 import Jumbotron from "../jumbotron/jumbotron";
+import { Colours } from "../styles/styles";
 
 
 const StyledCarousel = styled(Carousel)``
@@ -53,7 +54,7 @@ const NavigationFlexRowWrapper = styled.div`
 `
 
 const NavigationText = styled.p`
-    color: #00D200 !important;
+    color: ${Colours.green} !important;
     cursor: pointer;
 `
 

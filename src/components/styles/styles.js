@@ -4,6 +4,10 @@ import FreightBigBook from "../../assets/fonts/Freight_Big_Book.otf"
 import FaviconSVG from "../../assets/favicon.svg"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 
+export const Colours = {
+  'green': ' #00d200'
+}
+
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';
@@ -109,7 +113,7 @@ li {
 
 
   .active-link {
-    color: #00D200 !important;
+    color: ${Colours.green} !important;
   }
 
   .slide {

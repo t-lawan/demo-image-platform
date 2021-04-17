@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel"
 import { DateManager } from "../../utility/date-manager"
 import GreenFavicon from "../../assets/green-favicon.png"
+import { Colours } from "../styles/styles";
 
 const JumbotronWrapper = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const JumbotronWrapper = styled.div`
 `
 
 const JumbotronTitle = styled.h1`
-  color: #00d200;
+  color: ${Colours.green};
   display: inline-block;
 `
 

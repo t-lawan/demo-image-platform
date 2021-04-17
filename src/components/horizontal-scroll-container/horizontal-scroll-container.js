@@ -9,6 +9,7 @@ import Favicon from "../../assets/favicon.png"
 import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager"
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
+import { Colours } from "../styles/styles";
 const HorizontalScrollContainerWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -81,7 +82,8 @@ const JumbotronWrapper = styled.div`
 `
 
 const JumbotronTitle = styled.h1`
-  color: #00D200;
+  color: ${Colours.green};
+
   display: inline-block;
 `
 

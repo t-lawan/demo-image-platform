@@ -3,6 +3,7 @@ import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
+import { Colours } from "../styles/styles";
 const VideoTextOverlay = styled.div`
   width: 60%;
   text-align: justify;
@@ -36,7 +37,7 @@ const PlayButtonImage = styled.img`
 `
 
 const ArtistExhibitionTitle = styled.h2`
-  color: #00D200;
+  color: ${Colours.green};
   font-family: 'FreightBigBook';
   font-style: normal;
   font-weight: normal;

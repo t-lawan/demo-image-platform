@@ -8,6 +8,7 @@ import DEMOLOGO from '../../assets/DEMO_LOGO.png'
 import SocialMedia from "../social-media/social-media";
 import { useLocation } from "@reach/router";
 import { PageUrls } from "../../utility/helper";
+import { Colours } from "../styles/styles";
 const NavbarWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -16,7 +17,7 @@ const NavbarWrapper = styled.div`
 `
 
 const SocialMediaWrapper = styled.div`
-  align-self: flex-end;
+  /* align-self: flex-end; */
 `
 const NavbarLinkWrapper = styled.div`
   padding: 0 2rem;
@@ -37,7 +38,7 @@ const HomeNavbarImage = styled.img`
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
   .active-link {
-    color: #00D200 !important;
+    color: ${Colours.green} !important;
   }
 `
 

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { size } from "../styles/styles"
+import { size, Colours } from "../styles/styles"
 import HorizontalScrollContainer from "../horizontal-scroll-container/horizontal-scroll-container"
 import Navbar from "../navbar/navbar"
 import { GenerateContentSection } from "../../utility/richtext"
@@ -25,7 +25,7 @@ export const PageSectionWrapper = styled.div`
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 2fr 7fr 0.15fr;
   /* height: 100vh; */
 `
 
@@ -36,19 +36,17 @@ const ImageBackground = styled.div`
   width: 100%;
 `
 
+const GreenBar = styled.div`
+  background: ${Colours.green};
+`
+
 export const PageContent = props => {
   let page = props.page;
   console.log('PAGE', page)
   let currentProject = props.currentProject
         // {/* <HorizontalScrollContainer sections={page.content} /> */}
-  let image = page.backgroundImage ? getImage(page.backgroundImage) : null
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
-      {/* {image ? (
-        <ImageBackground>
-          <GatsbyImage image={image} alt={"Image"} />
-        </ImageBackground>
-      ) : null} */}
       {page.hasHorizontalScroll ? (
         <SectionCarousel content={page.content} />
       ) : (
@@ -61,6 +59,7 @@ export const PageContent = props => {
                 )
               : null}
           </PageSectionWrapper>
+          <GreenBar />
         </TwoColumnWrapper>
       )}
       <Ticker />
