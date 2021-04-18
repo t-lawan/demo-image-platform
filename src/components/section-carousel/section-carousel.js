@@ -34,6 +34,14 @@ const RepeaterContainer = styled(Container)`
   background: lightgray;
 `
 
+const FaviconImage = styled.img`
+  width: 10% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+`
+
 
 const RepeaterContainerWrapper = styled.div`
   /* padding: 0 1rem; */
@@ -135,6 +143,7 @@ class SectionCarousel extends React.Component {
             key={index}
             image={currentProject.backgroundImage.file.url}
           >
+            <FaviconImage src={GreenFavicon} />
             <RepeaterContainerWrapper>
               {GenerateContentSection(section, index, currentProject)}
             </RepeaterContainerWrapper>
