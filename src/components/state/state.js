@@ -51,12 +51,6 @@ const State = props => {
                   gatsbyImageData
                 }
               }
-              backgroundImage {
-                gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-                file {
-                  url
-                }
-              }
             }
           }
         }
@@ -82,74 +76,74 @@ const State = props => {
           loadingVideoUrl
         }
         allContentfulProject {
-    edges {
-      node {
-        artist
-        contentful_id
-        endDate
-        startDate
-        title
-        type
-        contentSection {
-          backgroundImage {
-            gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-          }
-          audioFile {
-            file {
-              url
+          edges {
+            node {
+              artist
+              contentful_id
+              endDate
+              startDate
+              title
+              type
+              contentSection {
+                backgroundImage {
+                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
+                }
+                audioFile {
+                  file {
+                    url
+                  }
+                }
+                text {
+                  raw
+                }
+                type
+                credits {
+                  title
+                  name
+                }
+                mediaPartners {
+                  gatsbyImageData(resizingBehavior: FILL)
+                }
+                audioDescription {
+                  audioDescription
+                }
+                audioTitle
+                imageGallery {
+                  gatsbyImageData(resizingBehavior: FILL)
+                  description
+                }
+                pdf {
+                  file {
+                    url
+                  }
+                }
+                pdfImage {
+                  gatsbyImageData
+                  file {
+                    url
+                  }
+                }
+                pdfDescription {
+                  pdfDescription
+                }
+                pdfTitle
+                backgroundImages {
+                  gatsbyImageData(resizingBehavior: FILL)
+                }
+                videoUrl
+                videoText {
+                  videoText
+                }
+              }
+              backgroundImage {
+                gatsbyImageData
+                file {
+                  url
+                }
+              }
             }
-          }
-          text {
-            raw
-          }
-          type
-          credits {
-            title
-            name
-          }
-          mediaPartners {
-            gatsbyImageData(resizingBehavior: FILL)
-          }
-          audioDescription {
-            audioDescription
-          }
-          audioTitle
-          imageGallery {
-            gatsbyImageData(resizingBehavior: FILL)
-            description
-          }
-          pdf {
-            file {
-              url
-            }
-          }
-          pdfImage {
-            gatsbyImageData
-            file {
-              url
-            }
-          }
-          pdfDescription {
-            pdfDescription
-          }
-          pdfTitle
-          backgroundImages {
-            gatsbyImageData(resizingBehavior: FILL)
-          }
-          videoUrl
-          videoText {
-            videoText
           }
         }
-        backgroundImage {
-          gatsbyImageData
-          file {
-            url
-          }
-        }
-      }
-    }
-  }
       }
     `
   )

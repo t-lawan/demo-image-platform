@@ -65,12 +65,6 @@ exports.createPages = ({ graphql, actions }) => {
                     gatsbyImageData
                   }
                 }
-                backgroundImage {
-                  gatsbyImageData(resizingBehavior: FILL, layout: FULL_WIDTH)
-                  file {
-                    url
-                  }
-                }
               }
             }
           }
