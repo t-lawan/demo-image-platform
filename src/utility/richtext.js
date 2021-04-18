@@ -49,8 +49,13 @@ const TextWrapper = styled.div`
   padding-top: 2rem;
 `
 
+const AboutTextWrapper = styled(TextWrapper)`
+  color: white;
+`
+
 const CreditsWrapper = styled.div`
   padding: 2rem 0;
+  color: white;
 `
 const FlexImagesWrapper = styled.div`
   display: flex;
@@ -68,6 +73,7 @@ const Image = styled(GatsbyImage)``
 
 const MediaWrapper = styled.div`
   padding: 2rem 0;
+  color: white;
 `
 
 const FlexWrapper = styled.div`
@@ -131,7 +137,7 @@ export const GenerateContentSection = (section, index, entity) => {
     case ContentSectionModelType.ABOUT_TEXT: {
       console.log('ABOUT TEXT', section)
       render = (
-        <TextWrapper
+        <AboutTextWrapper
           key={index}
           dangerouslySetInnerHTML={{
             __html: documentToHtmlString(
@@ -141,7 +147,7 @@ export const GenerateContentSection = (section, index, entity) => {
           }}
         >
           {}
-        </TextWrapper>
+        </AboutTextWrapper>
       )
       break
     }

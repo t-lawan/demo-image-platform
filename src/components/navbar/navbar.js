@@ -37,6 +37,7 @@ const HomeNavbarImage = styled.img`
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
+  color: white;
   .active-link {
     color: ${Colours.green} !important;
   }
@@ -51,7 +52,7 @@ const NavbarTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${props => props.isActive ?GreenFaviconSVG: FaviconSVG });
     background-repeat: no-repeat;
     margin-right: 10px;
 }
