@@ -9,7 +9,7 @@ import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager";
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 import Jumbotron from "../jumbotron/jumbotron";
-import { Colours, size } from "../styles/styles";
+import { Colours, size, Layers } from "../styles/styles";
 import MobileNavbar from "../mobile-navbar/mobile-navbar";
 
 
@@ -60,6 +60,7 @@ const NavigationWrapper = styled.div`
     height: 7.5%;
     position: absolute;
     bottom: 0;
+    z-index: ${Layers.CAROUSEL_NAVIGATION};
 `
 
 const NavigationFlexRowWrapper = styled.div`
@@ -123,7 +124,7 @@ class SectionCarousel extends React.Component {
       <SectionCarouselWrapper>
         <StyledCarousel
           centerMode={false}
-          swipeable={true}
+          swipeable={false}
           dynamicHeight={false}
           showStatus={false}
           showThumbs={false}

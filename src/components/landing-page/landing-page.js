@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { hideLandingPage } from "../../store/action";
 import VideoPlayer from "../videoplayer/videoplayer";
 import Video from '../../assets/video/VIDEO.mp4'
+import { Layers } from "../styles/styles";
 const LandingPageWrapper = styled.div`
     position: fixed;
     top: 0;
@@ -11,7 +12,7 @@ const LandingPageWrapper = styled.div`
     height: 100vh;
     width: 100vw;
     background: black;
-    z-index: 1000;
+    z-index: ${Layers.LANDING_PAGE};
     display: ${props => (props.show ? "inherit" : "none")};
 `
 

@@ -17,6 +17,13 @@ export const size = {
   laptopL: "1440px",
   desktop: "1500px"
 }
+
+export const Layers = {
+  LANDING_PAGE: 5000,
+  MOBILE_NAVBAR: 2000,
+  TICKER: 1000,
+  CAROUSEL_NAVIGATION: 1500 
+}
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';

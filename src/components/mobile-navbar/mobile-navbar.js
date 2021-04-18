@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import DEMOLOGO from "../../assets/DEMO_LOGO.png"
-import { size, Colours } from "../styles/styles"
+import { size, Colours, Layers } from "../styles/styles"
 import GreenFavicon from "../../assets/green-favicon.png"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import CloseIcon from "../../assets/CloseIcon.png"
@@ -38,20 +38,26 @@ const ModalHeaderWrapper = styled.div`
 `
 
 const CloseImage = styled.img`
+
+`
+
+
+const CloseImageWrapper = styled.div`
   width: 10%;
   position: absolute;
   top: 0;
   right: 0;
   padding: 0.25rem;
-`
 
+`
 const MobileModal = styled.div`
   position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;
   background: red;
-  z-index: 1000;
+  z-index: ${Layers.MOBILE_NAVBAR};
+
   display: ${props => (props.show ? "block" : "none")};
 `
 
@@ -125,7 +131,7 @@ const MobileNavbar = props => {
   }
   return (
     <>
-      <MobileNavbarWrapper>
+      <MobileNavbarWrapper onClick={() => toggleModal(true)}>
         <DemoLogoWrapper>
           <MobileNavbarLink activeClassName={"active-link"} to={'/'}>
           <HomeNavbarImage src={DEMOLOGO} />
@@ -141,7 +147,9 @@ const MobileNavbar = props => {
       </MobileNavbarWrapper>
 
       <MobileModal show={showModal}>
-        <CloseImage src={CloseIcon} onClick={() => toggleModal(false)} />
+        <CloseImageWrapper>
+          <CloseImage src={CloseIcon} onClick={() => toggleModal(false)} />
+        </CloseImageWrapper>
         <MobileNavbarLinkWrapper>
           <MobileNavbarLink activeClassName={"active-link"} to={PageUrls.ABOUT}>
             <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.ABOUT)}>

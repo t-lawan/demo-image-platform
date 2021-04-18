@@ -1,6 +1,7 @@
 import * as React from "react"
 import { connect } from "react-redux"
 import styled from "styled-components"
+import { Layers } from "../styles/styles";
 
 const TickerWrapper = styled.div`
   position: fixed;
@@ -8,7 +9,9 @@ const TickerWrapper = styled.div`
   width: 100%;
   height: 7.5%;
   /* background: rgba(0, 255, 0, 0.6); */
-  z-index: 100;
+  /* z-index: 100; */
+  z-index: ${Layers.TICKER};
+
   mix-blend-mode: difference;
   background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
