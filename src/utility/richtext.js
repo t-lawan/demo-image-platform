@@ -90,6 +90,9 @@ const ImageCarouselWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  @media (max-width: ${size.mobileL}) {
+      padding: 0rem;
+  }
 `
 
 const VideoWrapper = styled.div`

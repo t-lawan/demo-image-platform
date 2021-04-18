@@ -15,6 +15,7 @@ export const UpcomingWrapper = styled.div`
   align-items: center;
   /* margin: 2rem; */
   height: 100vh;
+  height: 90vh;
   color: white;
 `
 

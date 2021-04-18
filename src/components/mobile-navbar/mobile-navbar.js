@@ -127,7 +127,9 @@ const MobileNavbar = props => {
     <>
       <MobileNavbarWrapper>
         <DemoLogoWrapper>
+          <MobileNavbarLink activeClassName={"active-link"} to={'/'}>
           <HomeNavbarImage src={DEMOLOGO} />
+          </MobileNavbarLink>
         </DemoLogoWrapper>
         <ModalHeaderWrapper>
           <HomeNavbarImage

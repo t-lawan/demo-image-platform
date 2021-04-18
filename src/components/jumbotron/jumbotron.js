@@ -14,7 +14,8 @@ const JumbotronWrapper = styled.div`
   justify-content: center;
   align-items: baseline;
   position: absolute;
-    left: 0;
+  left: 0;
+  bottom: 20%;
 `
 
 const JumbotronTitle = styled.h1`

@@ -50,11 +50,12 @@ export const PageContent = props => {
         // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
-      <MobileNavbar />
       {page.hasHorizontalScroll ? (
         <SectionCarousel content={page.content} />
       ) : (
-        <TwoColumnWrapper>
+        <>
+          <MobileNavbar />
+          <TwoColumnWrapper>
           <Navbar />
           <PageSectionWrapper>
             {page.content
@@ -65,6 +66,8 @@ export const PageContent = props => {
           </PageSectionWrapper>
           <GreenBar />
         </TwoColumnWrapper>
+        </>
+
       )}
       <Ticker />
     </PageWrapper>

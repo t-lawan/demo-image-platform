@@ -10,6 +10,7 @@ import { DateManager } from "../../utility/date-manager";
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 import Jumbotron from "../jumbotron/jumbotron";
 import { Colours, size } from "../styles/styles";
+import MobileNavbar from "../mobile-navbar/mobile-navbar";
 
 
 const StyledCarousel = styled(Carousel)``
@@ -21,10 +22,10 @@ const Container = styled.div`
   width: 100vw;
   background: transparent;
   flex: 0 0 auto;
-  background-image: url(${props => props.image || "none"});
+  /* background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
 `
 const NavbarWrapper = styled.div`
   top: 0;
@@ -36,6 +37,10 @@ const NavbarWrapper = styled.div`
 `
 const RepeaterContainer = styled(Container)`
   background: lightgray;
+  /* background-image: url(${props => props.image || "none"});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
 `
 
 const FaviconImage = styled.img`
@@ -132,6 +137,8 @@ class SectionCarousel extends React.Component {
           selectedItem={this.state.currentSlide}
         >
         <Container image={currentProject.backgroundImage.file.url}>
+          <MobileNavbar />
+          
           <FlexRowWrapper>
             <NavbarWrapper>
               <Navbar />

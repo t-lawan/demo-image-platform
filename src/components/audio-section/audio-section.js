@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import AudioPlayer from "../audio-player/audio-player";
+import { size } from "../styles/styles";
 
 const AudioWrapper = styled.div`
   width: 100%;
@@ -15,6 +16,7 @@ const AudioWrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
 `
 
 const Grid = styled.div`
@@ -25,6 +27,9 @@ const Grid = styled.div`
   grid-template-rows: 1fr 2fr 1.5fr 4fr;
   align-items: baseline;
   justify-content: center;
+  @media (max-width: ${size.mobileL}) {
+    width: 90%;
+  }
 `
 
 const AudioText = styled.h1`

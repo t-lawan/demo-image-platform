@@ -67,6 +67,9 @@ body {
   margin-bottom: 1.45rem;
   font-size: 2.5rem;
   line-height: 1.1;
+  @media (max-width: ${size.mobileL}) {
+    font-size: 1.5rem;
+  }
 }
 h2 {
   margin-bottom: 1.45rem;
@@ -114,7 +117,7 @@ p, a, li, button{
   padding-top: 0;
   font-size: 1.3rem;
   line-height: 1.3;
-  @media (max-width: ${size.tablet}) {
+  @media (max-width: ${size.mobileL}) {
     font-size: 1rem;
   }
   
@@ -135,14 +138,15 @@ li {
     display: flex;
   }
 
-  ${
-    "" /* .carousel .slide img {
-    width: unset !important;
+  .slick-prev {
+    @media (max-width: ${size.mobileL}) {
+      left: 0;
+    }
   }
-
-  .carousel img {
-    width: unset !important;
-  } */
+  .slick-next {
+    @media (max-width: ${size.mobileL}) {
+      right: 0;
+    }
   }
   .slick-prev:before, .slick-next:before{
     color: ${Colours.green};
