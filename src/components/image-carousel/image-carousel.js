@@ -8,13 +8,39 @@ import ArrowRight from "../../assets/arrow_right.png"
 import { connect } from "react-redux"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { size } from "../styles/styles"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
+const StyledSlider = styled(Slider)`
+  max-width: 100% !important;
+/* z-index: 100; */
+  position: relative;
+  display: grid;
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
+
+`
+
+const SliderSettings = {
+  dots: false,
+  arrows: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  variableWidth: false,
+  adaptiveHeight: false
+
+};
 const StyledCarousel = styled(Carousel)``
 
 const StyledCarouselWrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.5fr 9fr 0.5fr;
+  /* grid-template-columns: 0.5fr 9fr 0.5fr; */
   grid-column-gap: 1rem;
+  /* position: absolute;
+  height: 80%; */
   @media (max-width: ${size.tablet}) {
     grid-template-columns: 1fr;
   }
@@ -25,6 +51,7 @@ const NavigationButtons = styled.img`
   margin: auto;
   padding: 0 0.2rem;
   cursor: pointer;
+  width: 3% !important;
   @media (max-width: ${size.tablet}) {
     padding: 0;
     display: none;
@@ -33,38 +60,32 @@ const NavigationButtons = styled.img`
 
 const ImageWrapper = styled.div`
   padding: 2rem;
+  /* background: pink; */
 `
 
 const ImageDescription = styled.p`
   text-align: left;
 `
 
-// const Image = styled(Img)`
-//   img {
-//     object-fit: ${props =>
-//       props.isLandscape ? "cover !important" : "contain !important"};
-//     max-height: 400px !important;
-//     display: block;
-//     margin: 0 auto;
-//   }
-//   > picture > img {
-//     object-fit: ${props =>
-//       props.isLandscape ? "cover !important" : "contain !important"};
-//     max-height: 400px !important;
-//     display: block;
-//     margin: 0 auto;
-//     /* position: relative; */
-//   }
-// `
+const ArrowImage = (image, func) => {
+   return (
+    <NavigationButtons
+    src={image}
+    onClick={func}
+  />
+   )
+}
 class ImageCarousel extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.carouselRef = React.createRef();
     this.state = {
       currentSlide: 0
     }
   }
 
   previousSlide = () => {
+    console.log('SLIDE', this.carouselRef.current)
     if (this.state.currentSlide >= 0) {
       this.setState({
         currentSlide: this.state.currentSlide - 1
@@ -87,11 +108,11 @@ class ImageCarousel extends React.Component {
   render() {
     return (
       <StyledCarouselWrapper>
-        <NavigationButtons
+        {/* <NavigationButtons
           src={ArrowLeft}
           onClick={this.previousSlide.bind(this)}
-        />
-        <StyledCarousel
+        /> */}
+        {/* <StyledCarousel
           centerMode={false}
           swipeable={true}
           dynamicHeight={false}
@@ -105,7 +126,12 @@ class ImageCarousel extends React.Component {
           infiniteLoop={true}
           onChange={this.onChange.bind(this)}
           selectedItem={this.state.currentSlide}
-        >
+        > */}
+        <StyledSlider ref={this.carouselRef} {...SliderSettings} 
+                      // prevArrow={ArrowImage(ArrowLeft, this.previousSlide.bind(this))} 
+                      // nextArrow={ArrowImage(ArrowRight, this.nextSlide.bind(this))}
+                      >
+
           {this.props.images.map((im, index) => {
             let img = getImage(im.gatsbyImageData)
 
@@ -116,11 +142,13 @@ class ImageCarousel extends React.Component {
               </ImageWrapper>
             )
           })}
-        </StyledCarousel>
+        {/* </StyledCarousel> */}
+        </StyledSlider>
+{/* 
         <NavigationButtons
           src={ArrowRight}
           onClick={this.nextSlide.bind(this)}
-        />
+        /> */}
       </StyledCarouselWrapper>
     )
   }

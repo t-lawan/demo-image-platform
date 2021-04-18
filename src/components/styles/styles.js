@@ -129,7 +129,10 @@ li {
   .carousel img {
     width: unset !important;
   } */}
-
+  .slick-prev:before, .slick-next:before{
+    color: ${Colours.green};
+    font-family: 'Swiss721';
+  }
   @keyframes marquee {
     0% {
         transform: translate3d(var(--move-initial), 0, 0);
