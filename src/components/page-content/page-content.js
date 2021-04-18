@@ -8,6 +8,7 @@ import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { connect } from "react-redux"
 import SectionCarousel from "../section-carousel/section-carousel";
+import MobileNavbar from "../mobile-navbar/mobile-navbar";
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -15,25 +16,27 @@ export const PageWrapper = styled.div`
   background-position: center;
   background-size: cover;
   margin-bottom: 10rem;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
 `
 
 export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
   padding: 0 0.5rem;
   width: 90%;
+  @media (max-width: ${size.mobileL}) {
+    width: 100%;
+  }
 `
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 7fr 0.15fr;
   /* height: 100vh; */
-`
-
-const ImageBackground = styled.div`
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
+  @media (max-width: ${size.mobileL}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const GreenBar = styled.div`
@@ -47,6 +50,7 @@ export const PageContent = props => {
         // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
+      <MobileNavbar />
       {page.hasHorizontalScroll ? (
         <SectionCarousel content={page.content} />
       ) : (

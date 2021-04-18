@@ -29,7 +29,7 @@ export const richTextOptions = {
     [MARKS.BOLD]: text => <strong>{text}</strong>
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <PARAGRAPH>{children}</PARAGRAPH>
+    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
@@ -117,8 +117,6 @@ export const GenerateContentSection = (section, index, entity) => {
     }
 
     case ContentSectionModelType.TEXT: {
-      console.log(' TEXT', section)
-
       render = (
         <TextWrapper
           key={index}
@@ -135,8 +133,7 @@ export const GenerateContentSection = (section, index, entity) => {
       break
     }
     case ContentSectionModelType.ABOUT_TEXT: {
-      console.log('ABOUT TEXT', section)
-      render = (
+        render = (
         <AboutTextWrapper
           key={index}
           dangerouslySetInnerHTML={{

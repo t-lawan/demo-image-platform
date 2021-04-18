@@ -9,7 +9,7 @@ import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager";
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 import Jumbotron from "../jumbotron/jumbotron";
-import { Colours } from "../styles/styles";
+import { Colours, size } from "../styles/styles";
 
 
 const StyledCarousel = styled(Carousel)``
@@ -29,6 +29,10 @@ const Container = styled.div`
 const NavbarWrapper = styled.div`
   top: 0;
   width: 25%;
+  @media (max-width: ${size.mobileL}) {
+    width: 50%;
+    
+  }
 `
 const RepeaterContainer = styled(Container)`
   background: lightgray;

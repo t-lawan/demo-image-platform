@@ -5,19 +5,27 @@ import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
 import { DateManager } from "../../utility/date-manager";
 import { UpcomingWrapper } from "./upcoming-projects";
-
-
+import FaviconSVG from '../../assets/favicon.svg'
 
 const ProjectTitle = styled.li`
+  list-style-type: none;
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: inherit;
+    background-size: 20px;
+    background-image: url(${FaviconSVG});
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
   /* list-style-type: inherit; */
 `
-
-
 const ArchiveProjects = props => {
     let projects = props.projects;
     projects = projects.filter(project => {
         return project.type === ProjectType.ARCHIVE;
-        // return project.type === 'x';
     })
 
   return (

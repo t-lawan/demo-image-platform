@@ -85,7 +85,6 @@ class ImageCarousel extends React.Component {
   }
 
   previousSlide = () => {
-    console.log('SLIDE', this.carouselRef.current)
     if (this.state.currentSlide >= 0) {
       this.setState({
         currentSlide: this.state.currentSlide - 1

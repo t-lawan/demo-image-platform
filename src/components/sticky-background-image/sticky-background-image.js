@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { size } from "../styles/styles";
 
 const StickyBackgroundImageWrapper = styled.div`
   height: 15%;
@@ -8,6 +9,9 @@ const StickyBackgroundImageWrapper = styled.div`
   width: 100%;
   bottom: 0;
   position: sticky;
+  @media (max-width: ${size.mobileL}) {
+    height: 10%;
+  }
 `
 
 const FlexWrapper = styled.div`

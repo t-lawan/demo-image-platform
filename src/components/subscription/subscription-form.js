@@ -5,14 +5,15 @@ import { setErrors } from "@graphql-tools/utils"
 import axios from "axios"
 import FaviconSVG from "../../assets/favicon.svg"
 import GreenFaviconSVG from '../../assets/green-favicon.svg'
+import { size } from "../styles/styles";
 
 const SubscriptionFormWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  padding-top: 3rem;
+  justify-content: center;
+  /* padding-top: 3rem; */
 `
 
 const InputsWrapper = styled.div`
@@ -22,6 +23,9 @@ const InputsWrapper = styled.div`
   height: 100%;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: ${size.mobileL}) {
+    flex-direction: column;
+  }
 `
 
 const SubscribeButtonWrapper = styled.div`
@@ -36,6 +40,9 @@ const InputWrapper = styled.div`
   width: 30%;
   display: flex;
   flex-direction: column;
+  @media (max-width: ${size.mobileL}) {
+    width: 90%;
+  }
 `
 
 const StyledInput = styled.input`
@@ -60,15 +67,23 @@ const ErrorLabel = styled.p`
 `
 const Label = styled.p`
   color: white;
+  @media (max-width: ${size.mobileL}) {
+    margin: 0;
+  }
 `
 
 const LabelInner = styled.li`
+  @media (max-width: ${size.mobileL}) {
+    margin: 0;
+  }
   list-style-type: none;
   &:before {
     content: "";
     display: inline-block;
     color: inherit;
     background-size: 20px;
+    height: 20px;
+    width: 20px;
     background-image: url(${FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;

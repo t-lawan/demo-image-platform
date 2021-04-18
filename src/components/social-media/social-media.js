@@ -5,6 +5,7 @@ import Twitter from "../../assets/Twitter.png"
 import Instagram from "../../assets/Instagram.png"
 import Facebook from "../../assets/Facebook.png"
 import Email from "../../assets/email.png"
+import { connect } from "react-redux"
 
 const SocialMediaLinkWrapper = styled.div`
   padding: 0.5rem 1rem;
@@ -14,17 +15,22 @@ const SocialMediaLinkWrapper = styled.div`
   justify-content: center;
   align-items: baseline;
   margin: 1rem 0;
+  width: 80%;
 `
 
 const SocialMediaWrapper = styled.div``
 
 const SocialMediaLink = styled(Link)``
 
+const ExternalLink = styled.a`
+`
 const SocialMediaImage = styled.img`
   width: 25% !important;
 `
 
 const SocialMedia = props => {
+  console.log('PROPS', props)
+  
   return (
     <SocialMediaWrapper>
       <SocialMediaLinkWrapper>
@@ -46,4 +52,13 @@ const SocialMedia = props => {
   )
 }
 
-export default SocialMedia
+const mapStateToProps = state => {
+  return {
+    page_info: state.page_info
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(SocialMedia)

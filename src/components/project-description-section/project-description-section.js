@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
-import { richTextOptions } from "../../utility/richtext";
+import { richTextOptions } from "../../utility/richtext"
+import { size } from "../styles/styles"
 
 const ProjectDescriptionWrapper = styled.div`
   padding: 1rem;
@@ -10,6 +11,9 @@ const ProjectDescriptionWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  @media (max-width: ${size.mobileL}) {
+    padding: 0.25rem;
+  }
 `
 const FlexColumnWrapper = styled.div`
   display: flex;
@@ -17,6 +21,9 @@ const FlexColumnWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 60%;
+  @media (max-width: ${size.mobileL}) {
+    width: 90%;
+  }
 `
 const ProjectArtist = styled.h1`
   color: white;
@@ -31,8 +38,8 @@ const TextWrapper = styled.div`
   padding-top: 2rem;
 `
 const ProjectDescriptionSection = props => {
-    const project = props.project;
-    const section = props.section;
+  const project = props.project
+  const section = props.section
   return (
     <ProjectDescriptionWrapper>
       <FlexColumnWrapper>

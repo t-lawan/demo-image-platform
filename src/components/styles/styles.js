@@ -5,9 +5,18 @@ import FaviconSVG from "../../assets/favicon.svg"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 
 export const Colours = {
-  'green': ' #00d200'
+  green: " #00d200"
 }
 
+export const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "1500px"
+}
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Swiss721';
@@ -105,6 +114,10 @@ p, a, li, button{
   padding-top: 0;
   font-size: 1.3rem;
   line-height: 1.3;
+  @media (max-width: ${size.tablet}) {
+    font-size: 1rem;
+  }
+  
 }
 li {
 
@@ -122,13 +135,15 @@ li {
     display: flex;
   }
 
-  ${'' /* .carousel .slide img {
+  ${
+    "" /* .carousel .slide img {
     width: unset !important;
   }
 
   .carousel img {
     width: unset !important;
-  } */}
+  } */
+  }
   .slick-prev:before, .slick-next:before{
     color: ${Colours.green};
     font-family: 'Swiss721';
@@ -175,15 +190,6 @@ li {
         }
 `
 
-export const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "1500px"
-}
 
 export const TwoColumnSection = styled.div`
   display: grid;
