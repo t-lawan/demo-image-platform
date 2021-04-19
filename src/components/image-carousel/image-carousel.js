@@ -107,29 +107,7 @@ class ImageCarousel extends React.Component {
   render() {
     return (
       <StyledCarouselWrapper>
-        {/* <NavigationButtons
-          src={ArrowLeft}
-          onClick={this.previousSlide.bind(this)}
-        /> */}
-        {/* <StyledCarousel
-          centerMode={false}
-          swipeable={true}
-          dynamicHeight={false}
-          showStatus={false}
-          showThumbs={false}
-          showIndicators={false}
-          showStatus={false}
-          showArrows={false}
-          autoPlay={false}
-          stopOnHover={true}
-          infiniteLoop={true}
-          onChange={this.onChange.bind(this)}
-          selectedItem={this.state.currentSlide}
-        > */}
-        <StyledSlider ref={this.carouselRef} {...SliderSettings} 
-                      // prevArrow={ArrowImage(ArrowLeft, this.previousSlide.bind(this))} 
-                      // nextArrow={ArrowImage(ArrowRight, this.nextSlide.bind(this))}
-                      >
+        <StyledSlider ref={this.carouselRef} {...SliderSettings}>
 
           {this.props.images.map((im, index) => {
             let img = getImage(im.gatsbyImageData)
@@ -143,11 +121,6 @@ class ImageCarousel extends React.Component {
           })}
         {/* </StyledCarousel> */}
         </StyledSlider>
-{/* 
-        <NavigationButtons
-          src={ArrowRight}
-          onClick={this.nextSlide.bind(this)}
-        /> */}
       </StyledCarouselWrapper>
     )
   }

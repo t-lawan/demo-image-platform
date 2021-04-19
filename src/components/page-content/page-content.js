@@ -45,11 +45,12 @@ const GreenBar = styled.div`
 
 export const PageContent = props => {
   let page = props.page;
-  let currentProject = props.currentProject
+  let currentProject = props.currentProject;
+  let pageInfo = props.pageInfo;
   // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
-      {page.hasHorizontalScroll ? (
+      {page.hasHorizontalScroll && pageInfo.showCurrentProject ? (
         <SectionCarousel content={page.content} />
       ) : (
         <>
@@ -74,7 +75,8 @@ export const PageContent = props => {
 
 const mapStateToProps = state => {
   return {
-    currentProject: state.currentProject
+    currentProject: state.currentProject,
+    pageInfo: state.page_info
   }
 }
 
