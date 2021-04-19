@@ -20,7 +20,7 @@ const SocialMediaLinkWrapper = styled.div`
 
 const SocialMediaWrapper = styled.div``
 
-const SocialMediaLink = styled(Link)``
+const SocialMediaLink = styled.a``
 
 const ExternalLink = styled.a`
 `
@@ -29,21 +29,20 @@ const SocialMediaImage = styled.img`
 `
 
 const SocialMedia = props => {
-  console.log('PROPS', props)
-  
+  let pageInfo = props.page_info;
   return (
     <SocialMediaWrapper>
       <SocialMediaLinkWrapper>
-        <SocialMediaLink to={"/"}>
+        <SocialMediaLink target={'__blank'} href={pageInfo.facebookUrl}>
           <SocialMediaImage src={Facebook} alt="Email" />
         </SocialMediaLink>
-        <SocialMediaLink to={"/"}>
+        <SocialMediaLink target={'__blank'} href={pageInfo.twitterUrl}>
           <SocialMediaImage src={Twitter} alt="Twitter" />
         </SocialMediaLink>
-        <SocialMediaLink to={"/about"}>
+        <SocialMediaLink target={'__blank'} href={pageInfo.instagramUrl}>
           <SocialMediaImage src={Instagram} alt="Instagram" />
         </SocialMediaLink>
-        <SocialMediaLink to={"/subscribe"}>
+        <SocialMediaLink target={'__blank'} href={pageInfo.facebookUrl}>
           {/* Facebook */}
           <SocialMediaImage src={Facebook} alt="Facebook" />
         </SocialMediaLink>

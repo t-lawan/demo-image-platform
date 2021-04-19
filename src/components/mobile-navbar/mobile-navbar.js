@@ -103,8 +103,6 @@ const MobileNavbar = props => {
   const [showModal, setShowModal] = useState(false)
   let location = useLocation()
   let currentProject = props.currentProject
-
-  console.log('CURRENT PROJECT', currentProject)
   const isCurrentUrl = url => {
     let response = false
 
@@ -130,7 +128,6 @@ const MobileNavbar = props => {
     return response
   }
   const toggleModal = show => {
-    console.log("TOGGLE", showModal)
     setShowModal(show)
   }
   return (

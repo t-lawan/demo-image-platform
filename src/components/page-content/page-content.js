@@ -7,8 +7,8 @@ import { GenerateContentSection } from "../../utility/richtext"
 import Ticker from "../ticker/ticker"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { connect } from "react-redux"
-import SectionCarousel from "../section-carousel/section-carousel";
-import MobileNavbar from "../mobile-navbar/mobile-navbar";
+import SectionCarousel from "../section-carousel/section-carousel"
+import MobileNavbar from "../mobile-navbar/mobile-navbar"
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -32,7 +32,7 @@ export const PageSectionWrapper = styled.div`
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 7fr 0.15fr;
+  grid-template-columns: 2fr 7fr;
   /* height: 100vh; */
   @media (max-width: ${size.mobileL}) {
     grid-template-columns: 1fr;
@@ -45,9 +45,8 @@ const GreenBar = styled.div`
 
 export const PageContent = props => {
   let page = props.page;
-  console.log('PAGE', page)
   let currentProject = props.currentProject
-        // {/* <HorizontalScrollContainer sections={page.content} /> */}
+  // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
     <PageWrapper image={currentProject.backgroundImage.file.url}>
       {page.hasHorizontalScroll ? (
@@ -56,18 +55,17 @@ export const PageContent = props => {
         <>
           <MobileNavbar />
           <TwoColumnWrapper>
-          <Navbar />
-          <PageSectionWrapper>
-            {page.content
-              ? page.content.map((con, index) =>
-                  GenerateContentSection(con, index, page)
-                )
-              : null}
-          </PageSectionWrapper>
-          <GreenBar />
-        </TwoColumnWrapper>
+            <Navbar />
+            <PageSectionWrapper>
+              {page.content
+                ? page.content.map((con, index) =>
+                    GenerateContentSection(con, index, page)
+                  )
+                : null}
+            </PageSectionWrapper>
+            {/* <GreenBar /> */}
+          </TwoColumnWrapper>
         </>
-
       )}
       <Ticker />
     </PageWrapper>

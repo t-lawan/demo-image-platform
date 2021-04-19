@@ -29,7 +29,7 @@ const Container = styled.div`
 `
 const NavbarWrapper = styled.div`
   top: 0;
-  width: 25%;
+  width: 22.2%;
   @media (max-width: ${size.mobileL}) {
     width: 50%;
     

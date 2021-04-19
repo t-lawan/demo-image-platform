@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { GlobalStyle } from "../styles/styles";
 import LandingPage from "../landing-page/landing-page";
 import State from "../state/state";
+import SEO from "../seo/seo";
 const LayoutWrapper = styled.div`
     /* padding: 1rem; */
     padding-top: 0;
@@ -17,6 +18,7 @@ const Layout = (props) => {
     <LayoutWrapper>
       <GlobalStyle />
       <State />
+      <SEO />
       <LandingPage isHome={props.isHome} />
 
       {props.children}

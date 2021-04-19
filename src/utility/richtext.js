@@ -144,9 +144,7 @@ export const GenerateContentSection = (section, index, entity) => {
           JSON.parse(section.text.raw),
           richTextOptions
         )
-        console.log('XX', htmlString)
-        htmlString = `<li class="with-star">${htmlString}</li>`
-        console.log('LI', JSON.parse(section.text.raw))
+        htmlString = `<li class="with-star">${htmlString}</li>`;
         render = (
         <AboutTextWrapper
           key={index}

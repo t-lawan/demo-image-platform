@@ -74,7 +74,9 @@ export class Convert {
       contentfulModel.twitterUrl,
       contentfulModel.facebookUrl,
       contentfulModel.instagramUrl,
-      contentfulModel.loadingVideoUrl
+      contentfulModel.loadingVideoUrl,
+      contentfulModel.showCurrentProject,
+      contentfulModel.sharingImage
     )
   }
 
