@@ -14,6 +14,7 @@ const LandingPageWrapper = styled.div`
     background: black;
     z-index: ${Layers.LANDING_PAGE};
     display: ${props => (props.show ? "inherit" : "none")};
+    cursor: pointer;
 `
 
 const LandingPageContainer = styled.div`

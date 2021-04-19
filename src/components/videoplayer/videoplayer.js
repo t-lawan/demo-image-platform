@@ -81,6 +81,7 @@ class VideoPlayer extends React.Component {
             height={"100vh"}
             width={"100vw"}
             muted={true}
+            loop={this.props.isOnLandingPage}
             // onReady={onReady}
             
           />

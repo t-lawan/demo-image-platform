@@ -74,6 +74,7 @@ const State = props => {
           twitterUrl
           showTicker
           loadingVideoUrl
+          showCurrentProject
         }
         allContentfulProject {
           edges {
