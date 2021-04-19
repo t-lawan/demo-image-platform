@@ -9,7 +9,8 @@ export class PageInfoModel {
     facebookUrl;
     instagramUrl;
     loadingVideoUrl;
-    constructor(id,title, description, showTicker, tickerImage, tickerText, twitterUrl, facebookUrl, instagramUrl, loadingVideoUrl, showCurrentProject, sharingImage, backgroundImage) {
+    email;
+    constructor(id,title, description, showTicker, tickerImage, tickerText, twitterUrl, facebookUrl, instagramUrl, email, loadingVideoUrl, showCurrentProject, sharingImage, backgroundImage) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -23,5 +24,6 @@ export class PageInfoModel {
         this.showCurrentProject = showCurrentProject;
         this.sharingImage = sharingImage;
         this.backgroundImage = backgroundImage;
+        this.email = email;
     }
 }

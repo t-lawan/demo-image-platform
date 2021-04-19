@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Twitter from "../../assets/Twitter.png"
 import Instagram from "../../assets/Instagram.png"
 import Facebook from "../../assets/Facebook.png"
-import Email from "../../assets/email.png"
+import Email from "../../assets/Mail.png"
 import { connect } from "react-redux"
 
 const SocialMediaLinkWrapper = styled.div`
@@ -44,9 +44,9 @@ const SocialMedia = props => {
         <SocialMediaLink target={'__blank'} href={pageInfo.instagramUrl}>
           <SocialMediaImage src={Instagram} alt="Instagram" />
         </SocialMediaLink>
-        <SocialMediaLink target={'__blank'} href={pageInfo.facebookUrl}>
+        <SocialMediaLink target={'__blank'} href={`mailto:${pageInfo.email}`}>
           {/* Facebook */}
-          <SocialMediaImage src={Facebook} alt="Facebook" />
+          <SocialMediaImage src={Email} alt="Email" />
         </SocialMediaLink>
       </SocialMediaLinkWrapper>
     </SocialMediaWrapper>
