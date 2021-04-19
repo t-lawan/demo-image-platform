@@ -60,7 +60,7 @@ const NavbarTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${props => props.isActive ? GreenFaviconSVG : WhiteFaviconSVG});
+    background-image: url(${props => props.isActive ? GreenFaviconSVG : FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
     margin-bottom: -5px;
