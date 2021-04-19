@@ -81,6 +81,10 @@ const FlexWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: ${size.mobileL}) {
+    flex-direction: column;
+    margin-bottom: 01rem;
+  }
 `
 
 const ImageCarouselWrapper = styled.div`
@@ -136,14 +140,18 @@ export const GenerateContentSection = (section, index, entity) => {
       break
     }
     case ContentSectionModelType.ABOUT_TEXT: {
+        let htmlString = documentToHtmlString(
+          JSON.parse(section.text.raw),
+          richTextOptions
+        )
+        console.log('XX', htmlString)
+        htmlString = `<li class="with-star">${htmlString}</li>`
+        console.log('LI', JSON.parse(section.text.raw))
         render = (
         <AboutTextWrapper
           key={index}
           dangerouslySetInnerHTML={{
-            __html: documentToHtmlString(
-              JSON.parse(section.text.raw),
-              richTextOptions
-            )
+            __html: htmlString
           }}
         >
           {}

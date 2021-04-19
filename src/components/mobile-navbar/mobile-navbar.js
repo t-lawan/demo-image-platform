@@ -9,6 +9,7 @@ import FaviconSVG from "../../assets/favicon.svg"
 import { Link } from "gatsby"
 import { PageUrls } from "../../utility/helper"
 import { useLocation } from "@reach/router"
+import { connect } from "react-redux"
 
 const HomeNavbarImage = styled.img`
   /* width: 15%; */
@@ -55,7 +56,8 @@ const MobileModal = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: red;
+  background-image: url(${props => props.image || "none"});
+  /* background: red; */
   z-index: ${Layers.MOBILE_NAVBAR};
 
   display: ${props => (props.show ? "block" : "none")};
@@ -100,7 +102,9 @@ const MobileNavbarTitle = styled.li`
 const MobileNavbar = props => {
   const [showModal, setShowModal] = useState(false)
   let location = useLocation()
+  let currentProject = props.currentProject
 
+  console.log('CURRENT PROJECT', currentProject)
   const isCurrentUrl = url => {
     let response = false
 
@@ -146,7 +150,7 @@ const MobileNavbar = props => {
         {/* <p> Link</p> */}
       </MobileNavbarWrapper>
 
-      <MobileModal show={showModal}>
+      <MobileModal image={currentProject.backgroundImage.file.url} show={showModal}>
         <CloseImageWrapper>
           <CloseImage src={CloseIcon} onClick={() => toggleModal(false)} />
         </CloseImageWrapper>
@@ -190,4 +194,14 @@ const MobileNavbar = props => {
   )
 }
 
-export default MobileNavbar
+
+const mapStateToProps = state => {
+  return {
+    currentProject: state.currentProject
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(MobileNavbar)

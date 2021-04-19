@@ -139,6 +139,20 @@ li {
     color: ${Colours.green} !important;
   }
 
+  .with-star{
+    list-style-type: none;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: inherit;
+    background-size: 20px;
+    background-image: url(${GreenFaviconSVG});
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+
   .slide {
     justify-content: center;
     align-items: center;

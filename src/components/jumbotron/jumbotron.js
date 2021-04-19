@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel"
 import { DateManager } from "../../utility/date-manager"
 import GreenFavicon from "../../assets/green-favicon.png"
-import { Colours } from "../styles/styles";
+import { Colours, size } from "../styles/styles";
 
 const JumbotronWrapper = styled.div`
   display: flex;
@@ -27,6 +27,9 @@ const JumbotronImage = styled.img`
   width: 2.5% !important;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+  @media (max-width: ${size.tablet}) {
+    width: 5% !important;
+  }
 `
 const Jumbotron = props => {
     let currentProject = props.currentProject;
