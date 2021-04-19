@@ -15,6 +15,8 @@ import Video from '../assets/video/VIDEO.mp4'
 import AudioSection from "../components/audio-section/audio-section";
 import PDFSection from "../components/pdf-section/pdf-section";
 import ProjectDescriptionSection from "../components/project-description-section/project-description-section";
+import Jumbotron from "../components/jumbotron/jumbotron";
+
 const PARAGRAPH = styled.p``
 
 const EXTERNALLINK = styled.a`
@@ -138,6 +140,13 @@ export const GenerateContentSection = (section, index, entity) => {
         </TextWrapper>
       )
       break
+    }
+
+    case ContentSectionModelType.JUMBOTRON: {
+      render = (
+        <Jumbotron key={index} />
+      )
+      break;
     }
     case ContentSectionModelType.ABOUT_TEXT: {
         let htmlString = documentToHtmlString(

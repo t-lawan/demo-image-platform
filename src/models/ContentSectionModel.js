@@ -49,5 +49,6 @@ export const ContentSectionModelType = {
     PDF: 'PDF',
     VIDEO: 'VIDEO',
     PROJECT_DESCRIPTION: 'PROJECT_DESCRIPTION',
-    ABOUT_TEXT: 'ABOUT_TEXT'
+    ABOUT_TEXT: 'ABOUT_TEXT',
+    JUMBOTRON: 'JUMBOTRON'
 }
