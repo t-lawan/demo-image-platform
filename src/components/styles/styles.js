@@ -151,9 +151,9 @@ li {
     background-image: url(${GreenFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    ${'' /* margin-bottom: -5px; */}
-
-p {
+    ${"" /* margin-bottom: -5px; */}
+  }
+  p {
   display: inline;
 }
   }
