@@ -6,6 +6,7 @@ import GreenFavicon from "../../assets/green-favicon.png"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import CloseIcon from "../../assets/CloseIcon.png"
 import FaviconSVG from "../../assets/favicon.svg"
+import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 import { Link } from "gatsby"
 import { PageUrls } from "../../utility/helper"
 import { useLocation } from "@reach/router"
@@ -92,10 +93,10 @@ const MobileNavbarTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${props =>
-      props.isActive ? GreenFaviconSVG : FaviconSVG});
+    background-image: url(${props => props.isActive ? GreenFaviconSVG : WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
+    margin-bottom: -5px;
   }
 `
 
@@ -158,7 +159,7 @@ const MobileNavbar = props => {
               about{" "}
             </MobileNavbarTitle>
           </MobileNavbarLink>
-          <MobileNavbarLink
+          {/* <MobileNavbarLink
             activeClassName={"active-link"}
             to={PageUrls.SUBSCRIBE}
           >
@@ -166,7 +167,7 @@ const MobileNavbar = props => {
               {" "}
               subscribe{" "}
             </MobileNavbarTitle>
-          </MobileNavbarLink>
+          </MobileNavbarLink> */}
           <MobileNavbarLink
             activeClassName={"active-link"}
             to={PageUrls.ARCHIVE}

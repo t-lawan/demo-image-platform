@@ -1,8 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
-import Soy from '../../assets/soy.png'
-import Zero from '../../assets/zeros.jpg'
 const PDFWrapper = styled.div`
   width: 100%;
   height: 100vh;

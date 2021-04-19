@@ -76,7 +76,8 @@ export class Convert {
       contentfulModel.instagramUrl,
       contentfulModel.loadingVideoUrl,
       contentfulModel.showCurrentProject,
-      contentfulModel.sharingImage
+      contentfulModel.sharingImage,
+      contentfulModel.backgroundImage
     )
   }
 

@@ -18,14 +18,16 @@ const SocialMediaLinkWrapper = styled.div`
   width: 80%;
 `
 
-const SocialMediaWrapper = styled.div``
+const SocialMediaWrapper = styled.div`
+  padding: 0 2rem;
+`
 
 const SocialMediaLink = styled.a``
 
 const ExternalLink = styled.a`
 `
 const SocialMediaImage = styled.img`
-  width: 25% !important;
+  width: 50% !important;
 `
 
 const SocialMedia = props => {

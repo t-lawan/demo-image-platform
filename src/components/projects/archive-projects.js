@@ -19,6 +19,7 @@ const ProjectTitle = styled.li`
     background-image: url(${FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
+    margin-bottom: -5px;
 }
   /* list-style-type: inherit; */
 `

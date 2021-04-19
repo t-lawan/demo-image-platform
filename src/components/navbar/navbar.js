@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Favicon from "../../assets/favicon.png"
 import FaviconSVG from "../../assets/favicon.svg"
+import WhiteFaviconSVG from "../../assets/white-favicon.svg"
+
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import DEMOLOGO from "../../assets/DEMO_LOGO.png"
 import SocialMedia from "../social-media/social-media"
@@ -57,10 +59,10 @@ const NavbarTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${props =>
-      props.isActive ? GreenFaviconSVG : FaviconSVG});
+    background-image: url(${props => props.isActive ? GreenFaviconSVG : WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
+    margin-bottom: -5px;
   }
 `
 
@@ -103,12 +105,12 @@ const Navbar = props => {
             about{" "}
           </NavbarTitle>
         </NavbarLink>
-        <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
+        {/* <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
             {" "}
             subscribe{" "}
           </NavbarTitle>
-        </NavbarLink>
+        </NavbarLink> */}
         <NavbarLink activeClassName={"active-link"} to={PageUrls.ARCHIVE}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.ARCHIVE)}>
             {" "}

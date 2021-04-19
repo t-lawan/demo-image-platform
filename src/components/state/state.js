@@ -55,39 +55,45 @@ const State = props => {
           }
         }
         contentfulPageInfo {
-    contentful_id
-    tickerImage {
-      gatsbyImageData(layout: FULL_WIDTH, resizingBehavior: FILL)
-      file {
-        url
-      }
-    }
-    title
-    description {
-      description
-    }
-    tickerText {
-      tickerText
-    }
-    instagramUrl
-    facebookUrl
-    twitterUrl
-    showTicker
-    loadingVideoUrl
-    showCurrentProject
-    sharingImage {
-      gatsbyImageData
-      file {
-        url
-        details {
-          image {
-            height
-            width
+          contentful_id
+          tickerImage {
+            gatsbyImageData(layout: FULL_WIDTH, resizingBehavior: FILL)
+            file {
+              url
+            }
+          }
+          title
+          description {
+            description
+          }
+          tickerText {
+            tickerText
+          }
+          instagramUrl
+          facebookUrl
+          twitterUrl
+          showTicker
+          loadingVideoUrl
+          showCurrentProject
+          sharingImage {
+            gatsbyImageData
+            file {
+              url
+              details {
+                image {
+                  height
+                  width
+                }
+              }
+            }
+          }
+          backgroundImage {
+            gatsbyImageData
+            file {
+              url
+            }
           }
         }
-      }
-    }
-  }
         allContentfulProject {
           edges {
             node {
