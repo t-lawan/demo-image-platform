@@ -30,12 +30,15 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Swiss721}) format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: block;
 }
 @font-face {
     font-family: 'FreightBigBook';
     src: url(${FreightBigBook}) format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: block;
+
 }
     * {
   box-sizing: border-box;
