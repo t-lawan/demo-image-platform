@@ -22,7 +22,7 @@ export const Layers = {
   LANDING_PAGE: 5000,
   MOBILE_NAVBAR: 2000,
   TICKER: 1000,
-  CAROUSEL_NAVIGATION: 1500 
+  CAROUSEL_NAVIGATION: 1500
 }
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -151,8 +151,11 @@ li {
     background-image: url(${GreenFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    ${'' /* margin-bottom: -5px; */}
 
+p {
+  display: inline;
+}
   }
 
   .slide {
@@ -216,7 +219,6 @@ li {
             }
         }
 `
-
 
 export const TwoColumnSection = styled.div`
   display: grid;
