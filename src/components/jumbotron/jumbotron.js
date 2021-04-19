@@ -21,6 +21,7 @@ const JumbotronWrapper = styled.div`
 const JumbotronTitle = styled.h1`
   color: ${Colours.green};
   display: inline-block;
+  font-size: 3.5rem !important;
 `
 
 const JumbotronImage = styled.img`

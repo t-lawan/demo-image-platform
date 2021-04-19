@@ -52,7 +52,7 @@ const NavbarLink = styled(Link)`
 
 const NavbarTitle = styled.li`
   list-style-type: none;
-  font-size: 2rem;
+  font-size: 2rem !important;
   &:before {
     content: "";
     display: inline-block;
