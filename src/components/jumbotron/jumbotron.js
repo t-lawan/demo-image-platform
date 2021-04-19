@@ -22,6 +22,9 @@ const JumbotronTitle = styled.h1`
   color: ${Colours.green};
   display: inline-block;
   font-size: 3.5rem !important;
+  @media (max-width: ${size.tablet}) {
+    font-size: 1.5rem !important;
+  }
 `
 
 const JumbotronImage = styled.img`
