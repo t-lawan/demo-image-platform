@@ -35,9 +35,9 @@ const ArchiveProjects = props => {
             <ProjectTitle key={index}> {project.artist}, {project.title}, {DateManager.createStartAndEndDateString(project.startDate, project.endDate)} </ProjectTitle>
         ))}
 
-        {projects.length === 0 ? (
+        {/* {projects.length === 0 ? (
           <p> There are no archived projects</p>
-        ) : null}
+        ) : null} */}
     </UpcomingWrapper>
   )
 }

@@ -96,7 +96,7 @@ const MobileNavbarTitle = styled.li`
     background-image: url(${props => props.isActive ? GreenFaviconSVG : FaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: -2.5px;
   }
 `
 
