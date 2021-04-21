@@ -18,7 +18,13 @@ import ProjectDescriptionSection from "../components/project-description-section
 import Jumbotron from "../components/jumbotron/jumbotron";
 
 const PARAGRAPH = styled.p``
+const CreditTitle = styled.p`
+  text-align: left;
+`
 
+const CreditName = styled.p`
+  text-align: end;
+`
 const EXTERNALLINK = styled.a`
   margin-bottom: 1rem;
   text-decoration: underline;
@@ -190,8 +196,8 @@ export const GenerateContentSection = (section, index, entity) => {
         <CreditsWrapper key={index}>
           {section.credits.map((credit, i) => (
             <FlexWrapper key={i}>
-              <p> {credit.title} </p>
-              <p> {credit.name} </p>
+              <CreditTitle> {credit.title} </CreditTitle>
+              <CreditName> {credit.name} </CreditName>
             </FlexWrapper>
           ))}
         </CreditsWrapper>

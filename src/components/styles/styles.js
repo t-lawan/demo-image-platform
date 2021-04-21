@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import Swiss721 from "../../assets/fonts/Swis721_Lt_BT_Light.ttf"
 import FreightBigBook from "../../assets/fonts/Freight_Big_Book.otf"
 import FaviconSVG from "../../assets/favicon.svg"
-import GreenFaviconSVG from "../../assets/green-favicon.svg"
+import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 
 export const Colours = {
   green: " #00d200"
@@ -151,7 +151,7 @@ li {
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${GreenFaviconSVG});
+    background-image: url(${WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
     ${"" /* margin-bottom: -5px; */}
