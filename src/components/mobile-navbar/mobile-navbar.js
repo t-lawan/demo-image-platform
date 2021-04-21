@@ -93,7 +93,7 @@ const MobileNavbarTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${props => props.isActive ? GreenFaviconSVG : FaviconSVG});
+    background-image: url(${props => props.isActive ? GreenFaviconSVG : WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
     margin-bottom: -2.5px;

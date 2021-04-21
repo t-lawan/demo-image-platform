@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
 import { DateManager } from "../../utility/date-manager";
 import { UpcomingWrapper } from "./upcoming-projects";
-import FaviconSVG from '../../assets/favicon.svg'
+import WhiteFaviconSVG from '../../assets/white-favicon.svg'
 
 const ProjectTitle = styled.li`
   list-style-type: none;
@@ -16,10 +16,11 @@ const ProjectTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: -2.5px;
+
 }
   /* list-style-type: inherit; */
 `

@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
 import { DateManager } from "../../utility/date-manager";
-import FaviconSVG from '../../assets/favicon.svg'
+import WhiteFaviconSVG from '../../assets/white-favicon.svg'
+
 export const UpcomingWrapper = styled.div`
   padding: 0.5rem 1rem;
   display: flex;
@@ -28,10 +29,10 @@ const ProjectTitle = styled.li`
     width: 20px;
     color: inherit;
     background-size: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: -2.5px;
 }
   /* list-style-type: inherit; */
 `

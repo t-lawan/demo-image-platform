@@ -1,11 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import Navbar from "../navbar/navbar"
-import SocialMedia from "../social-media/social-media"
 import { connect } from "react-redux"
 import { GenerateContentSection } from "../../utility/richtext"
-import Image from "../../assets/IMAGE.jpg"
-import Favicon from "../../assets/favicon.png"
 import GreenFavicon from "../../assets/green-favicon.png"
 import { DateManager } from "../../utility/date-manager"
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
