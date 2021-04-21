@@ -55,7 +55,7 @@ function SEO() {
   let title = contentfulPageInfo.title
   let url =  "https://demomovingimage.net/";
 
-  const metaDescription = contentfulPageInfo.description
+  const metaDescription = contentfulPageInfo.description.description
   // const defaultTitle = site.siteMetadata?.title
 
   return (
