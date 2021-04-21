@@ -29,6 +29,12 @@ const ArchiveProjects = props => {
     projects = projects.filter(project => {
         return project.type === ProjectType.ARCHIVE;
     })
+    if(projects){
+      projects = projects.sort((a,b) => {
+        return DateManager.numberOfDaysBetween(b.startDate, a.startDate);
+      })
+    }
+
 
   return (
     <UpcomingWrapper>

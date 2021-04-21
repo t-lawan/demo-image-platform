@@ -13,7 +13,7 @@ export const UpcomingWrapper = styled.div`
   /* height: 100%; */
   justify-content: space-between;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   /* margin: 2rem; */
   height: 100vh;
   height: 90vh;
@@ -43,6 +43,12 @@ const UpcomingProjects = props => {
     projects = projects.filter(project => {
         return project.type === ProjectType.UPCOMING;
     })
+
+
+    projects = projects.sort((a,b) => {
+      return DateManager.numberOfDaysBetween(a.startDate, b.startDate);
+    })
+
 
   return (
     <UpcomingWrapper>
