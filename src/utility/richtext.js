@@ -201,7 +201,7 @@ export const GenerateContentSection = (section, index, entity) => {
     case ContentSectionModelType.MEDIA_PARTNERS: {
       render = (
         <MediaWrapper key={index}>
-          <p> Media Partners </p>
+          {/* <p> Media Partners </p> */}
           <FlexImagesWrapper>
             {section.mediaPartners.map((mp, i) => {
               let image = getImage(mp.gatsbyImageData)

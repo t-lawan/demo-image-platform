@@ -37,8 +37,10 @@ const JumbotronImage = styled.img`
 `
 const Jumbotron = props => {
     let currentProject = props.currentProject;
+    console.log('PROJECT', currentProject)
   return (
-    <JumbotronWrapper>
+    currentProject ? (
+      <JumbotronWrapper>
       <JumbotronTitle>{currentProject.artist}</JumbotronTitle>
       <JumbotronImage src={GreenFavicon} />
       <JumbotronTitle>{currentProject.title}</JumbotronTitle>
@@ -50,6 +52,8 @@ const Jumbotron = props => {
         )}{" "}
       </JumbotronTitle>
     </JumbotronWrapper>
+    ) : null
+
   )
 }
 
