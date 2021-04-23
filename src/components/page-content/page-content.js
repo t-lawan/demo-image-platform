@@ -32,7 +32,7 @@ export const PageSectionWrapper = styled.div`
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 2.5fr 7fr;
   /* height: 100vh; */
   @media (max-width: ${size.mobileL}) {
     grid-template-columns: 1fr;
