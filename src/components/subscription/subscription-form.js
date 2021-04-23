@@ -4,8 +4,9 @@ import styled from "styled-components"
 import { setErrors } from "@graphql-tools/utils"
 import axios from "axios"
 import FaviconSVG from "../../assets/favicon.svg"
-import GreenFaviconSVG from '../../assets/green-favicon.svg'
+import WhiteFaviconSVG from '../../assets/white-favicon.svg'
 import { size } from "../styles/styles";
+import queryString from 'query-string';
 
 const SubscriptionFormWrapper = styled.div`
   width: 100%;
@@ -72,6 +73,10 @@ const Label = styled.p`
   }
 `
 
+const SubscriptionText = styled.p`
+  color: white;
+`
+
 const LabelInner = styled.li`
   @media (max-width: ${size.mobileL}) {
     margin: 0;
@@ -84,10 +89,10 @@ const LabelInner = styled.li`
     background-size: 20px;
     height: 20px;
     width: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: -2.5px;
   }
 `
 const SubscriptionForm = props => {
@@ -167,24 +172,19 @@ const SubscriptionForm = props => {
     formData.set("EMAIL", email)
     // formData.set("email", email)
     // formData.set("b_2248085299b940b0726178ce2_2695e32256", "")
-    // formData.set("u", "2248085299b940b0726178ce2")
-    // formData.set("id", "2695e32256")
+    formData.set("u", "2248085299b940b0726178ce2")
+    formData.set("id", "2695e32256")
 
-    axios({
+    let config = {
+      headers: {
+        // "Access-Control-Allow-Origin": "*",
+        "Content-Type": "multipart/form-data"
+      },
+      data: formData,
       method: "post",
-      url: "http://demomovingimage.us18.list-manage.com/subscribe/post-json?u=2248085299b940b0726178ce2&id=2695e32256",
-      // body: encode({
-      //   ...formData
-      // }),
-      
-      // data: new URLSearchParams(formData).toString(),
-      withCredentials: true,
-      data:formData,
-      // headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials" :'true' }
-      // headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data",  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
-      headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data"},
-      // headers: { "Content-Type": "application/json"}
-    })
+      url:  `https://demomovingimage.us18.list-manage.com/subscribe/post-json?u=2248085299b940b0726178ce2&amp;id=2695e32256&c=?}`
+    }
+    axios(config)
       .then(response => {
         console.log("Response", response)
       })
@@ -194,7 +194,8 @@ const SubscriptionForm = props => {
   }
   return (
     <SubscriptionFormWrapper ref={formDataRef}>
-      <form
+      {!hasSubmitted ? (
+        <form
         name="subscription_test"
         method="POST"
         data-netlify="true"
@@ -252,6 +253,10 @@ const SubscriptionForm = props => {
           </SubscribeButton>
         </SubscribeButtonWrapper>
       </form>
+      ) : (
+        <SubscriptionText> Thank you for subscribing </SubscriptionText>
+      )}
+
     </SubscriptionFormWrapper>
   )
 }
@@ -262,7 +267,6 @@ const mapStateToProps = state => {
     pages: state.pages
   }
 }
-
 export default connect(
   mapStateToProps,
   null

@@ -106,12 +106,12 @@ const Navbar = props => {
             about{" "}
           </NavbarTitle>
         </NavbarLink>
-        {/* <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
+        <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
             {" "}
             subscribe{" "}
           </NavbarTitle>
-        </NavbarLink> */}
+        </NavbarLink>
         <NavbarLink activeClassName={"active-link"} to={PageUrls.ARCHIVE}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.ARCHIVE)}>
             {" "}
