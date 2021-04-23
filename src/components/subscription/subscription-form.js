@@ -216,7 +216,7 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.firstName}>
               {" "}
-              {errors.firstName ? errors.firstName : "."}
+              {errors.firstName ? errors.firstName : ""}
             </ErrorLabel>
           </InputWrapper>
           <InputWrapper>
@@ -230,7 +230,7 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.lastName}>
               {" "}
-              {errors.lastName ? errors.lastName : "."}
+              {errors.lastName ? errors.lastName : ""}
             </ErrorLabel>
           </InputWrapper>
           <InputWrapper>
