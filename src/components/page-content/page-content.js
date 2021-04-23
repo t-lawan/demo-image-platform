@@ -9,6 +9,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { connect } from "react-redux"
 import SectionCarousel from "../section-carousel/section-carousel"
 import MobileNavbar from "../mobile-navbar/mobile-navbar"
+import { getCorrectBackgroundImage } from "../../utility/helper";
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -49,7 +50,7 @@ export const PageContent = props => {
   let pageInfo = props.pageInfo;
   // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
-    <PageWrapper image={currentProject.backgroundImage.file.url}>
+    <PageWrapper image={getCorrectBackgroundImage(props.pageInfo, currentProject)}>
       {page.hasHorizontalScroll && pageInfo.showCurrentProject ? (
         <SectionCarousel content={page.content} />
       ) : (

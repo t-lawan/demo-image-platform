@@ -8,7 +8,7 @@ import CloseIcon from "../../assets/CloseIcon.png"
 import FaviconSVG from "../../assets/favicon.svg"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 import { Link } from "gatsby"
-import { PageUrls } from "../../utility/helper"
+import { PageUrls, getCorrectBackgroundImage } from "../../utility/helper"
 import { useLocation } from "@reach/router"
 import { connect } from "react-redux"
 
@@ -148,7 +148,7 @@ const MobileNavbar = props => {
         {/* <p> Link</p> */}
       </MobileNavbarWrapper>
 
-      <MobileModal image={currentProject.backgroundImage.file.url} show={showModal}>
+      <MobileModal image={getCorrectBackgroundImage(props.page_info, currentProject)} show={showModal}>
         <CloseImageWrapper>
           <CloseImage src={CloseIcon} onClick={() => toggleModal(false)} />
         </CloseImageWrapper>
@@ -195,7 +195,8 @@ const MobileNavbar = props => {
 
 const mapStateToProps = state => {
   return {
-    currentProject: state.currentProject
+    currentProject: state.currentProject,
+    page_info: state.page_info
   }
 }
 
