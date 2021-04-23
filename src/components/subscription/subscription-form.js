@@ -52,6 +52,7 @@ const StyledInput = styled.input`
   border-bottom: 1px solid white;
   height: 2rem;
   color: white;
+  outline: none;
 `
 
 const SubscribeButton = styled.button`
@@ -65,6 +66,7 @@ const SubscribeButton = styled.button`
 const ErrorLabel = styled.p`
   font-size: 1.1rem;
   visibility: ${props => (props.hide ? "visibility" : "hidden")};
+  color: white;
 `
 const Label = styled.p`
   color: white;
@@ -242,7 +244,7 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.email}>
               {" "}
-              {errors.email ? errors.email : "."}
+              {errors.email ? errors.email : ""}
             </ErrorLabel>
           </InputWrapper>
         </InputsWrapper>

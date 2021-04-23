@@ -49,6 +49,10 @@ export const GlobalStyle = createGlobalStyle`
     background: black;
   }
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
 html,
 body {
   font-family: 'Swiss721';
