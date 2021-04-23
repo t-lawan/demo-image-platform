@@ -65,6 +65,7 @@ const ImageWrapper = styled.div`
 
 const ImageDescription = styled.p`
   text-align: left;
+  font-size: 1.67rem;
 `
 
 const ArrowImage = (image, func) => {

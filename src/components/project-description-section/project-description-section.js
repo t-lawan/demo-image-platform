@@ -28,14 +28,22 @@ const FlexColumnWrapper = styled.div`
 const ProjectArtist = styled.h1`
   color: white;
   align-self: flex-start;
+  margin: 0;
+  font-size: 3rem;
+
 `
 
 const ProjectTitle = styled.h1`
   color: black;
   align-self: flex-start;
+  font-size: 3rem;
 `
 const TextWrapper = styled.div`
   padding-top: 2rem;
+  text-align: justify;
+  p {
+    font-size: 1.67rem;
+  }
 `
 const ProjectDescriptionSection = props => {
   const project = props.project

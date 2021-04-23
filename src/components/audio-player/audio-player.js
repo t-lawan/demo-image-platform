@@ -7,7 +7,7 @@ import { size } from "../styles/styles";
 const AudioResourceWrapper = styled.section`
   /* display: flex;
   flex-direction: row; */
-  padding: 1em 0;
+  padding: 0.25rem 0;
   @media (min-width: ${size.laptopM}) {
     padding: 0.7em 0 0.3em;
   }

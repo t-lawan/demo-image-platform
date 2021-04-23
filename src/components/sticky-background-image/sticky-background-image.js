@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { size } from "../styles/styles";
+import { size, Colours } from "../styles/styles";
 
 const StickyBackgroundImageWrapper = styled.div`
   height: 15%;
   /* background: green; */
+  border-top: 1px solid ${Colours.green};
   width: 100%;
   bottom: 0;
   position: sticky;

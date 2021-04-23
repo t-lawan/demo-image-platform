@@ -39,6 +39,7 @@ color: ${props => props.colour};
 `
 const AudioDescription = styled.p`
   /* width: 50%; */
+  font-size: 1.67rem;
 `
 
 const AudioPlayerWrapper = styled.div`

@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import { GenerateContentSection } from "../../utility/richtext"
 import Navbar from "../navbar/navbar";
 import GreenFavicon from "../../assets/green-favicon.png"
+import WhiteFavicon from "../../assets/white-favicon.png"
 import { DateManager } from "../../utility/date-manager";
 import StickyBackgroundImage from "../sticky-background-image/sticky-background-image";
 import Jumbotron from "../jumbotron/jumbotron";
@@ -156,7 +157,7 @@ class SectionCarousel extends React.Component {
             key={index}
             image={currentProject.backgroundImage.file.url}
           >
-            <FaviconImage src={GreenFavicon} />
+            <FaviconImage src={WhiteFavicon} />
             <RepeaterContainerWrapper>
               {GenerateContentSection(section, index, currentProject)}
             </RepeaterContainerWrapper>

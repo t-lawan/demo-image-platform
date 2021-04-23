@@ -51,7 +51,7 @@ export const PageContent = props => {
   // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
     <PageWrapper image={getCorrectBackgroundImage(props.pageInfo, currentProject)}>
-      {page.hasHorizontalScroll && pageInfo.showCurrentProject ? (
+      {true ? (
         <SectionCarousel content={page.content} />
       ) : (
         <>

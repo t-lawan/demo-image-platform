@@ -41,11 +41,13 @@ const ArtistExhibitionTitle = styled.h2`
   font-family: 'FreightBigBook';
   font-style: normal;
   font-weight: normal;
+  font-size: 4rem;
 
 `
 
 const Description = styled.p`
   color: white;
+  font-size: 1.67rem;
 `
 
 class VideoPlayer extends React.Component {
