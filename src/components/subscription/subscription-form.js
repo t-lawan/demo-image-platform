@@ -256,7 +256,7 @@ const SubscriptionForm = props => {
         </SubscribeButtonWrapper>
       </form>
       ) : (
-        <SubscriptionText> Thank you for subscribing </SubscriptionText>
+        <SubscriptionText> Thank you </SubscriptionText>
       )}
 
     </SubscriptionFormWrapper>
