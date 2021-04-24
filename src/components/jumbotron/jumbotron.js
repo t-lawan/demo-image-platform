@@ -16,6 +16,7 @@ const JumbotronWrapper = styled.div`
   position: absolute;
   left: 0;
   bottom: 20%;
+  font-family: "FreightBigBook";
 `
 
 const JumbotronTitle = styled.h1`

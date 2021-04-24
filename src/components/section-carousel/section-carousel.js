@@ -15,7 +15,9 @@ import MobileNavbar from "../mobile-navbar/mobile-navbar";
 
 const StyledCarousel = styled(Carousel)``
 
-const SectionCarouselWrapper = styled.div``
+const SectionCarouselWrapper = styled.div`
+font-family: 'AkzidenzGrotesk';
+`
 
 const Container = styled.div`
   height: 100vh;

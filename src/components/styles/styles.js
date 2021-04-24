@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components"
 import Swiss721 from "../../assets/fonts/Swis721_Lt_BT_Light.ttf"
 import FreightBigBook from "../../assets/fonts/Freight_Big_Book.otf"
-import FaviconSVG from "../../assets/favicon.svg"
+import AkzidenzGrotesk from "../../assets/fonts/Akzidenz-Grotesk.ttf"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 
 export const Colours = {
@@ -32,6 +32,15 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: block;
 }
+
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url(${AkzidenzGrotesk}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 @font-face {
     font-family: 'FreightBigBook';
     src: url(${FreightBigBook}) format('opentype');
@@ -55,7 +64,7 @@ textarea:focus, input:focus{
 }
 html,
 body {
-  font-family: 'Swiss721';
+  font-family: 'FreightBigBook';
   width: 100vw;
   width: 100%;
   height: 100%;

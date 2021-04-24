@@ -235,7 +235,7 @@ const SubscriptionForm = props => {
           </InputWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>Email</LabelInner>
+              <LabelInner>E-mail</LabelInner>
             </Label>
             <StyledInput
               type="text"
