@@ -101,7 +101,7 @@ const Navbar = props => {
     <NavbarWrapper>
       <NavbarLinkWrapper>
         <NavbarLink to={"/"}>
-          <HomeNavbarImage image={image} alt="Favicon" />
+          <HomeNavbarImage image={image} />
         </NavbarLink>
         <NavbarLink activeClassName={"active-link"} to={PageUrls.ABOUT}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.ABOUT)}>
