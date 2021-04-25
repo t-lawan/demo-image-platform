@@ -1,6 +1,7 @@
 export const PageUrls = {
     ABOUT: '/about',
     SUBSCRIBE: '/subscribe',
+    NEWSLETTER: '/newsletter',
     ARCHIVE: '/archive',
     UPCOMING: '/upcoming'
 }

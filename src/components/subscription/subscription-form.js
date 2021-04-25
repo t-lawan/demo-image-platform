@@ -62,6 +62,7 @@ const SubscribeButton = styled.button`
   background: inherit;
   text-decoration: underline;
   color: white;
+  font-family: 'FreightBigBook';  
 `
 const ErrorLabel = styled.p`
   font-size: 1.1rem;

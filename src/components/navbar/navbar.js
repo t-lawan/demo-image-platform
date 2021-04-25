@@ -82,8 +82,8 @@ const Navbar = props => {
         response = PageUrls.ARCHIVE === location.pathname
         break
       }
-      case PageUrls.SUBSCRIBE: {
-        response = PageUrls.SUBSCRIBE === location.pathname
+      case PageUrls.NEWSLETTER: {
+        response = PageUrls.NEWSLETTER === location.pathname
         break
       }
       case PageUrls.UPCOMING: {
@@ -106,8 +106,8 @@ const Navbar = props => {
             about{" "}
           </NavbarTitle>
         </NavbarLink>
-        <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
-          <NavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
+        <NavbarLink activeClassName={"active-link"} to={PageUrls.NEWSLETTER}>
+          <NavbarTitle isActive={isCurrentUrl(PageUrls.NEWSLETTER)}>
             {" "}
             newsletter{" "}
           </NavbarTitle>

@@ -116,8 +116,8 @@ const MobileNavbar = props => {
         response = PageUrls.ARCHIVE === location.pathname
         break
       }
-      case PageUrls.SUBSCRIBE: {
-        response = PageUrls.SUBSCRIBE === location.pathname
+      case PageUrls.NEWSLETTER: {
+        response = PageUrls.NEWSLETTER === location.pathname
         break
       }
       case PageUrls.UPCOMING: {
@@ -161,9 +161,9 @@ const MobileNavbar = props => {
           </MobileNavbarLink>
           <MobileNavbarLink
             activeClassName={"active-link"}
-            to={PageUrls.SUBSCRIBE}
+            to={PageUrls.NEWSLETTER}
           >
-            <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
+            <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.NEWSLETTER)}>
               {" "}
               newsletter{" "}
             </MobileNavbarTitle>
