@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import Favicon from "../../assets/favicon.png"
-import FaviconSVG from "../../assets/favicon.svg"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
-
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import DEMOLOGO from "../../assets/DEMO_LOGO.png"
 import SocialMedia from "../social-media/social-media"
 import { useLocation } from "@reach/router"
 import { PageUrls } from "../../utility/helper"
 import { Colours, size } from "../styles/styles"
+import { connect } from "react-redux"
+
 const NavbarWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -38,9 +38,9 @@ const NavbarLinkWrapper = styled.div`
 
   /* margin: 2rem; */
 `
-const HomeNavbarImage = styled.img`
+const HomeNavbarImage = styled(GatsbyImage)`
   /* width: 15%; */
-  width: 100%;
+  /* width: 100%; */
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -49,6 +49,7 @@ const NavbarLink = styled(Link)`
     color: ${Colours.green} !important;
   }
 `
+
 
 const NavbarTitle = styled.li`
   list-style-type: none;
@@ -69,6 +70,8 @@ const NavbarTitle = styled.li`
 
 const Navbar = props => {
   let location = useLocation()
+  let image = getImage(props.pageInfo.navbarImage.gatsbyImageData);
+  console.log('IMAGE', image)
 
   const isCurrentUrl = url => {
     let response = false
@@ -98,7 +101,7 @@ const Navbar = props => {
     <NavbarWrapper>
       <NavbarLinkWrapper>
         <NavbarLink to={"/"}>
-          <HomeNavbarImage src={DEMOLOGO} alt="Favicon" />
+          <HomeNavbarImage image={image} alt="Favicon" />
         </NavbarLink>
         <NavbarLink activeClassName={"active-link"} to={PageUrls.ABOUT}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.ABOUT)}>
@@ -131,5 +134,12 @@ const Navbar = props => {
     </NavbarWrapper>
   )
 }
-
-export default Navbar
+const mapStateToProps = state => {
+  return {
+    pageInfo: state.page_info
+  }
+}
+export default connect(
+  mapStateToProps,
+  null
+)(Navbar)

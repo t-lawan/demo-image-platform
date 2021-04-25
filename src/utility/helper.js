@@ -7,7 +7,6 @@ export const PageUrls = {
 }
 
 export const getCorrectBackgroundImage = (pageInfo, currentProject) =>{
-    console.log('SHOW CURRENT PROJECT', pageInfo)
     if(pageInfo.showCurrentProject) {
         return currentProject.backgroundImage.file.url;
     } else {

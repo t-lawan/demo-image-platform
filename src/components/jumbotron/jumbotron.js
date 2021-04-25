@@ -38,7 +38,6 @@ const JumbotronImage = styled.img`
 `
 const Jumbotron = props => {
     let currentProject = props.currentProject;
-    console.log('PROJECT', currentProject)
   return (
     currentProject ? (
       <JumbotronWrapper>
