@@ -109,7 +109,7 @@ const Navbar = props => {
         <NavbarLink activeClassName={"active-link"} to={PageUrls.SUBSCRIBE}>
           <NavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
             {" "}
-            subscribe{" "}
+            newsletter{" "}
           </NavbarTitle>
         </NavbarLink>
         <NavbarLink activeClassName={"active-link"} to={PageUrls.ARCHIVE}>

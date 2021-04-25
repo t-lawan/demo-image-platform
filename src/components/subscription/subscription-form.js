@@ -76,6 +76,7 @@ const Label = styled.p`
 `
 
 const SubscriptionText = styled.p`
+  font-family: 'FreightBigBook';
   color: white;
 `
 

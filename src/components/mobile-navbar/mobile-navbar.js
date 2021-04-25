@@ -159,15 +159,15 @@ const MobileNavbar = props => {
               about{" "}
             </MobileNavbarTitle>
           </MobileNavbarLink>
-          {/* <MobileNavbarLink
+          <MobileNavbarLink
             activeClassName={"active-link"}
             to={PageUrls.SUBSCRIBE}
           >
             <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
               {" "}
-              subscribe{" "}
+              newsletter{" "}
             </MobileNavbarTitle>
-          </MobileNavbarLink> */}
+          </MobileNavbarLink>
           <MobileNavbarLink
             activeClassName={"active-link"}
             to={PageUrls.ARCHIVE}
