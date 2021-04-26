@@ -19,7 +19,7 @@ const HomeNavbarImage = styled.img`
 `
 
 const DemoLogoWrapper = styled.div`
-  width: 20%;
+  width: 25%;
 
 `
 
@@ -78,7 +78,7 @@ const MobileNavbarLinkWrapper = styled.div`
 `
 const MobileNavbarLink = styled(Link)`
   font-size: 1.3rem;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   color: white;
   .active-link {
     color: ${Colours.green} !important;
