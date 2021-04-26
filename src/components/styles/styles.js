@@ -55,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: black;
+    background: ${Colours.green};
   }
 }
 

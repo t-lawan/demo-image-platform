@@ -15,8 +15,8 @@ export const UpcomingWrapper = styled.div`
   justify-content: flex-start;
   align-items: baseline;
   /* margin: 2rem; */
-  height: 100vh;
-  height: 90vh;
+  /* height: 100vh; */
+  /* height: 90vh; */
   color: white;
 `
 
