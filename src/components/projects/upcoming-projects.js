@@ -12,7 +12,7 @@ export const UpcomingWrapper = styled.div`
   flex-direction: column;
   /* height: 100%; */
   justify-content: space-between;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   /* margin: 2rem; */
   height: 100vh;

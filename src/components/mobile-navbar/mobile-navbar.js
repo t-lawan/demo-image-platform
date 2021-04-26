@@ -3,6 +3,7 @@ import styled from "styled-components"
 import DEMOLOGO from "../../assets/DEMO_LOGO.png"
 import { size, Colours, Layers } from "../styles/styles"
 import GreenFavicon from "../../assets/green-favicon.png"
+import WhiteFavicon from "../../assets/white-favicon.png"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import CloseIcon from "../../assets/CloseIcon.png"
 import FaviconSVG from "../../assets/favicon.svg"
@@ -142,7 +143,7 @@ const MobileNavbar = props => {
         <ModalHeaderWrapper>
           <HomeNavbarImage
             onClick={() => toggleModal(true)}
-            src={GreenFavicon}
+            src={WhiteFavicon}
           />
         </ModalHeaderWrapper>
         {/* <p> Link</p> */}

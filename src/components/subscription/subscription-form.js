@@ -13,7 +13,7 @@ const SubscriptionFormWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   /* padding-top: 3rem; */
 `
 
@@ -60,7 +60,8 @@ const SubscribeButton = styled.button`
   border-radius: 0;
   border: 0;
   background: inherit;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  cursor: pointer;
   color: white;
   font-family: 'FreightBigBook';  
 `

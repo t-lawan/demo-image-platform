@@ -9,7 +9,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { connect } from "react-redux"
 import SectionCarousel from "../section-carousel/section-carousel"
 import MobileNavbar from "../mobile-navbar/mobile-navbar"
-import { getCorrectBackgroundImage } from "../../utility/helper";
+import { getCorrectBackgroundImage, PageUrls } from "../../utility/helper";
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -26,8 +26,10 @@ export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
   padding: 0 0.5rem;
   width: 90%;
+  padding-top: ${props => props.top};
   @media (max-width: ${size.mobileL}) {
     width: 100%;
+    padding-top: 0;
   }
 `
 
@@ -44,6 +46,34 @@ const GreenBar = styled.div`
   background: ${Colours.green};
 `
 
+const SetPageWrapperPadding = (url) => {
+  let response;
+  switch(url){
+    case PageUrls.ABOUT: {
+      response = '13.2%';
+      break;
+    }
+    case PageUrls.NEWSLETTER: {
+      response = '19.1%';
+      break;
+    }
+    case PageUrls.ARCHIVE: {
+      response = '29.3%';
+      break;
+    }
+    case PageUrls.UPCOMING: {
+      response = '36.6%';
+      break;
+    }
+
+    default: {
+      response = '0';
+    }
+  }
+
+  return response;
+}
+
 export const PageContent = props => {
   let page = props.page;
   let currentProject = props.currentProject;
@@ -58,7 +88,7 @@ export const PageContent = props => {
           <MobileNavbar />
           <TwoColumnWrapper>
             <Navbar />
-            <PageSectionWrapper>
+            <PageSectionWrapper top={SetPageWrapperPadding(page.url)}>
               {page.content
                 ? page.content.map((con, index) =>
                     GenerateContentSection(con, index, page)
