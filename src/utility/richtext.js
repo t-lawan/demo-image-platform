@@ -20,10 +20,14 @@ import Jumbotron from "../components/jumbotron/jumbotron";
 const PARAGRAPH = styled.p``
 const CreditTitle = styled.p`
   text-align: left;
+
 `
 
 const CreditName = styled.p`
   text-align: end;
+  @media (max-width: ${size.mobileM}) {
+    text-align: left;
+  }
 `
 const EXTERNALLINK = styled.a`
   margin-bottom: 1rem;
