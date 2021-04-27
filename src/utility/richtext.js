@@ -79,7 +79,7 @@ const FlexImagesWrapper = styled.div`
   /* align-items: flex-end; */
 `
 const ImageWrapper = styled.div`
-  width: 40%;
+  width: 25%;
 `
 
 const Image = styled(GatsbyImage)``
