@@ -21,11 +21,12 @@ const InputsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   justify-content: space-around;
   align-items: center;
   @media (max-width: ${size.mobileL}) {
     flex-direction: column;
+    height: 100%;
+
   }
 `
 

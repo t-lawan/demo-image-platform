@@ -8,14 +8,21 @@ export const Colours = {
   green: " #00d200"
 }
 
+
 export const size = {
   mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
+  mobileM: "420px",
+  mobileL: "520px",
+  mobileSL: "568px",
+  mobileXL: "736px",
   tablet: "768px",
+  tabletL: "1023px",
   laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "1500px"
+  laptopM: "1124px",
+  laptopL: "1400px",
+  desktopS: "1600px",
+  desktopM: "1900px",
+  desktop: "2260px",
 }
 
 export const Layers = {

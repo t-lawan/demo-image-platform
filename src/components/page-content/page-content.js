@@ -35,7 +35,7 @@ export const PageSectionWrapper = styled.div`
 
 export const TwoColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2.5fr 7fr;
+  grid-template-columns: 2fr 7fr;
   /* height: 100vh; */
   @media (max-width: ${size.mobileL}) {
     grid-template-columns: 1fr;
@@ -50,24 +50,33 @@ const SetPageWrapperPadding = (url) => {
   let response;
   switch(url){
     case PageUrls.ABOUT: {
-      response = '13.2%';
+      response = '22vh';
       break;
     }
     case PageUrls.NEWSLETTER: {
-      response = '19.1%';
+      response = '19.1vh';
+      response = '22.4vh';
+      response = '27.4vh';
+      response = '30vh';
       break;
     }
     case PageUrls.ARCHIVE: {
-      response = '29.3%';
+      response = '29.3vh';
+      response = '28.2vh';
+      response = '35.23vh';
       break;
     }
     case PageUrls.UPCOMING: {
-      response = '36.6%';
+      //HDPI
+      response = '43.1vh';
+      // MDPI
+      response = '45.5vh';
       break;
     }
 
     default: {
       response = '0';
+      break;
     }
   }
 

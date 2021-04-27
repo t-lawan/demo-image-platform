@@ -16,6 +16,8 @@ const NavbarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
   @media (max-width: ${size.mobileL}) {
 
      display: none;
@@ -31,16 +33,23 @@ const NavbarLinkWrapper = styled.div`
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  height: 20%;
+  height: 50vh;
   justify-content: space-between;
   align-items: baseline;
   font-family: "FreightBigBook";
+  /* background: red; */
 
   /* margin: 2rem; */
 `
 const HomeNavbarImage = styled(GatsbyImage)`
   /* width: 15%; */
   /* width: 100%; */
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-bottom: 5vh;
+  @media (min-width: ${size.desktopS}) {
+    width: 80%;
+  }
 `
 const NavbarLink = styled(Link)`
   padding-left: 1rem;
@@ -55,7 +64,7 @@ const NavbarTitle = styled.li`
   list-style-type: none;
   font-size: 2rem !important;
   margin-bottom: 0.3rem;
-  
+
   &:before {
     content: "";
     display: inline-block;
@@ -73,7 +82,6 @@ const NavbarTitle = styled.li`
 const Navbar = props => {
   let location = useLocation()
   let image = getImage(props.pageInfo.navbarImage.gatsbyImageData);
-  console.log('IMAGE', image)
 
   const isCurrentUrl = url => {
     let response = false
