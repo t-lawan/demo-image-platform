@@ -62,6 +62,7 @@ const TextWrapper = styled.div`
 `
 
 const AboutTextWrapper = styled(TextWrapper)`
+  padding: 0;
   color: white;
 `
 
@@ -78,7 +79,7 @@ const FlexImagesWrapper = styled.div`
   /* align-items: flex-end; */
 `
 const ImageWrapper = styled.div`
-  width: 30%;
+  width: 40%;
 `
 
 const Image = styled(GatsbyImage)``

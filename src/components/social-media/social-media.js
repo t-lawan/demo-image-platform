@@ -26,7 +26,7 @@ const SocialMediaLink = styled.a``
 
 const ExternalLink = styled.a``
 const SocialMediaImage = styled.img`
-  width: 50% !important;
+  width: 35% !important;
 `
 
 const SocialMedia = props => {
