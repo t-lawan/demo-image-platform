@@ -78,7 +78,8 @@ export class Convert {
       contentfulModel.loadingVideoUrl,
       contentfulModel.showCurrentProject,
       contentfulModel.sharingImage,
-      contentfulModel.backgroundImage
+      contentfulModel.backgroundImage,
+      contentfulModel.navbarImage
     )
   }
 

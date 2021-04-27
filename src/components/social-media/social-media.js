@@ -24,30 +24,31 @@ const SocialMediaWrapper = styled.div`
 
 const SocialMediaLink = styled.a``
 
-const ExternalLink = styled.a`
-`
+const ExternalLink = styled.a``
 const SocialMediaImage = styled.img`
-  width: 50% !important;
+  width: 40% !important;
 `
 
 const SocialMedia = props => {
-  let pageInfo = props.page_info;
+  let pageInfo = props.page_info
   return (
     <SocialMediaWrapper>
       <SocialMediaLinkWrapper>
-        <SocialMediaLink target={'__blank'} href={pageInfo.facebookUrl}>
-          <SocialMediaImage src={Facebook} alt="Email" />
-        </SocialMediaLink>
-        <SocialMediaLink target={'__blank'} href={pageInfo.twitterUrl}>
-          <SocialMediaImage src={Twitter} alt="Twitter" />
-        </SocialMediaLink>
-        <SocialMediaLink target={'__blank'} href={pageInfo.instagramUrl}>
-          <SocialMediaImage src={Instagram} alt="Instagram" />
-        </SocialMediaLink>
-        <SocialMediaLink target={'__blank'} href={`mailto:${pageInfo.email}`}>
+        <SocialMediaLink target={"__blank"} href={`mailto:${pageInfo.email}`}>
           {/* Facebook */}
           <SocialMediaImage src={Email} alt="Email" />
         </SocialMediaLink>
+        <SocialMediaLink target={"__blank"} href={pageInfo.instagramUrl}>
+          <SocialMediaImage src={Instagram} alt="Instagram" />
+        </SocialMediaLink>
+        <SocialMediaLink target={"__blank"} href={pageInfo.twitterUrl}>
+          <SocialMediaImage src={Twitter} alt="Twitter" />
+        </SocialMediaLink>
+        <SocialMediaLink target={"__blank"} href={pageInfo.facebookUrl}>
+          <SocialMediaImage src={Facebook} alt="Email" />
+        </SocialMediaLink>
+
+
       </SocialMediaLinkWrapper>
     </SocialMediaWrapper>
   )

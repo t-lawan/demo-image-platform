@@ -3,12 +3,13 @@ import styled from "styled-components"
 import DEMOLOGO from "../../assets/DEMO_LOGO.png"
 import { size, Colours, Layers } from "../styles/styles"
 import GreenFavicon from "../../assets/green-favicon.png"
+import WhiteFavicon from "../../assets/white-favicon.png"
 import GreenFaviconSVG from "../../assets/green-favicon.svg"
 import CloseIcon from "../../assets/CloseIcon.png"
 import FaviconSVG from "../../assets/favicon.svg"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 import { Link } from "gatsby"
-import { PageUrls } from "../../utility/helper"
+import { PageUrls, getCorrectBackgroundImage } from "../../utility/helper"
 import { useLocation } from "@reach/router"
 import { connect } from "react-redux"
 
@@ -18,7 +19,7 @@ const HomeNavbarImage = styled.img`
 `
 
 const DemoLogoWrapper = styled.div`
-  width: 20%;
+  width: 25%;
 
 `
 
@@ -77,7 +78,7 @@ const MobileNavbarLinkWrapper = styled.div`
 `
 const MobileNavbarLink = styled(Link)`
   font-size: 1.3rem;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   color: white;
   .active-link {
     color: ${Colours.green} !important;
@@ -116,8 +117,8 @@ const MobileNavbar = props => {
         response = PageUrls.ARCHIVE === location.pathname
         break
       }
-      case PageUrls.SUBSCRIBE: {
-        response = PageUrls.SUBSCRIBE === location.pathname
+      case PageUrls.NEWSLETTER: {
+        response = PageUrls.NEWSLETTER === location.pathname
         break
       }
       case PageUrls.UPCOMING: {
@@ -142,13 +143,13 @@ const MobileNavbar = props => {
         <ModalHeaderWrapper>
           <HomeNavbarImage
             onClick={() => toggleModal(true)}
-            src={GreenFavicon}
+            src={WhiteFavicon}
           />
         </ModalHeaderWrapper>
         {/* <p> Link</p> */}
       </MobileNavbarWrapper>
 
-      <MobileModal image={currentProject.backgroundImage.file.url} show={showModal}>
+      <MobileModal image={getCorrectBackgroundImage(props.page_info, currentProject)} show={showModal}>
         <CloseImageWrapper>
           <CloseImage src={CloseIcon} onClick={() => toggleModal(false)} />
         </CloseImageWrapper>
@@ -159,15 +160,15 @@ const MobileNavbar = props => {
               about{" "}
             </MobileNavbarTitle>
           </MobileNavbarLink>
-          {/* <MobileNavbarLink
+          <MobileNavbarLink
             activeClassName={"active-link"}
-            to={PageUrls.SUBSCRIBE}
+            to={PageUrls.NEWSLETTER}
           >
-            <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.SUBSCRIBE)}>
+            <MobileNavbarTitle isActive={isCurrentUrl(PageUrls.NEWSLETTER)}>
               {" "}
-              subscribe{" "}
+              newsletter{" "}
             </MobileNavbarTitle>
-          </MobileNavbarLink> */}
+          </MobileNavbarLink>
           <MobileNavbarLink
             activeClassName={"active-link"}
             to={PageUrls.ARCHIVE}
@@ -195,7 +196,8 @@ const MobileNavbar = props => {
 
 const mapStateToProps = state => {
   return {
-    currentProject: state.currentProject
+    currentProject: state.currentProject,
+    page_info: state.page_info
   }
 }
 

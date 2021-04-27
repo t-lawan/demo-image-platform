@@ -9,6 +9,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { connect } from "react-redux"
 import SectionCarousel from "../section-carousel/section-carousel"
 import MobileNavbar from "../mobile-navbar/mobile-navbar"
+import { getCorrectBackgroundImage, PageUrls } from "../../utility/helper"
 
 export const PageWrapper = styled.div`
   background-image: url(${props => props.image || "none"});
@@ -25,8 +26,34 @@ export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
   padding: 0 0.5rem;
   width: 90%;
+  /* padding-top: ${props => props.top}; */
+  padding-top: ${props => (props.page === PageUrls.ABOUT ? "26.9vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "34vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "46.5vh" : "")};
+  @media screen and (max-width: ${size.desktop}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "23.5vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "31vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "46vh" : "")};
+  }
+  @media screen and (max-width: ${size.laptopL}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "22vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "30vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "45.5vh" : "")};
+  }
+
+  @media screen and (min-width: ${size.desktop}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "30.5vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "37vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "50vh" : "")};
+  }
+  
   @media (max-width: ${size.mobileL}) {
     width: 100%;
+    padding-top: 0;
   }
 `
 
@@ -43,13 +70,52 @@ const GreenBar = styled.div`
   background: ${Colours.green};
 `
 
+const SetPageWrapperPadding = url => {
+  let response
+  switch (url) {
+    case PageUrls.ABOUT: {
+      response = "22vh"
+      break
+    }
+    case PageUrls.NEWSLETTER: {
+      response = "19.1vh"
+      response = "22.4vh"
+      response = "27.4vh"
+      response = "30vh"
+      break
+    }
+    case PageUrls.ARCHIVE: {
+      response = "29.3vh"
+      response = "28.2vh"
+      response = "35.23vh"
+      break
+    }
+    case PageUrls.UPCOMING: {
+      //HDPI
+      response = "43.1vh"
+      // MDPI
+      response = "45.5vh"
+      break
+    }
+
+    default: {
+      response = "0"
+      break
+    }
+  }
+
+  return response
+}
+
 export const PageContent = props => {
-  let page = props.page;
-  let currentProject = props.currentProject;
-  let pageInfo = props.pageInfo;
+  let page = props.page
+  let currentProject = props.currentProject
+  let pageInfo = props.pageInfo
   // {/* <HorizontalScrollContainer sections={page.content} /> */}
   return (
-    <PageWrapper image={currentProject.backgroundImage.file.url}>
+    <PageWrapper
+      image={getCorrectBackgroundImage(props.pageInfo, currentProject)}
+    >
       {page.hasHorizontalScroll && pageInfo.showCurrentProject ? (
         <SectionCarousel content={page.content} />
       ) : (
@@ -57,7 +123,10 @@ export const PageContent = props => {
           <MobileNavbar />
           <TwoColumnWrapper>
             <Navbar />
-            <PageSectionWrapper>
+            <PageSectionWrapper
+              page={page.url}
+              top={SetPageWrapperPadding(page.url)}
+            >
               {page.content
                 ? page.content.map((con, index) =>
                     GenerateContentSection(con, index, page)

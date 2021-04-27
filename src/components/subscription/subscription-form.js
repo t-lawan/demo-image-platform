@@ -4,15 +4,16 @@ import styled from "styled-components"
 import { setErrors } from "@graphql-tools/utils"
 import axios from "axios"
 import FaviconSVG from "../../assets/favicon.svg"
-import GreenFaviconSVG from '../../assets/green-favicon.svg'
+import WhiteFaviconSVG from '../../assets/white-favicon.svg'
 import { size } from "../styles/styles";
+import queryString from 'query-string';
 
 const SubscriptionFormWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   /* padding-top: 3rem; */
 `
 
@@ -20,11 +21,12 @@ const InputsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   justify-content: space-around;
   align-items: center;
   @media (max-width: ${size.mobileL}) {
     flex-direction: column;
+    height: 100%;
+
   }
 `
 
@@ -51,6 +53,7 @@ const StyledInput = styled.input`
   border-bottom: 1px solid white;
   height: 2rem;
   color: white;
+  outline: none;
 `
 
 const SubscribeButton = styled.button`
@@ -58,18 +61,26 @@ const SubscribeButton = styled.button`
   border-radius: 0;
   border: 0;
   background: inherit;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  cursor: pointer;
   color: white;
+  font-family: 'FreightBigBook';  
 `
 const ErrorLabel = styled.p`
   font-size: 1.1rem;
   visibility: ${props => (props.hide ? "visibility" : "hidden")};
+  color: white;
 `
 const Label = styled.p`
   color: white;
   @media (max-width: ${size.mobileL}) {
     margin: 0;
   }
+`
+
+const SubscriptionText = styled.p`
+  font-family: 'FreightBigBook';
+  color: white;
 `
 
 const LabelInner = styled.li`
@@ -84,10 +95,10 @@ const LabelInner = styled.li`
     background-size: 20px;
     height: 20px;
     width: 20px;
-    background-image: url(${FaviconSVG});
+    background-image: url(${WhiteFaviconSVG});
     background-repeat: no-repeat;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: -2.5px;
   }
 `
 const SubscriptionForm = props => {
@@ -167,24 +178,19 @@ const SubscriptionForm = props => {
     formData.set("EMAIL", email)
     // formData.set("email", email)
     // formData.set("b_2248085299b940b0726178ce2_2695e32256", "")
-    // formData.set("u", "2248085299b940b0726178ce2")
-    // formData.set("id", "2695e32256")
+    formData.set("u", "2248085299b940b0726178ce2")
+    formData.set("id", "2695e32256")
 
-    axios({
+    let config = {
+      headers: {
+        // "Access-Control-Allow-Origin": "*",
+        "Content-Type": "multipart/form-data"
+      },
+      data: formData,
       method: "post",
-      url: "http://demomovingimage.us18.list-manage.com/subscribe/post-json?u=2248085299b940b0726178ce2&id=2695e32256",
-      // body: encode({
-      //   ...formData
-      // }),
-      
-      // data: new URLSearchParams(formData).toString(),
-      withCredentials: true,
-      data:formData,
-      // headers: { "Content-Type": "multipart/form-data", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials" :'true' }
-      // headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data",  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'},
-      headers: { "Access-Control-Allow-Origin": "*", "Content-Type": "multipart/form-data"},
-      // headers: { "Content-Type": "application/json"}
-    })
+      url:  `https://demomovingimage.us18.list-manage.com/subscribe/post-json?u=2248085299b940b0726178ce2&amp;id=2695e32256&c=?}`
+    }
+    axios(config)
       .then(response => {
         console.log("Response", response)
       })
@@ -194,7 +200,8 @@ const SubscriptionForm = props => {
   }
   return (
     <SubscriptionFormWrapper ref={formDataRef}>
-      <form
+      {!hasSubmitted ? (
+        <form
         name="subscription_test"
         method="POST"
         data-netlify="true"
@@ -213,7 +220,7 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.firstName}>
               {" "}
-              {errors.firstName ? errors.firstName : "."}
+              {errors.firstName ? errors.firstName : ""}
             </ErrorLabel>
           </InputWrapper>
           <InputWrapper>
@@ -227,12 +234,12 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.lastName}>
               {" "}
-              {errors.lastName ? errors.lastName : "."}
+              {errors.lastName ? errors.lastName : ""}
             </ErrorLabel>
           </InputWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>Email</LabelInner>
+              <LabelInner>E-mail</LabelInner>
             </Label>
             <StyledInput
               type="text"
@@ -241,7 +248,7 @@ const SubscriptionForm = props => {
             />
             <ErrorLabel hide={errors.email}>
               {" "}
-              {errors.email ? errors.email : "."}
+              {errors.email ? errors.email : ""}
             </ErrorLabel>
           </InputWrapper>
         </InputsWrapper>
@@ -252,6 +259,10 @@ const SubscriptionForm = props => {
           </SubscribeButton>
         </SubscribeButtonWrapper>
       </form>
+      ) : (
+        <SubscriptionText> Thank you </SubscriptionText>
+      )}
+
     </SubscriptionFormWrapper>
   )
 }
@@ -262,7 +273,6 @@ const mapStateToProps = state => {
     pages: state.pages
   }
 }
-
 export default connect(
   mapStateToProps,
   null
