@@ -25,7 +25,7 @@ const LandingPageContainer = styled.div`
 const LandingPage = (props) => {
     let show = props.showLandingPage && props.isHome
   return (
-    <LandingPageWrapper onClick={() => props.hideLandingPage()} show={show}>    
+    <LandingPageWrapper onTouchStart={() => props.hideLandingPage()} onClick={() => props.hideLandingPage()} show={show}>    
         {props.page_info && props.page_info.loadingVideoUrl && show ? <VideoPlayer isOnLandingPage={true} autoPlay={true} showControls={false} fullScreen={true}  videoUrl={props.page_info.loadingVideoUrl} /> : null}
     </LandingPageWrapper>
   )
