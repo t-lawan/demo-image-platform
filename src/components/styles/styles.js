@@ -147,6 +147,7 @@ p, a, li, button{
   padding-top: 0;
   font-size: 2rem;
   line-height: 1.3;
+  letter-spacing: 0.1rem;
   @media (max-width: ${size.mobileL}) {
     font-size: 1rem;
   }

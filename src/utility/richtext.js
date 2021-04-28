@@ -20,11 +20,13 @@ import Jumbotron from "../components/jumbotron/jumbotron";
 const PARAGRAPH = styled.p``
 const CreditTitle = styled.p`
   text-align: left;
+  line-height: 1.0;
 
 `
 
 const CreditName = styled.p`
   text-align: end;
+  line-height: 1.0;
   @media (max-width: ${size.mobileM}) {
     text-align: left;
   }
@@ -67,8 +69,11 @@ const AboutTextWrapper = styled(TextWrapper)`
 `
 
 const CreditsWrapper = styled.div`
-  padding: 2rem 0;
+  padding: 5rem 0;
   color: white;
+  @media (max-width: ${size.mobileL}) {
+    padding: 2rem 0;
+  }
 `
 const FlexImagesWrapper = styled.div`
   display: flex;
