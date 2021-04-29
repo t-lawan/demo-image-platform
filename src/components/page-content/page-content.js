@@ -24,13 +24,13 @@ export const PageWrapper = styled.div`
 
 export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   width: 90%;
   /* padding-top: ${props => props.top}; */
-    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(18.6vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "27vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "37.23vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "43.7vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "25vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "41.7vh" : "")};
     /* margin-top: 1rem; */
   /* @media screen and (max-width: ${size.desktop}) {
     padding-top: ${props => (props.page === PageUrls.ABOUT ? "23.5vh" : "")};
