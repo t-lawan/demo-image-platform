@@ -66,47 +66,6 @@ export const TwoColumnWrapper = styled.div`
   }
 `
 
-const GreenBar = styled.div`
-  background: ${Colours.green};
-`
-
-const SetPageWrapperPadding = url => {
-  let response
-  switch (url) {
-    case PageUrls.ABOUT: {
-      response = "22vh"
-      break
-    }
-    case PageUrls.NEWSLETTER: {
-      response = "19.1vh"
-      response = "22.4vh"
-      response = "27.4vh"
-      response = "30vh"
-      break
-    }
-    case PageUrls.ARCHIVE: {
-      response = "29.3vh"
-      response = "28.2vh"
-      response = "35.23vh"
-      break
-    }
-    case PageUrls.UPCOMING: {
-      //HDPI
-      response = "43.1vh"
-      // MDPI
-      response = "45.5vh"
-      break
-    }
-
-    default: {
-      response = "0"
-      break
-    }
-  }
-
-  return response
-}
-
 export const PageContent = props => {
   let page = props.page
   let currentProject = props.currentProject
@@ -125,7 +84,6 @@ export const PageContent = props => {
             <Navbar />
             <PageSectionWrapper
               page={page.url}
-              top={SetPageWrapperPadding(page.url)}
             >
               {page.content
                 ? page.content.map((con, index) =>
