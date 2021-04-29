@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 import { ProjectType } from "../../models/ProjectModel";
 import { DateManager } from "../../utility/date-manager";
 import WhiteFaviconSVG from '../../assets/white-favicon.svg'
+import { size } from "../styles/styles";
 
 export const UpcomingWrapper = styled.div`
   /* padding: 0.5rem 1rem; */
@@ -18,7 +19,10 @@ export const UpcomingWrapper = styled.div`
   /* height: 100vh; */
   /* height: 90vh; */
   color: white;
+
+  @media (max-width: ${size.mobileL}) {
   padding: 0rem 0.5rem;
+  }
 `
 
 const ProjectTitle = styled.li`
