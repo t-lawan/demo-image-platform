@@ -29,15 +29,19 @@ const SocialMediaWrapper = styled.div`
   /* align-self: flex-end; */
 `
 const NavbarLinkWrapper = styled.div`
-  padding: 0 2rem;
+  /* padding: 0 2rem;
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
   height: 50vh;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: baseline; */
   font-family: "FreightBigBook";
   /* background: red; */
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+  height: 50vh;
+  padding-left: 2rem;
 
   /* margin: 2rem; */
 `
@@ -45,8 +49,9 @@ const HomeNavbarImage = styled(GatsbyImage)`
   /* width: 15%; */
   /* width: 100%; */
   width: 100%;
-  margin-bottom: 2rem;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  /* margin-bottom: 5vh; */
   @media (min-width: ${size.desktopS}) {
     width: 80%;
   }

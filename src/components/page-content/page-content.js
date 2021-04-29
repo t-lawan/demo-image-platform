@@ -27,11 +27,12 @@ export const PageSectionWrapper = styled.div`
   padding: 0 0.5rem;
   width: 90%;
   /* padding-top: ${props => props.top}; */
-  padding-top: ${props => (props.page === PageUrls.ABOUT ? "26.9vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "34vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "46.5vh" : "")};
-  @media screen and (max-width: ${size.desktop}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(18.6vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "27vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "37.23vh" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "43.7vh" : "")};
+    /* margin-top: 1rem; */
+  /* @media screen and (max-width: ${size.desktop}) {
     padding-top: ${props => (props.page === PageUrls.ABOUT ? "23.5vh" : "")};
     padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "31vh" : "")};
     padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
@@ -49,7 +50,7 @@ export const PageSectionWrapper = styled.div`
     padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "37vh" : "")};
     padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
     padding-top: ${props => (props.page === PageUrls.UPCOMING ? "50vh" : "")};
-  }
+  } */
   
   @media (max-width: ${size.mobileL}) {
     width: 100%;
