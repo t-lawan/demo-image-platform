@@ -7,21 +7,23 @@ import { DateManager } from "../../utility/date-manager";
 import WhiteFaviconSVG from '../../assets/white-favicon.svg'
 
 export const UpcomingWrapper = styled.div`
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   display: flex;
   flex-direction: column;
   /* height: 100%; */
   justify-content: space-between;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   /* margin: 2rem; */
-  height: 100vh;
-  height: 90vh;
+  /* height: 100vh; */
+  /* height: 90vh; */
   color: white;
+  padding: 0rem 0.5rem;
 `
 
 const ProjectTitle = styled.li`
   list-style-type: none;
+  letter-spacing: 0.1rem;
   &:before{
     content: '';
     display: inline-block;

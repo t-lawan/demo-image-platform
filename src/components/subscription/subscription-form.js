@@ -13,7 +13,7 @@ const SubscriptionFormWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   /* padding-top: 3rem; */
 `
 
@@ -21,11 +21,12 @@ const InputsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   justify-content: space-around;
   align-items: center;
   @media (max-width: ${size.mobileL}) {
     flex-direction: column;
+    height: 100%;
+
   }
 `
 
@@ -60,8 +61,10 @@ const SubscribeButton = styled.button`
   border-radius: 0;
   border: 0;
   background: inherit;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  cursor: pointer;
   color: white;
+  font-family: 'FreightBigBook';  
 `
 const ErrorLabel = styled.p`
   font-size: 1.1rem;
@@ -76,6 +79,7 @@ const Label = styled.p`
 `
 
 const SubscriptionText = styled.p`
+  font-family: 'FreightBigBook';
   color: white;
 `
 
@@ -235,7 +239,7 @@ const SubscriptionForm = props => {
           </InputWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>Email</LabelInner>
+              <LabelInner>E-mail</LabelInner>
             </Label>
             <StyledInput
               type="text"
@@ -256,7 +260,7 @@ const SubscriptionForm = props => {
         </SubscribeButtonWrapper>
       </form>
       ) : (
-        <SubscriptionText> Thank you for subscribing </SubscriptionText>
+        <SubscriptionText> Thank you </SubscriptionText>
       )}
 
     </SubscriptionFormWrapper>

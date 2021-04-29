@@ -94,6 +94,12 @@ const State = props => {
             }
           }
           email
+          navbarImage {
+            gatsbyImageData
+            file {
+              url
+            }
+          }
         }
         allContentfulProject {
           edges {

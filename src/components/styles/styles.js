@@ -1,21 +1,28 @@
 import styled, { createGlobalStyle } from "styled-components"
 import Swiss721 from "../../assets/fonts/Swis721_Lt_BT_Light.ttf"
 import FreightBigBook from "../../assets/fonts/Freight_Big_Book.otf"
-import FaviconSVG from "../../assets/favicon.svg"
+import AkzidenzGrotesk from "../../assets/fonts/Akzidenz-Grotesk.ttf"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 
 export const Colours = {
   green: " #00d200"
 }
 
+
 export const size = {
   mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
+  mobileM: "420px",
+  mobileL: "520px",
+  mobileSL: "568px",
+  mobileXL: "736px",
   tablet: "768px",
+  tabletL: "1023px",
   laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "1500px"
+  laptopM: "1124px",
+  laptopL: "1400px",
+  desktopS: "1600px",
+  desktopM: "1900px",
+  desktop: "2260px",
 }
 
 export const Layers = {
@@ -32,6 +39,15 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: block;
 }
+
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url(${AkzidenzGrotesk}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 @font-face {
     font-family: 'FreightBigBook';
     src: url(${FreightBigBook}) format('opentype');
@@ -46,7 +62,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: black;
+    background: ${Colours.green};
   }
 }
 
@@ -55,7 +71,7 @@ textarea:focus, input:focus{
 }
 html,
 body {
-  font-family: 'Swiss721';
+  font-family: 'FreightBigBook';
   width: 100vw;
   width: 100%;
   height: 100%;
@@ -131,6 +147,7 @@ p, a, li, button{
   padding-top: 0;
   font-size: 2rem;
   line-height: 1.3;
+  letter-spacing: 0.1rem;
   @media (max-width: ${size.mobileL}) {
     font-size: 1rem;
   }
