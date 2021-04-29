@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react';
 import styled from "styled-components"
 import PDFReader from "../pdf-reader/pdf-reader";
 const PDFWrapper = styled.div`
@@ -11,16 +11,25 @@ const PDFWrapper = styled.div`
   /* cursor: url(${props => props.image || "inherit"}) 15 15, pointer; */
 `
 
+const PDFTextWrapper = styled.div`
+  cursor: pointer;
+`
 
 const PDFSection = props => {
+  const [showPDF, setShowPDF] = useState(false);
+
   return (
     // <PDFWrapper image={props.file}>
     <PDFWrapper image={props.image.file.url}>
-        <PDFReader />
-        {/* <a href={props.file} target="__blank">
+    {showPDF ? (
+      <PDFReader />
+    ): (
+        <PDFTextWrapper onClick={() => setShowPDF(true)}>
             <p>{props.title}</p>
             <p>{props.description}</p>
-        </a> */}
+        </PDFTextWrapper>
+    )}
+
 
     </PDFWrapper>
   )
