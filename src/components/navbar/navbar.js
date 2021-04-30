@@ -16,8 +16,10 @@ const NavbarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  display: grid;
-  grid-template-rows: 9fr 1fr;
+  /* display: grid;
+  grid-template-rows: 9fr 1fr; */
+  padding-left: 2rem;
+
   @media (max-width: ${size.mobileL}) {
 
      display: none;
@@ -41,7 +43,7 @@ const NavbarLinkWrapper = styled.div`
   display: grid;
   grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
   height: 50vh;
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 
   /* margin: 2rem; */
 `
@@ -68,7 +70,7 @@ const NavbarLink = styled(Link)`
 const NavbarTitle = styled.li`
   list-style-type: none;
   font-size: 2rem !important;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem; 
 
   &:before {
     content: "";
@@ -143,9 +145,9 @@ const Navbar = props => {
           </NavbarTitle>
         </NavbarLink>
       </NavbarLinkWrapper>
-      <SocialMediaWrapper>
+      {/* <SocialMediaWrapper> */}
         <SocialMedia />
-      </SocialMediaWrapper>
+      {/* </SocialMediaWrapper> */}
     </NavbarWrapper>
   )
 }
