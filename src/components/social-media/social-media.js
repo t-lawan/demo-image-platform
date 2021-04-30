@@ -14,19 +14,24 @@ const SocialMediaLinkWrapper = styled.div`
   /* height: 30%; */
   justify-content: center;
   align-items: baseline;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   width: 80%;
 `
 
 const SocialMediaWrapper = styled.div`
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 `
 
-const SocialMediaLink = styled.a``
+const SocialMediaLink = styled.a`
+  padding: 0;
+  margin: 0;
+`
 
 const ExternalLink = styled.a``
 const SocialMediaImage = styled.img`
   width: 40% !important;
+  margin: 0;
+  padding: 0;
 `
 
 const SocialMedia = props => {

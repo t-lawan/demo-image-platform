@@ -86,11 +86,16 @@ const SubscriptionText = styled.p`
   color: white;
 `
 
+
 const LabelInner = styled.li`
   @media (max-width: ${size.mobileL}) {
     margin: 0;
   }
   list-style-type: none;
+
+`
+
+const LabelInnerWithStar = styled(LabelInner)`
   &:before {
     content: "";
     display: inline-block;
@@ -214,7 +219,7 @@ const SubscriptionForm = props => {
         <InputsWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>First Name</LabelInner>
+              <LabelInnerWithStar>First Name</LabelInnerWithStar>
             </Label>
             <StyledInput
               type="text"
