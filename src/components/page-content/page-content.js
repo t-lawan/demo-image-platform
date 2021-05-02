@@ -24,14 +24,15 @@ export const PageWrapper = styled.div`
 
 export const PageSectionWrapper = styled.div`
   /* margin-top: 2rem; */
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   width: 90%;
   /* padding-top: ${props => props.top}; */
-  padding-top: ${props => (props.page === PageUrls.ABOUT ? "26.9vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "34vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "46.5vh" : "")};
-  @media screen and (max-width: ${size.desktop}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh + 2vh)" : "")};
+    /* margin-top: 1rem; */
+  /* @media screen and (max-width: ${size.desktop}) {
     padding-top: ${props => (props.page === PageUrls.ABOUT ? "23.5vh" : "")};
     padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "31vh" : "")};
     padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
@@ -43,13 +44,13 @@ export const PageSectionWrapper = styled.div`
     padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
     padding-top: ${props => (props.page === PageUrls.UPCOMING ? "45.5vh" : "")};
   }
-
-  @media screen and (min-width: ${size.desktop}) {
-    padding-top: ${props => (props.page === PageUrls.ABOUT ? "30.5vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "37vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "35.23vh" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "50vh" : "")};
-  }
+*/
+  @media screen and (min-width: ${size.desktopS}) {
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh)" : "")};
+  } 
   
   @media (max-width: ${size.mobileL}) {
     width: 100%;

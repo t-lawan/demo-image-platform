@@ -21,7 +21,7 @@ const InputsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   @media (max-width: ${size.mobileL}) {
     flex-direction: column;
@@ -57,7 +57,7 @@ const StyledInput = styled.input`
 `
 
 const SubscribeButton = styled.button`
-  padding: 1rem;
+  padding: 1rem 0;
   border-radius: 0;
   border: 0;
   background: inherit;
@@ -65,6 +65,9 @@ const SubscribeButton = styled.button`
   cursor: pointer;
   color: white;
   font-family: 'FreightBigBook';  
+  @media (max-width: ${size.mobileL}) {
+    padding: 2.5%;
+  }
 `
 const ErrorLabel = styled.p`
   font-size: 1.1rem;
@@ -83,11 +86,16 @@ const SubscriptionText = styled.p`
   color: white;
 `
 
+
 const LabelInner = styled.li`
   @media (max-width: ${size.mobileL}) {
     margin: 0;
   }
   list-style-type: none;
+
+`
+
+const LabelInnerWithStar = styled(LabelInner)`
   &:before {
     content: "";
     display: inline-block;
@@ -211,7 +219,7 @@ const SubscriptionForm = props => {
         <InputsWrapper>
           <InputWrapper>
             <Label>
-              <LabelInner>First Name</LabelInner>
+              <LabelInnerWithStar>First Name</LabelInnerWithStar>
             </Label>
             <StyledInput
               type="text"
