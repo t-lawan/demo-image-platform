@@ -3,7 +3,7 @@ import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
-import { Colours } from "../styles/styles";
+import { Colours, Layers } from "../styles/styles";
 const VideoTextOverlay = styled.div`
   width: 60%;
   text-align: justify;
@@ -34,6 +34,7 @@ const PlayButton = styled.h1`
 const PlayButtonImage = styled.img`
   cursor: pointer;
   width: 15% !important;
+  z-index: ${Layers.CAROUSEL_NAVIGATION};
 `
 
 const ArtistExhibitionTitle = styled.h2`

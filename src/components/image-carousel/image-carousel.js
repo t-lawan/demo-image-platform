@@ -15,7 +15,7 @@ import Slider from "react-slick";
 const StyledSlider = styled(Slider)`
   max-width: 100% !important;
 /* z-index: 100; */
-  position: relative;
+  /* position: relative; */
   display: grid;
   /* overflow-y: hidden;
   overflow-x: hidden; */
@@ -30,7 +30,7 @@ const SliderSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   variableWidth: false,
-  adaptiveHeight: false
+  dynamicHeight: true
 
 };
 const StyledCarousel = styled(Carousel)``
@@ -39,6 +39,7 @@ const StyledCarouselWrapper = styled.div`
   display: grid;
   /* grid-template-columns: 0.5fr 9fr 0.5fr; */
   grid-column-gap: 1rem;
+  width:80%;
   /* position: absolute;
   height: 80%; */
   @media (max-width: ${size.tablet}) {
@@ -66,6 +67,10 @@ const ImageWrapper = styled.div`
 const ImageDescription = styled.p`
   text-align: left;
   font-size: 1.67rem;
+`
+
+const StyledImage = styled(GatsbyImage)`
+  max-height: 80vh;
 `
 
 const ArrowImage = (image, func) => {
@@ -109,13 +114,12 @@ class ImageCarousel extends React.Component {
     return (
       <StyledCarouselWrapper>
         <StyledSlider ref={this.carouselRef} {...SliderSettings}>
-
           {this.props.images.map((im, index) => {
             let img = getImage(im.gatsbyImageData)
 
             return (
               <ImageWrapper key={index}>
-                <GatsbyImage image={img} alt={"Image Carousel"} />
+                <StyledImage image={img} alt={"Image Carousel"} />
                 <ImageDescription> {im.description}</ImageDescription>
               </ImageWrapper>
             )

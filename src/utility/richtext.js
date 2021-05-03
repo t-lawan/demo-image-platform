@@ -106,7 +106,8 @@ const FlexWrapper = styled.div`
 `
 
 const ImageCarouselWrapper = styled.div`
-  padding: 3rem 5rem;
+  /* padding: 3rem 5rem; */
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
