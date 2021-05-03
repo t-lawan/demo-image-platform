@@ -25,13 +25,16 @@ const PDFControl = styled.div``
 const Control = styled.p`
   opacity: ${props => (props.hide ? 0 : 1)};
   cursor: pointer;
+  visibility: ${props => (props.show ? 'visible': 'hidden')};
 `;
-function PDFReader() {
+function PDFReader(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
+    setHasLoaded(true);
   }
   const isLast = () => {
     return pageNumber === numPages;
@@ -60,10 +63,10 @@ function PDFReader() {
   return (
     <PDFReaderWrapper>
         <PDFControl>
-            <Control onClick={() => previousPage()}> Back</Control>
+            <Control show={hasLoaded} onClick={() => previousPage()}> Back</Control>
         </PDFControl>
       <Document
-        file={Whitehead}
+        file={props.file}
         renderMode={"svg"}
         onLoadSuccess={onDocumentLoadSuccess}
         
@@ -71,7 +74,7 @@ function PDFReader() {
         <StyledPage pageNumber={pageNumber} />
       </Document>
       <PDFControl>
-         <Control onClick={() => nextPage()}> Next</Control>
+         <Control show={hasLoaded} onClick={() => nextPage()}> Next</Control>
           
       </PDFControl>
       {/* <p>Page {pageNumber} of {numPages}</p> */}

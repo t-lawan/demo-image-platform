@@ -160,6 +160,12 @@ const State = props => {
                 videoText {
                   videoText
                 }
+                videoBackgroundImage {
+                  gatsbyImageData
+                  file {
+                    url
+                  }
+                }
               }
               backgroundImage {
                 gatsbyImageData
@@ -182,7 +188,7 @@ const State = props => {
       Convert.toProjectModel
     )
     let pageInfo = Convert.toPageInfoModel(contentfulPageInfo)
-    pageInfo.showCurrentProject = true;
+    pageInfo.showCurrentProject = true
     props.setPageInfo(pageInfo)
     props.setProjects(projects)
     let currentProject = projects.find(project => {
