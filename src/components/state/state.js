@@ -182,6 +182,7 @@ const State = props => {
       Convert.toProjectModel
     )
     let pageInfo = Convert.toPageInfoModel(contentfulPageInfo)
+    pageInfo.showCurrentProject = true;
     props.setPageInfo(pageInfo)
     props.setProjects(projects)
     let currentProject = projects.find(project => {

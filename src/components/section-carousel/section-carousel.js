@@ -31,7 +31,8 @@ const Container = styled.div`
   background-size: cover; */
 `
 const NavbarWrapper = styled.div`
-  top: 0;
+  text-align: left;
+  /* top: 0; */
   width: 22.2%;
   @media (max-width: ${size.mobileL}) {
     width: 50%;
@@ -78,11 +79,12 @@ const NavigationFlexRowWrapper = styled.div`
 const NavigationText = styled.p`
     color: ${Colours.green} !important;
     cursor: pointer;
+    visibility: ${props => props.hide ? 'hidden' : 'visible'};
 `
 
 const FlexRowWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   /* grid-template-columns: 2fr 8fr; */
   /* grid-template-columns: 8.5fr 0.5fr; */
 `
@@ -101,6 +103,15 @@ class SectionCarousel extends React.Component {
     this.state = {
       currentSlide: 0
     }
+  }
+
+  isFirst = () => {
+
+    return this.state.currentSlide === 0;
+  }
+
+  isLast = () => {
+    return this.state.currentSlide === this.props.currentProject.content.length;
   }
 
   previousSlide = () => {
@@ -144,7 +155,7 @@ class SectionCarousel extends React.Component {
         <Container image={currentProject.backgroundImage.file.url}>
           <MobileNavbar />
           
-          <FlexRowWrapper>
+          {/* <FlexRowWrapper> */}
             <NavbarWrapper>
               <Navbar />
             </NavbarWrapper>
@@ -152,7 +163,7 @@ class SectionCarousel extends React.Component {
                 <Jumbotron />
             </PageSectionWrapper>
             {/* <SocialMedia /> */}
-          </FlexRowWrapper>
+          {/* </FlexRowWrapper> */}
         </Container>
         {currentProject.content.map((section, index) => (
           <RepeaterContainer
@@ -172,8 +183,8 @@ class SectionCarousel extends React.Component {
         </StyledCarousel>
         <NavigationWrapper>
                 <NavigationFlexRowWrapper>
-                    <NavigationText onClick={this.previousSlide.bind(this)}> Back</NavigationText>
-                    <NavigationText onClick={this.nextSlide.bind(this)}> Next</NavigationText>
+                    <NavigationText hide={this.isFirst()} onClick={this.previousSlide.bind(this)}> Back</NavigationText>
+                    <NavigationText hide={this.isLast()} onClick={this.nextSlide.bind(this)}> Next</NavigationText>
                 </NavigationFlexRowWrapper>
         </NavigationWrapper>
       </SectionCarouselWrapper>
