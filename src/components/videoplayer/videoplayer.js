@@ -88,7 +88,7 @@ class VideoPlayer extends React.Component {
             
           />
         ) : (
-          <VideoBackgroundWrapper image={IMAGE}>
+          <VideoBackgroundWrapper image={this.props.backgroundImage.file.url}>
           {/* <PlayButton onClick={() => this.playVideo()}>PLAY</PlayButton> */}
             <PlayButtonImage src={PlayButtonImg} onClick={() => this.playVideo()} />
             <VideoTextOverlay>

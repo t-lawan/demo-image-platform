@@ -24,10 +24,11 @@ const PDFTextWrapper = styled.div`
 const ImageWrapper = styled.div`
   border: 2px solid black;
   /* border-bottom: 0; */
+  margin-bottom: 2vh;
 `
 const PDFImage = styled(GatsbyImage)`
   img {
-    border-bottom: 1px solid ${Colours.green};
+    border-bottom: 1px solid ${Colours.green} !important;
   }
 `
 

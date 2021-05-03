@@ -41,7 +41,9 @@ export class Convert {
       contentfulModel.pdfTitle,
       contentfulModel.pdfDescription ? contentfulModel.pdfDescription.pdfDescription : null,
       contentfulModel.videoText ? contentfulModel.videoText.videoText : null,
-      contentfulModel.videoUrl
+      contentfulModel.videoUrl,
+      contentfulModel.videoBackgroundImage,
+
     )
   }
 

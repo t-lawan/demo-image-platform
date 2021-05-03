@@ -16,8 +16,9 @@ export class ContentSectionModel {
     backgroundImages;
     videoText;
     videoUrl;
+    videoBackgroundImage;
 
-    constructor(whiteAudioTitle,blackAudioTitle, audioDescription, audioFile, imageGallery, backgroundImage, backgroundImages, text, type, mediaPartners, credits, pdfFile, pdfImage, pdfTitle, pdfDescription, videoText, videoUrl) {
+    constructor(whiteAudioTitle,blackAudioTitle, audioDescription, audioFile, imageGallery, backgroundImage, backgroundImages, text, type, mediaPartners, credits, pdfFile, pdfImage, pdfTitle, pdfDescription, videoText, videoUrl, videoBackgroundImage) {
         this.blackAudioTitle = whiteAudioTitle;
         this.whiteAudioTitle = blackAudioTitle;
         this.audioDescription = audioDescription;
@@ -35,6 +36,7 @@ export class ContentSectionModel {
         this.pdfDescription = pdfDescription;
         this.videoText = videoText;
         this.videoUrl = videoUrl;
+        this.videoBackgroundImage = videoBackgroundImage;
     }
 }
 
