@@ -9,10 +9,10 @@ const AudioResourceWrapper = styled.section`
   flex-direction: row; */
   padding: 0.25rem 0;
   @media (min-width: ${size.laptopM}) {
-    padding: 0.7em 0 0.3em;
+    padding: 0.3em 0 0.3em;
   }
   @media (min-width: ${size.laptopM}) {
-    padding: 0.6em 0 0.2em;
+    padding: 0.2em 0 0.2em;
   }
   > span {
     @media (min-width: ${size.laptopM}) {
