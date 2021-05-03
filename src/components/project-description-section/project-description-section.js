@@ -27,15 +27,23 @@ const FlexColumnWrapper = styled.div`
 `
 const ProjectArtist = styled.h1`
   color: white;
-  align-self: flex-start;
   margin: 0;
   font-size: 3rem;
+  
 
 `
 
+const ProjectTitleWrapper = styled.div`
+  text-align: left;
+  align-self: flex-start;
+  font-family: "FreightBigBook";
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+`
+
+
 const ProjectTitle = styled.h1`
   color: black;
-  align-self: flex-start;
   font-size: 3rem;
 `
 const TextWrapper = styled.div`
@@ -51,8 +59,10 @@ const ProjectDescriptionSection = props => {
   return (
     <ProjectDescriptionWrapper>
       <FlexColumnWrapper>
-        <ProjectArtist> {project.artist}</ProjectArtist>
-        <ProjectTitle> {project.title}</ProjectTitle>
+        <ProjectTitleWrapper>
+          <ProjectArtist> {project.artist}</ProjectArtist>
+          <ProjectTitle> {project.title}</ProjectTitle>
+        </ProjectTitleWrapper>
         <TextWrapper
           dangerouslySetInnerHTML={{
             __html: documentToHtmlString(

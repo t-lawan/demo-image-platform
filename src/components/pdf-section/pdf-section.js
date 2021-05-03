@@ -19,7 +19,6 @@ const PDFSection = props => {
   const [showPDF, setShowPDF] = useState(false);
 
   return (
-    // <PDFWrapper image={props.file}>
     <PDFWrapper image={props.image.file.url}>
     {showPDF ? (
       <PDFReader />
