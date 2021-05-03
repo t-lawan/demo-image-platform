@@ -235,7 +235,7 @@ export const GenerateContentSection = (section, index, entity) => {
 
     case ContentSectionModelType.AUDIO: {
       render = (
-        <AudioSection key={index} audioTitle={section.audioTitle} audioUrl={section.audioFile.file.url} audioDescription={section.audioDescription} />
+        <AudioSection key={index} blackAudioTitle={section.blackAudioTitle} whiteAudioTitle={section.whiteAudioTitle} audioUrl={section.audioFile.file.url} audioDescription={section.audioDescription} />
       )
       break
     }

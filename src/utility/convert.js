@@ -26,6 +26,7 @@ export class Convert {
   static toContentSectionModel = contentfulModel => {
     return new ContentSectionModel(
       contentfulModel.audioTitle,
+      contentfulModel.audioFirstTitle,
       contentfulModel.audioDescription ? contentfulModel.audioDescription.audioDescription : null,
       contentfulModel.audioFile,
       contentfulModel.imageGallery,
