@@ -30,10 +30,10 @@ export const PageSectionWrapper = styled.div`
   /* padding: 0 0.5rem; */
   width: 90%;
   /* padding-top: ${props => props.top}; */
-    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh + 2vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh + 2vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh + 2vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh + 4vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh + 4vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh + 4vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh + 4vh)" : "")};
     /* margin-top: 1rem; */
   /* @media screen and (max-width: ${size.desktop}) {
     padding-top: ${props => (props.page === PageUrls.ABOUT ? "23.5vh" : "")};
@@ -49,10 +49,10 @@ export const PageSectionWrapper = styled.div`
   }
 */
   @media screen and (min-width: ${size.desktopS}) {
-    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh)" : "")};
-    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ABOUT ? "calc(16.6vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.NEWSLETTER ? "calc(25vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.ARCHIVE ? "calc(35.23vh + 2vh)" : "")};
+    padding-top: ${props => (props.page === PageUrls.UPCOMING ? "calc(41.7vh + 2vh)" : "")};
   } 
   
   @media (max-width: ${size.mobileL}) {
