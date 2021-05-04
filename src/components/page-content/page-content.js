@@ -64,6 +64,7 @@ export const TwoColumnWrapper = styled.div`
   /* height: 100vh; */
   @media (max-width: ${size.mobileL}) {
     grid-template-columns: 1fr;
+    padding: 0.25rem;
   }
 `
 
