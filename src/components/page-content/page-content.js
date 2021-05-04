@@ -17,9 +17,12 @@ export const PageWrapper = styled.div`
   background-position: center;
   background-size: cover;
   margin-bottom: 10rem;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100vh;
+  overflow-y: overlay;
+}
 `
 
 export const PageSectionWrapper = styled.div`
@@ -64,6 +67,7 @@ export const TwoColumnWrapper = styled.div`
   /* height: 100vh; */
   @media (max-width: ${size.mobileL}) {
     grid-template-columns: 1fr;
+    padding: 0.25rem;
   }
 `
 

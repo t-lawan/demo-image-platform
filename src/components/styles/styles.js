@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Swiss721}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    ${'' /* font-display: block; */}
 }
 
 @font-face {
@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${AkzidenzGrotesk}) format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    ${'' /* font-display: block; */}
 }
 
 @font-face {
@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${FreightBigBook}) format('opentype');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    ${'' /* font-display: block; */}
 
 }
     * {
