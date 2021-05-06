@@ -16,7 +16,7 @@ const Layout = (props) => {
 
   return (
     <LayoutWrapper>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <State />
       <SEO />
       <LandingPage isHome={props.isHome} />

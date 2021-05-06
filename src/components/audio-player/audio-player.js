@@ -16,12 +16,14 @@ const AudioResourceWrapper = styled.section`
   }
   > span {
     @media (min-width: ${size.laptopM}) {
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
+    font-size: 1.2vw;
     }
   }
 `
 const AudioNumber = styled.span`
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: 1vw;
 `
 const PlayIcon = styled.div`
   margin-right: 1em;

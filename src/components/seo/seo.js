@@ -114,6 +114,10 @@ function SEO() {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          name: `twitter:image:src`,
+          content: contentfulPageInfo.sharingImage.file.url
         }
       ]}
     />

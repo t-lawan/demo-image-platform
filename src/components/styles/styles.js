@@ -57,13 +57,13 @@ export const GlobalStyle = createGlobalStyle`
 
 }
     * {
-  box-sizing: border-box;
+  ${'' /* box-sizing: border-box;
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
     background: ${Colours.green};
-  }
+  } */}
 }
 
 textarea:focus, input:focus{
@@ -95,35 +95,42 @@ body {
   }
   h1 {
   margin-bottom: 1.45rem;
-  font-size: 2.5rem;
+  ${'' /* font-size: 2.5rem; */}
+  font-size: 2.5vw;
   line-height: 1.1;
   @media (max-width: ${size.mobileL}) {
-    font-size: 1.5rem;
+    ${'' /* font-size: 1.5rem; */}
+    font-size: 1.5vw;
   }
 }
 h2 {
   margin-bottom: 1.45rem;
-  font-size: 2rem;
+  ${'' /* font-size: 2rem; */}
+  font-size: 2vw;
   line-height: 1.1;
 }
 h3 {
   margin-bottom: 1.45rem;
-  font-size: 1.4rem;
+  ${'' /* font-size: 1.4rem; */}
+  font-size: 1.4vw;
   line-height: 1.1;
 }
 h4 {
   margin-bottom: 1.45rem;
-  font-size: 1rem;
+  ${'' /* font-size: 1rem; */}
+  font-size: 1vw;
   line-height: 1.1;
 }
 h5 {
   margin-bottom: 1.45rem;
-  font-size: 0.85028rem;
+  ${'' /* font-size: 0.85028rem; */}
+  font-size: 0.85028vw;
   line-height: 1.1;
 }
 h6 {
   margin-bottom: 1.45rem;
-  font-size: 0.78405rem;
+  ${'' /* font-size: 0.78405rem; */}
+  font-size: 0.78405vw;
 }
 img {
   max-width: 100%;
@@ -145,11 +152,13 @@ p, a, li, button{
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  font-size: 2rem;
+  ${'' /* font-size: 2rem; */}
+  font-size: 2vw;
   line-height: 1.3;
   letter-spacing: 0.1rem;
   @media (max-width: ${size.mobileL}) {
-    font-size: 1rem;
+    ${'' /* font-size: 1rem; */}
+    font-size: 1vw;
   }
   
 }

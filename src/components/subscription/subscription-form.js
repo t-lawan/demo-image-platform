@@ -70,7 +70,8 @@ const SubscribeButton = styled.button`
   }
 `
 const ErrorLabel = styled.p`
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
+  font-size: 1.1vw;
   visibility: ${props => (props.hide ? "visibility" : "hidden")};
   color: white;
 `
