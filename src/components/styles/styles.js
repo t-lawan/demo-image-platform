@@ -5,7 +5,8 @@ import AkzidenzGrotesk from "../../assets/fonts/Akzidenz-Grotesk.ttf"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 
 export const Colours = {
-  green: " #00d200"
+  green: " #00d200",
+  grey: 'lightgray'
 }
 
 
@@ -169,7 +170,7 @@ li {
 
 
   .active-link {
-    color: ${Colours.green} !important;
+    color: ${Colours.green} !important;,
   }
 
   .with-star{

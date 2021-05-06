@@ -10,12 +10,16 @@ const VideoTextOverlay = styled.div`
 `
 
 const VideoPlayerWrapper = styled.div`
+    width: 100%;
+    height: 100%;
     /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
 `
 
 const VideoPlayerElement = styled(ReactPlayer)`
-  width: 100vw !important;
-  height:auto !important;
+  /* width: 100vw !important; */
+  width: 100% !important;
+  /* height:auto !important; */
+  height:100% !important;
   @media (max-width: ${size.mobileL}) {
     height: 100vh !important;  
   }
@@ -75,6 +79,7 @@ class VideoPlayer extends React.Component {
   }
 
   playVideo = () => {
+    console.log('PLAY VIDEO')
     this.setState({
       showPlayer: true
     })
@@ -89,15 +94,15 @@ class VideoPlayer extends React.Component {
             url={this.props.videoUrl}
             controls={this.props.showControls}
             style={{ height: "100vh" }}
-            height={"100vh"}
-            width={"100vw"}
+            // height={"100vh"}
+            // width={"100vw"}
             muted={true}
             loop={this.props.isOnLandingPage}
             // onReady={onReady}
             
           />
         ) : (
-          <VideoBackgroundWrapper image={this.props.backgroundImage.file.url}>
+          <VideoBackgroundWrapper onClick={() => this.playVideo()} image={this.props.backgroundImage.file.url}>
           {/* <PlayButton onClick={() => this.playVideo()}>PLAY</PlayButton> */}
             <PlayButtonImage src={PlayButtonImg} onClick={() => this.playVideo()} />
             <VideoTextOverlay>
