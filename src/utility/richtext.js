@@ -123,6 +123,8 @@ const ImageCarouselWrapper = styled.div`
 
 const VideoWrapper = styled.div`
   background: black;
+  width: 100vw;
+  height: 100vh;
 `
 
 export const GenerateContentSection = (section, index, entity) => {

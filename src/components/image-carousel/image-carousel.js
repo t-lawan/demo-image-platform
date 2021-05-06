@@ -7,7 +7,7 @@ import ArrowLeft from "../../assets/arrow_left.png"
 import ArrowRight from "../../assets/arrow_right.png"
 import { connect } from "react-redux"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { size, Layers } from "../styles/styles"
+import { size, Layers, Colours } from "../styles/styles"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -77,7 +77,7 @@ const FullScreenImageWapper = styled.div`
   top: 0;
   left: 0;
   z-index: ${Layers.LANDING_PAGE};
-  background:red;
+  background:${Colours.grey};
   display: ${props => props.show ? 'block': 'none'};
 
 `
