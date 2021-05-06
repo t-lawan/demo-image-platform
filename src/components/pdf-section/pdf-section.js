@@ -20,30 +20,40 @@ const PDFTextWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 90vh;
 `
 const ImageWrapper = styled.div`
   border: 2px solid black;
   /* border-bottom: 0; */
   margin-bottom: 2vh;
+  width: 25%;
+  /* height: 100%; */
 `
 const PDFImage = styled(GatsbyImage)`
-  img {
+    width: 100%;
     border-bottom: 1px solid ${Colours.green} !important;
+
+  img {
+    object-fit: fill !important;
   }
 `
 
 const PDFText = styled.p`
-  font-size: 1.667rem !important;
+  /* font-size: 1.667vw !important; */
+  font-size: 1.4vw !important;
 `
 
 const Title = styled(PDFText)`
   /* border-top: 1px solid ${Colours.green}; */
 `
 
+const TitleWrapper = styled.div`
+
+`
+
 const PDFSection = props => {
   const [showPDF, setShowPDF] = useState(false);
   let img = getImage(props.image.gatsbyImageData)
-  console.log('PDF', props)
 
   return (
     <PDFWrapper image={props.image.file.url}>
@@ -53,7 +63,9 @@ const PDFSection = props => {
         <PDFTextWrapper onClick={() => setShowPDF(true)}>
             <ImageWrapper>
               <PDFImage image={img} />
-              <Title>{props.title}</Title>
+              <TitleWrapper>
+                <Title>{props.title}</Title>
+              </TitleWrapper>
 
             </ImageWrapper>
             <PDFText>{props.description}</PDFText>

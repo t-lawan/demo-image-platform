@@ -3,7 +3,7 @@ import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
-import { Colours, Layers } from "../styles/styles";
+import { Colours, size, Layers } from "../styles/styles";
 const VideoTextOverlay = styled.div`
   width: 60%;
   text-align: justify;
@@ -11,6 +11,14 @@ const VideoTextOverlay = styled.div`
 
 const VideoPlayerWrapper = styled.div`
     /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
+`
+
+const VideoPlayerElement = styled(ReactPlayer)`
+  width: 100vw !important;
+  height:auto !important;
+  @media (max-width: ${size.mobileL}) {
+    height: 100vh !important;  
+  }
 `
 
 const VideoBackgroundWrapper = styled.div`
@@ -75,7 +83,7 @@ class VideoPlayer extends React.Component {
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
-          <ReactPlayer
+          <VideoPlayerElement
             // ref={this.videoRef}
             playing={this.props.autoPlay}
             url={this.props.videoUrl}

@@ -65,7 +65,7 @@ const NavigationWrapper = styled.div`
     position: absolute;
     bottom: 0;
     z-index: ${Layers.CAROUSEL_NAVIGATION};
-    z-index: 0;
+    /* z-index: 0; */
 `
 
 const NavigationFlexRowWrapper = styled.div`

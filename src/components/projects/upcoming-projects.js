@@ -27,7 +27,7 @@ export const UpcomingWrapper = styled.div`
 
 const ProjectTitle = styled.li`
   list-style-type: none;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   &:before{
     content: '';
     display: inline-block;

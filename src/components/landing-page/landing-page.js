@@ -15,9 +15,6 @@ const LandingPageWrapper = styled.div`
     z-index: ${Layers.LANDING_PAGE};
     display: ${props => (props.show ? "inherit" : "none")};
     cursor: pointer;
-    @media (max-width: ${size.mobileL}) {
-        display: none;
-    }
 `
 
 const LandingPageContainer = styled.div`

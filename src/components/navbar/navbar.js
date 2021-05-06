@@ -43,6 +43,7 @@ const NavbarLinkWrapper = styled.div`
   display: grid;
   grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
   height: 50vh;
+  margin-top: 2vh;
   /* padding-left: 2rem; */
 
   /* margin: 2rem; */
@@ -69,7 +70,8 @@ const NavbarLink = styled(Link)`
 
 const NavbarTitle = styled.li`
   list-style-type: none;
-  font-size: 2rem !important;
+  /* font-size: 2rem !important; */
+  font-size: 2vw !important;
   margin-bottom: 0.3rem; 
 
   &:before {

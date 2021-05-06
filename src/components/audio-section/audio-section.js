@@ -24,7 +24,7 @@ const Grid = styled.div`
   width: 50%;
   height: 85vh;
   text-align: left;
-  grid-template-rows: 0.5fr 2fr 1.5fr 4fr;
+  grid-template-rows: 0.5fr 2fr 0.75fr 4fr;
   align-items: baseline;
   justify-content: center;
   @media (max-width: ${size.mobileL}) {
@@ -44,7 +44,9 @@ margin: 0;
 `
 const AudioDescription = styled.p`
   /* width: 50%; */
-  font-size: 1.67rem;
+  /* font-size: 1.67rem; */
+  font-size: 1.67vw;
+  font-size: 1.4vw !important;
 `
 
 const AudioPlayerWrapper = styled.div`

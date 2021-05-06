@@ -28,7 +28,8 @@ const FlexColumnWrapper = styled.div`
 const ProjectArtist = styled.h1`
   color: white;
   margin: 0;
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  font-size: 3vw;
   
 
 `
@@ -45,12 +46,18 @@ const ProjectTitleWrapper = styled.div`
 const ProjectTitle = styled.h1`
   color: black;
   font-size: 3rem;
+  font-size: 3vw;
+
 `
 const TextWrapper = styled.div`
   padding-top: 2rem;
   text-align: justify;
   p {
-    font-size: 1.67rem;
+    /* font-size: 1.67rem;
+    font-size: 1.67vw; */
+    font-size: 1.4vw;
+    letter-spacing: 0;
+    line-height: 1.5;
   }
 `
 const ProjectDescriptionSection = props => {
