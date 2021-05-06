@@ -85,6 +85,9 @@ const FlexImagesWrapper = styled.div`
 `
 const ImageWrapper = styled.div`
   width: 25%;
+  @media (max-width: ${size.mobileL}) {
+    width: 40%;
+  }
 `
 
 const Image = styled(GatsbyImage)``

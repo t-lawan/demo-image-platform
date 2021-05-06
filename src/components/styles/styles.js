@@ -100,7 +100,7 @@ body {
   line-height: 1.1;
   @media (max-width: ${size.mobileL}) {
     ${'' /* font-size: 1.5rem; */}
-    font-size: 1.5vw;
+    font-size: 7vw;
   }
 }
 h2 {
@@ -158,7 +158,7 @@ p, a, li, button{
   letter-spacing: 0.1rem;
   @media (max-width: ${size.mobileL}) {
     ${'' /* font-size: 1rem; */}
-    font-size: 1vw;
+    font-size: 5vw;
   }
   
 }
