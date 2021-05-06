@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Document, Page } from 'react-pdf';
+import { Page } from 'react-pdf';
 import { pdfjs } from "react-pdf";
+import { Document } from 'react-pdf/dist/esm/entry.webpack';
 import Whitehead from '../../assets/Whitehead.pdf'
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const PDFReaderWrapper = styled.div`
     /* background: red; */
@@ -13,8 +14,9 @@ const PDFReaderWrapper = styled.div`
     grid-template-columns: 2.5fr 95fr 2.5fr;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
 `
 
 const StyledPage = styled(Page)`
@@ -34,7 +36,9 @@ function PDFReader(props) {
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
-    setHasLoaded(true);
+    if(!hasLoaded){
+      setHasLoaded(true);
+    }
   }
   const isLast = () => {
     return pageNumber === numPages;
@@ -63,18 +67,19 @@ function PDFReader(props) {
   return (
     <PDFReaderWrapper>
         <PDFControl>
-            <Control show={hasLoaded} onClick={() => previousPage()}> Back</Control>
+            <Control show={hasLoaded && !isFirst()} onClick={() => previousPage()}> Back</Control>
         </PDFControl>
       <Document
         file={props.file}
         renderMode={"svg"}
         onLoadSuccess={onDocumentLoadSuccess}
+
         
       >
         <StyledPage pageNumber={pageNumber} />
       </Document>
       <PDFControl>
-         <Control show={hasLoaded} onClick={() => nextPage()}> Next</Control>
+         <Control show={hasLoaded && !isLast()} onClick={() => nextPage()}> Next</Control>
           
       </PDFControl>
       {/* <p>Page {pageNumber} of {numPages}</p> */}

@@ -48,7 +48,7 @@ const PlayIcon = styled.div`
     border-top: 7px solid transparent;
     border-right: none;
     border-bottom: 7px solid transparent;
-    border-left: 12px solid #000000 !important;
+    border-left: 12px solid rgba(0,0,0,0.5) !important;
   }
   > div.active {
     content: '';
@@ -64,7 +64,7 @@ const PlayIcon = styled.div`
   > div.active:before, div.active:after {
     content: '';
     width: 4px;
-    background-color:#000;
+    background-color:rgba(0, 0, 0, 0.5);
     height: 14px;
   }
   @media (max-width: ${size.mobileM}) {
@@ -94,11 +94,11 @@ const AudioPlayerWrapper = styled.div`
 const TimeProgressBar = styled.progress`
   width: 90%;
   position:relative;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.5);
   &[value] {
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     color: black;
     height: 0.3rem;
     border: 0;
@@ -107,7 +107,7 @@ const TimeProgressBar = styled.progress`
   &[value]::-webkit-progress-bar {
     background-color: rgba(0, 0, 0, 0.2);
     border: 0;
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
   }
 
   &::-moz-progress-bar {
@@ -118,7 +118,8 @@ const TimeProgressBar = styled.progress`
 
   &::-webkit-progress-value {
     color: black;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color:pink; */
     ::after {
       border: 2px solid #000;
       display: flex;
@@ -130,7 +131,7 @@ const TimeProgressBar = styled.progress`
     margin-right: -5px;
     width: 15px;
     height: 15px;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     }
   }

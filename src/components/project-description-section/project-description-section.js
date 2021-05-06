@@ -53,8 +53,11 @@ const TextWrapper = styled.div`
   padding-top: 2rem;
   text-align: justify;
   p {
-    font-size: 1.67rem;
-    font-size: 1.67vw;
+    /* font-size: 1.67rem;
+    font-size: 1.67vw; */
+    font-size: 1.4vw;
+    letter-spacing: 0;
+    line-height: 1.5;
   }
 `
 const ProjectDescriptionSection = props => {

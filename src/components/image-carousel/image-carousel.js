@@ -7,7 +7,7 @@ import ArrowLeft from "../../assets/arrow_left.png"
 import ArrowRight from "../../assets/arrow_right.png"
 import { connect } from "react-redux"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { size } from "../styles/styles"
+import { size, Layers } from "../styles/styles"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -70,8 +70,25 @@ const ImageDescription = styled.p`
   font-size: 1.67vw;
 `
 
+const FullScreenImageWapper = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: ${Layers.LANDING_PAGE};
+  background:red;
+  display: ${props => props.show ? 'block': 'none'};
+
+`
+
 const StyledImage = styled(GatsbyImage)`
   max-height: 80vh;
+`
+
+const FullScreenImage = styled(GatsbyImage)`
+  height: 100vh;
+
 `
 
 const ArrowImage = (image, func) => {
@@ -87,8 +104,28 @@ class ImageCarousel extends React.Component {
     super(props);
     this.carouselRef = React.createRef();
     this.state = {
-      currentSlide: 0
+      currentSlide: 0, 
+      isFullscreen: false, 
+      index: 0
     }
+  }
+
+  showFullscreen = (index) => {
+    this.setState({
+      index: index,
+      isFullscreen: true
+    })
+  }
+
+  hideFullscreen = () => {
+    this.setState({
+      isFullscreen: false
+    })
+  }
+
+  getImage = (image) => {
+    console.log('IMAGE', image)
+    return getImage(image.gatsbyImageData)
   }
 
   previousSlide = () => {
@@ -119,7 +156,7 @@ class ImageCarousel extends React.Component {
             let img = getImage(im.gatsbyImageData)
 
             return (
-              <ImageWrapper key={index}>
+              <ImageWrapper key={index} onClick={() => this.showFullscreen(index)}>
                 <StyledImage image={img} alt={"Image Carousel"} />
                 <ImageDescription> {im.description}</ImageDescription>
               </ImageWrapper>
@@ -127,6 +164,14 @@ class ImageCarousel extends React.Component {
           })}
         {/* </StyledCarousel> */}
         </StyledSlider>
+        {this.state.isFullscreen ? 
+          (
+            <FullScreenImageWapper onClick={() => this.hideFullscreen()} show={this.state.isFullscreen}>
+          <FullScreenImage image={this.getImage(this.props.images[this.state.index])} alt={"Image Carousel"} />
+        </FullScreenImageWapper>
+          ) : null
+        }
+
       </StyledCarouselWrapper>
     )
   }
