@@ -3,7 +3,7 @@ import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
-import { Colours } from "../styles/styles";
+import { Colours, size } from "../styles/styles";
 const VideoTextOverlay = styled.div`
   width: 60%;
   text-align: justify;
@@ -16,6 +16,9 @@ const VideoPlayerWrapper = styled.div`
 const VideoPlayerElement = styled(ReactPlayer)`
   width: 100vw !important;
   height:auto !important;
+  @media (max-width: ${size.mobileL}) {
+    height: 100vh !important;  
+  }
 `
 
 const VideoBackgroundWrapper = styled.div`
