@@ -57,13 +57,13 @@ export const GlobalStyle = createGlobalStyle`
 
 }
     * {
-  box-sizing: border-box;
+  ${'' /* box-sizing: border-box;
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-thumb {
     background: ${Colours.green};
-  }
+  } */}
 }
 
 textarea:focus, input:focus{
