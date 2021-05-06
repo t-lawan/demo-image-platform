@@ -77,7 +77,8 @@ const MobileNavbarLinkWrapper = styled.div`
   /* margin: 2rem; */
 `
 const MobileNavbarLink = styled(Link)`
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
+  font-size: 1.3vw;
   /* padding-left: 1rem; */
   color: white;
   .active-link {

@@ -70,7 +70,8 @@ const NavbarLink = styled(Link)`
 
 const NavbarTitle = styled.li`
   list-style-type: none;
-  font-size: 2rem !important;
+  /* font-size: 2rem !important; */
+  font-size: 2vw !important;
   margin-bottom: 0.3rem; 
 
   &:before {
