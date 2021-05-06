@@ -13,6 +13,11 @@ const VideoPlayerWrapper = styled.div`
     /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
 `
 
+const VideoPlayerElement = styled(ReactPlayer)`
+  width: 100vw !important;
+  height:auto !important;
+`
+
 const VideoBackgroundWrapper = styled.div`
   width: 100vw;
   height: 100vh;
@@ -72,7 +77,7 @@ class VideoPlayer extends React.Component {
     return (
       <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
-          <ReactPlayer
+          <VideoPlayerElement
             // ref={this.videoRef}
             playing={this.props.autoPlay}
             url={this.props.videoUrl}
