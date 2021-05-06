@@ -44,7 +44,8 @@ margin: 0;
 `
 const AudioDescription = styled.p`
   /* width: 50%; */
-  font-size: 1.67rem;
+  /* font-size: 1.67rem; */
+  font-size: 1.67vw;
 `
 
 const AudioPlayerWrapper = styled.div`

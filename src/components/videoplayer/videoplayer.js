@@ -3,7 +3,7 @@ import styled from "styled-components"
 import ReactPlayer from "react-player"
 import PlayButtonImg from '../../assets/PlayButton.png'
 import IMAGE from '../../assets/IMAGE.jpg'
-import { Colours, size } from "../styles/styles";
+import { Colours, size, Layers } from "../styles/styles";
 const VideoTextOverlay = styled.div`
   width: 60%;
   text-align: justify;

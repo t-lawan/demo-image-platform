@@ -155,7 +155,7 @@ p, a, li, button{
   ${'' /* font-size: 2rem; */}
   font-size: 2vw;
   line-height: 1.3;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.095vw;
   @media (max-width: ${size.mobileL}) {
     ${'' /* font-size: 1rem; */}
     font-size: 5vw;
