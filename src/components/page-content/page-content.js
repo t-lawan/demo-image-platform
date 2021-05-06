@@ -16,7 +16,7 @@ export const PageWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
   /* height: 100%; */
   width: 100%;
   /* min-height: 100vh; */
