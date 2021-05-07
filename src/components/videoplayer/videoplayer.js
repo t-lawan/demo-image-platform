@@ -11,7 +11,7 @@ const VideoTextOverlay = styled.div`
 
 const VideoPlayerWrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 95%;
     /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
 `
 
@@ -54,7 +54,6 @@ const ArtistExhibitionTitle = styled.h2`
   font-family: 'FreightBigBook';
   font-style: normal;
   font-weight: normal;
-  font-size: 4rem;
   font-size: 4vw;
 
 `

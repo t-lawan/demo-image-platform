@@ -27,10 +27,10 @@ export const size = {
 }
 
 export const Layers = {
-  LANDING_PAGE: 5000,
-  MOBILE_NAVBAR: 2000,
-  TICKER: 1000,
-  CAROUSEL_NAVIGATION: 1500
+  LANDING_PAGE: 50,
+  MOBILE_NAVBAR: 20,
+  TICKER: 10,
+  CAROUSEL_NAVIGATION: 15
 }
 export const GlobalStyle = createGlobalStyle`
   @font-face {
