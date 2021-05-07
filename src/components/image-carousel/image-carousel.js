@@ -8,18 +8,17 @@ import ArrowRight from "../../assets/arrow_right.png"
 import { connect } from "react-redux"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { size, Layers, Colours } from "../styles/styles"
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick"
 
 const StyledSlider = styled(Slider)`
   max-width: 100% !important;
-/* z-index: 100; */
+  /* z-index: 100; */
   /* position: relative; */
   display: grid;
   /* overflow-y: hidden;
   overflow-x: hidden; */
-
 `
 
 const SliderSettings = {
@@ -31,15 +30,14 @@ const SliderSettings = {
   slidesToScroll: 1,
   variableWidth: false,
   dynamicHeight: true
-
-};
+}
 const StyledCarousel = styled(Carousel)``
 
 const StyledCarouselWrapper = styled.div`
   display: grid;
   /* grid-template-columns: 0.5fr 9fr 0.5fr; */
   grid-column-gap: 1rem;
-  width:80%;
+  width: 80%;
   /* position: absolute;
   height: 80%; */
   @media (max-width: ${size.tablet}) {
@@ -77,9 +75,8 @@ const FullScreenImageWapper = styled.div`
   top: 0;
   left: 0;
   z-index: ${Layers.LANDING_PAGE};
-  background:${Colours.grey};
-  display: ${props => props.show ? 'block': 'none'};
-
+  background: ${Colours.grey};
+  display: ${props => (props.show ? "block" : "none")};
 `
 
 const StyledImage = styled(GatsbyImage)`
@@ -88,29 +85,28 @@ const StyledImage = styled(GatsbyImage)`
 
 const FullScreenImage = styled(GatsbyImage)`
   height: 100vh;
-
+  @media (max-width: ${size.mobileL}) {
+    img {
+      object-fit: contain !important;
+    }
+  }
 `
 
 const ArrowImage = (image, func) => {
-   return (
-    <NavigationButtons
-    src={image}
-    onClick={func}
-  />
-   )
+  return <NavigationButtons src={image} onClick={func} />
 }
 class ImageCarousel extends React.Component {
   constructor(props) {
-    super(props);
-    this.carouselRef = React.createRef();
+    super(props)
+    this.carouselRef = React.createRef()
     this.state = {
-      currentSlide: 0, 
-      isFullscreen: false, 
+      currentSlide: 0,
+      isFullscreen: false,
       index: 0
     }
   }
 
-  showFullscreen = (index) => {
+  showFullscreen = index => {
     this.setState({
       index: index,
       isFullscreen: true
@@ -123,8 +119,8 @@ class ImageCarousel extends React.Component {
     })
   }
 
-  getImage = (image) => {
-    console.log('IMAGE', image)
+  getImage = image => {
+    console.log("IMAGE", image)
     return getImage(image.gatsbyImageData)
   }
 
@@ -156,22 +152,29 @@ class ImageCarousel extends React.Component {
             let img = getImage(im.gatsbyImageData)
 
             return (
-              <ImageWrapper key={index} onClick={() => this.showFullscreen(index)}>
+              <ImageWrapper
+                key={index}
+                onClick={() => this.showFullscreen(index)}
+              >
                 <StyledImage image={img} alt={"Image Carousel"} />
                 <ImageDescription> {im.description}</ImageDescription>
               </ImageWrapper>
             )
           })}
-        {/* </StyledCarousel> */}
+          {/* </StyledCarousel> */}
         </StyledSlider>
-        {this.state.isFullscreen ? 
-          (
-            <FullScreenImageWapper onClick={() => this.hideFullscreen()} show={this.state.isFullscreen}>
-          <FullScreenImage image={this.getImage(this.props.images[this.state.index])} alt={"Image Carousel"} />
-        </FullScreenImageWapper>
-          ) : null
-        }
-
+        {this.state.isFullscreen ? (
+          <FullScreenImageWapper
+            onClick={() => this.hideFullscreen()}
+            show={this.state.isFullscreen}
+          >
+            <FullScreenImage
+              image={this.getImage(this.props.images[this.state.index])}
+              alt={"Image Carousel"}
+              backgroundColor={Colours.grey}
+            />
+          </FullScreenImageWapper>
+        ) : null}
       </StyledCarouselWrapper>
     )
   }

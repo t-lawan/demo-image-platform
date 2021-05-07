@@ -136,7 +136,7 @@ const TimeProgressBar = styled.progress`
     }
   }
   @media (max-width: ${size.mobileM}) {
-    width: 35%;
+    width: 90%;
   }
 `
 

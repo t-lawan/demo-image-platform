@@ -11,8 +11,7 @@ const VideoTextOverlay = styled.div`
 
 const VideoPlayerWrapper = styled.div`
     width: 100%;
-    height: 100%;
-    /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
+    height: ${props => (props.showControls ? `95%` : "100%")};
 `
 
 const VideoPlayerElement = styled(ReactPlayer)`
@@ -46,6 +45,10 @@ const PlayButton = styled.h1`
 const PlayButtonImage = styled.img`
   cursor: pointer;
   width: 15% !important;
+  @media (max-width: ${size.mobileL}) {  
+    width: 25% !important;
+
+  }
   z-index: ${Layers.CAROUSEL_NAVIGATION};
 `
 
@@ -54,13 +57,15 @@ const ArtistExhibitionTitle = styled.h2`
   font-family: 'FreightBigBook';
   font-style: normal;
   font-weight: normal;
-  font-size: 4rem;
+  font-size: 4vw;
 
 `
 
 const Description = styled.p`
   color: white;
+  
   font-size: 1.67rem;
+  font-size: 1.66vw;
 `
 
 class VideoPlayer extends React.Component {
@@ -86,7 +91,7 @@ class VideoPlayer extends React.Component {
   }
   render() {
     return (
-      <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
+      <VideoPlayerWrapper showControls={this.props.showControls} fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
           <VideoPlayerElement
             // ref={this.videoRef}

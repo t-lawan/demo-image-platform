@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from "styled-components"
 import PDFReader from "../pdf-reader/pdf-reader";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Colours } from '../styles/styles';
+import { Colours, size } from '../styles/styles';
 
 const PDFWrapper = styled.div`
   width: 100%;
@@ -28,6 +28,9 @@ const ImageWrapper = styled.div`
   margin-bottom: 2vh;
   width: 25%;
   /* height: 100%; */
+  @media (max-width: ${size.mobileL}) {
+    width: 60%;
+  }
 `
 const PDFImage = styled(GatsbyImage)`
     width: 100%;
@@ -40,7 +43,7 @@ const PDFImage = styled(GatsbyImage)`
 
 const PDFText = styled.p`
   /* font-size: 1.667vw !important; */
-  font-size: 1.4vw !important;
+  font-size: 1.4vw;
 `
 
 const Title = styled(PDFText)`

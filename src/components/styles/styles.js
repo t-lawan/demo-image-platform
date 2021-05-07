@@ -5,8 +5,8 @@ import AkzidenzGrotesk from "../../assets/fonts/Akzidenz-Grotesk.ttf"
 import WhiteFaviconSVG from "../../assets/white-favicon.svg"
 
 export const Colours = {
-  green: " #00d200",
-  grey: 'lightgray'
+  green: " rgb(95,206,61)",
+  grey: 'rgb(225, 225, 225)'
 }
 
 
@@ -27,10 +27,10 @@ export const size = {
 }
 
 export const Layers = {
-  LANDING_PAGE: 5000,
-  MOBILE_NAVBAR: 2000,
-  TICKER: 1000,
-  CAROUSEL_NAVIGATION: 1500
+  LANDING_PAGE: 50,
+  MOBILE_NAVBAR: 20,
+  TICKER: 10,
+  CAROUSEL_NAVIGATION: 15
 }
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -101,7 +101,7 @@ body {
   line-height: 1.1;
   @media (max-width: ${size.mobileL}) {
     ${'' /* font-size: 1.5rem; */}
-    font-size: 7vw;
+    font-size: 7vw !important;
   }
 }
 h2 {
@@ -109,6 +109,10 @@ h2 {
   ${'' /* font-size: 2rem; */}
   font-size: 2vw;
   line-height: 1.1;
+  @media (max-width: ${size.mobileL}) {
+    ${'' /* font-size: 1.5rem; */}
+    font-size: 6vw !important;
+  }
 }
 h3 {
   margin-bottom: 1.45rem;
@@ -159,7 +163,7 @@ p, a, li, button{
   letter-spacing: 0.095vw;
   @media (max-width: ${size.mobileL}) {
     ${'' /* font-size: 1rem; */}
-    font-size: 5vw;
+    font-size: 5vw !important;
   }
   
 }
