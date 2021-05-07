@@ -30,7 +30,9 @@ const ProjectArtist = styled.h1`
   margin: 0;
   /* font-size: 3rem; */
   font-size: 3vw;
-  
+  /* @media (max-width: ${size.mobileL}) {
+      font-size: 6vw;
+  } */
 
 `
 
@@ -43,11 +45,13 @@ const ProjectTitleWrapper = styled.div`
 `
 
 
-const ProjectTitle = styled.h1`
+const ProjectTitle = styled(ProjectArtist)`
   color: black;
-  font-size: 3rem;
+  /* font-size: 3rem;
   font-size: 3vw;
-
+  @media (max-width: ${size.mobileL}) {
+      font-size: 6vw;
+  } */
 `
 const TextWrapper = styled.div`
   padding-top: 2rem;
@@ -58,6 +62,9 @@ const TextWrapper = styled.div`
     font-size: 1.4vw;
     letter-spacing: 0;
     line-height: 1.5;
+    @media (max-width: ${size.mobileL}) {
+      font-size: 3vw;
+  }
   }
 `
 const ProjectDescriptionSection = props => {

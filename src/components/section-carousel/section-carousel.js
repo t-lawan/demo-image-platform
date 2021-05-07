@@ -64,7 +64,7 @@ const NavigationWrapper = styled.div`
     height: 7.5%;
     position: absolute;
     bottom: 0;
-    z-index: ${Layers.CAROUSEL_NAVIGATION};
+    z-index: auto;
     /* z-index: 0; */
 `
 
@@ -79,6 +79,7 @@ const NavigationFlexRowWrapper = styled.div`
 const NavigationText = styled.p`
     color: ${Colours.green} !important;
     cursor: pointer;
+    z-index: ${Layers.CAROUSEL_NAVIGATION};
     visibility: ${props => props.hide ? 'hidden' : 'visible'};
 `
 

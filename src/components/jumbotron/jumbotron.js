@@ -22,12 +22,10 @@ const JumbotronWrapper = styled.div`
 const JumbotronTitle = styled.h1`
   color: ${Colours.green};
   display: inline-block;
-  /* font-size: 3.5rem !important; */
-  font-size: 3.5vw !important;
-  @media (max-width: ${size.tablet}) {
-    /* font-size: 1.5rem !important; */
+  font-size: 3.5vw;
+  /* @media (max-width: ${size.tablet}) {
     font-size: 1.5vw !important;
-  }
+  } */
 `
 
 const JumbotronImage = styled.img`

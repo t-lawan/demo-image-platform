@@ -11,8 +11,7 @@ const VideoTextOverlay = styled.div`
 
 const VideoPlayerWrapper = styled.div`
     width: 100%;
-    height: 95%;
-    /* width: ${props => (props.fullScreen ? `100vw !important` : "auto")}; */
+    height: ${props => (props.showControls ? `95%` : "100%")};
 `
 
 const VideoPlayerElement = styled(ReactPlayer)`
@@ -46,6 +45,10 @@ const PlayButton = styled.h1`
 const PlayButtonImage = styled.img`
   cursor: pointer;
   width: 15% !important;
+  @media (max-width: ${size.mobileL}) {  
+    width: 25% !important;
+
+  }
   z-index: ${Layers.CAROUSEL_NAVIGATION};
 `
 
@@ -88,7 +91,7 @@ class VideoPlayer extends React.Component {
   }
   render() {
     return (
-      <VideoPlayerWrapper fullScreen={this.props.fullScreen}>
+      <VideoPlayerWrapper showControls={this.props.showControls} fullScreen={this.props.fullScreen}>
         {this.props.isOnLandingPage || this.state.showPlayer ? (
           <VideoPlayerElement
             // ref={this.videoRef}
