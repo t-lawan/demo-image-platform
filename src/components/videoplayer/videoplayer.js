@@ -55,12 +55,14 @@ const ArtistExhibitionTitle = styled.h2`
   font-style: normal;
   font-weight: normal;
   font-size: 4rem;
+  font-size: 4vw;
 
 `
 
 const Description = styled.p`
   color: white;
   font-size: 1.67rem;
+  font-size: 1.66vw;
 `
 
 class VideoPlayer extends React.Component {
