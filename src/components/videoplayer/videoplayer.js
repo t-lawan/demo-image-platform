@@ -61,6 +61,7 @@ const ArtistExhibitionTitle = styled.h2`
 
 const Description = styled.p`
   color: white;
+  
   font-size: 1.67rem;
   font-size: 1.66vw;
 `
