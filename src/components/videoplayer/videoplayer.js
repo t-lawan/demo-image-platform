@@ -11,7 +11,7 @@ const VideoTextOverlay = styled.div`
 
 const VideoPlayerWrapper = styled.div`
     width: 100%;
-    height: ${props => (props.showControls ? `95%` : "100%")};
+    height: ${props => (props.showControls ? `95%` : "auto")};
 `
 
 const VideoPlayerElement = styled(ReactPlayer)`
