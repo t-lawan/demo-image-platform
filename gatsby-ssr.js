@@ -6,4 +6,7 @@
 
 // You can delete this file if you're not using it
 import wrapWithProvider from "./wrap-with-provider"
-export const wrapPageElement = wrapWithProvider;
+import wrapWithGlobal from "./wrap-with-global"
+
+export const wrapPageElement = wrapWithGlobal;
+export const wrapRootElement = wrapWithProvider;

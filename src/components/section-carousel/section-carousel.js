@@ -140,7 +140,7 @@ class SectionCarousel extends React.Component {
       <SectionCarouselWrapper>
         <StyledCarousel
           centerMode={false}
-          swipeable={false}
+          swipeable={true}
           dynamicHeight={false}
           showStatus={false}
           showThumbs={false}
