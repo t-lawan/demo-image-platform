@@ -34,6 +34,10 @@ const SocialMediaImage = styled.img`
   padding: 0;
 `
 
+const MailMediaImage = styled(SocialMediaImage)`
+  background: red;
+`
+
 const SocialMedia = props => {
   let pageInfo = props.page_info
   return (
@@ -41,7 +45,7 @@ const SocialMedia = props => {
       <SocialMediaLinkWrapper>
         <SocialMediaLink target={"__blank"} href={`mailto:${pageInfo.email}`}>
           {/* Facebook */}
-          <SocialMediaImage src={Email} alt="Email" />
+          <MailMediaImage src={Email} alt="Email" />
         </SocialMediaLink>
         <SocialMediaLink target={"__blank"} href={pageInfo.instagramUrl}>
           <SocialMediaImage src={Instagram} alt="Instagram" />
@@ -50,7 +54,7 @@ const SocialMedia = props => {
           <SocialMediaImage src={Twitter} alt="Twitter" />
         </SocialMediaLink>
         <SocialMediaLink target={"__blank"} href={pageInfo.facebookUrl}>
-          <SocialMediaImage src={Facebook} alt="Email" />
+          <SocialMediaImage src={Facebook} alt="Facebook" />
         </SocialMediaLink>
 
 
