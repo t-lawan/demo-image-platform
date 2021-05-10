@@ -25,6 +25,7 @@ const Container = styled.div`
   width: 100vw;
   background: transparent;
   flex: 0 0 auto;
+  position: relative;
   /* background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
@@ -41,18 +42,28 @@ const NavbarWrapper = styled.div`
 `
 const RepeaterContainer = styled(Container)`
   background: lightgray;
+  position:relative;
+  z-index: 0;
   /* background-image: url(${props => props.image || "none"});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; */
 `
-
-const FaviconImage = styled.img`
+const FaviconImageWrapper = styled.div`
   width: 10% !important;
+    position: absolute;
+    top: 0;
+    left: 4vw;
+    padding: 1rem;
+    cursor: pointer;
+`
+const FaviconImage = styled.img`
+  /* width: 10% !important;
     position: absolute;
     top: 0;
     left: 0;
     padding: 1rem;
+    cursor: pointer; */
 `
 
 
@@ -101,6 +112,7 @@ const PageSectionWrapper = styled.div`
 class SectionCarousel extends React.Component {
   constructor(props) {
     super(props)
+    this.carouselRef = React.createRef();
     this.state = {
       currentSlide: 0
     }
@@ -123,6 +135,13 @@ class SectionCarousel extends React.Component {
     }
   }
 
+  goToFirstSlide = () => {
+    console.log('XXXX')
+    this.setState({
+      currentSlide: 0
+    })
+  }
+
   nextSlide = () => {
     this.setState({
       currentSlide: this.state.currentSlide + 1
@@ -134,23 +153,33 @@ class SectionCarousel extends React.Component {
     })
   }
 
+  onSwipeEnd(){
+    this.carouselRef.current.clearAutoPlay()
+    console.log('SWIPE', this.carouselRef.current)
+
+  }
+
   render() {
     let currentProject = this.props.currentProject;
     return (
       <SectionCarouselWrapper>
         <StyledCarousel
-          centerMode={false}
+          ref={this.carouselRef}
+          autoPlay={false}
+          useKeyboardArrows={true}
           swipeable={true}
+          centerMode={false}
+          emulateTouch={false}
           dynamicHeight={false}
           showStatus={false}
           showThumbs={false}
           showIndicators={false}
           showStatus={false}
           showArrows={false}
-          autoPlay={false}
           stopOnHover={true}
-          infiniteLoop={true}
+          infiniteLoop={false}
           onChange={this.onChange.bind(this)}
+          onSwipeEnd={this.onSwipeEnd.bind(this)}
           selectedItem={this.state.currentSlide}
         >
         <Container image={currentProject.backgroundImage.file.url}>
@@ -171,7 +200,10 @@ class SectionCarousel extends React.Component {
             key={index}
             image={currentProject.backgroundImage.file.url}
           >
+            <FaviconImageWrapper  onClick={this.goToFirstSlide.bind(this)}>
             <FaviconImage src={WhiteFavicon} />
+
+            </FaviconImageWrapper>
             <RepeaterContainerWrapper>
               {GenerateContentSection(section, index, currentProject)}
             </RepeaterContainerWrapper>

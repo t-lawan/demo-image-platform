@@ -12,9 +12,10 @@ const AudioWrapper = styled.div`
   grid-template-rows: 3fr 2fr 2fr;
   align-items: baseline;
   justify-content: center; */
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 
 `
@@ -24,7 +25,7 @@ const Grid = styled.div`
   width: 50%;
   height: 85vh;
   text-align: left;
-  grid-template-rows: 0.5fr 2fr 0.75fr 4fr;
+  grid-template-rows: 3fr 0.75fr 4fr;
   align-items: baseline;
   justify-content: center;
   @media (max-width: ${size.mobileL}) {
@@ -39,6 +40,8 @@ const AudioText = styled.h1`
 color: ${props => props.colour};
 font-family: "FreightBigBook";
 margin: 0;
+font-size: 3vw;
+
   /* width: 50%; */
 
 `
@@ -46,7 +49,7 @@ const AudioDescription = styled.p`
   /* width: 50%; */
   /* font-size: 1.67rem; */
   font-size: 1.67vw;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
 `
 
 const AudioPlayerWrapper = styled.div`
@@ -56,12 +59,23 @@ const AudioPlayerWrapper = styled.div`
   border: 1px solid black;
 `
 
+const AudioTitleWrapper = styled.div`
+  text-align: left;
+  align-self: flex-start;
+  font-family: "FreightBigBook";
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+`
+
 const AudioSection = props => {
   return (
     <AudioWrapper>
       <Grid>
+      <AudioTitleWrapper>
       <AudioText colour={'white'}>{props.whiteAudioTitle}</AudioText>
       <AudioText colour={'black'}>{props.blackAudioTitle}</AudioText>
+      </AudioTitleWrapper>
+
       <AudioPlayerWrapper>
         <AudioPlayer url={props.audioUrl} />
       </AudioPlayerWrapper>

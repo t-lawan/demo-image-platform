@@ -20,7 +20,7 @@ const FlexColumnWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 50%;
   @media (max-width: ${size.mobileL}) {
     width: 90%;
   }
@@ -59,9 +59,9 @@ const TextWrapper = styled.div`
   p {
     /* font-size: 1.67rem;
     font-size: 1.67vw; */
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     letter-spacing: 0;
-    line-height: 1.5;
+    line-height: 1.8;
     @media (max-width: ${size.mobileL}) {
       font-size: 3vw;
   }
