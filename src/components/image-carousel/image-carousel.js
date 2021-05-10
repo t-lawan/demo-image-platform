@@ -37,7 +37,7 @@ const StyledCarouselWrapper = styled.div`
   display: grid;
   /* grid-template-columns: 0.5fr 9fr 0.5fr; */
   grid-column-gap: 1rem;
-  width: 80%;
+  width: 70%;
   /* position: absolute;
   height: 80%; */
   @media (max-width: ${size.tablet}) {
@@ -65,7 +65,7 @@ const ImageWrapper = styled.div`
 const ImageDescription = styled.p`
   text-align: left;
   /* font-size: 1.67rem; */
-  font-size: 1.67vw;
+  font-size: 1.2vw;
 `
 
 const FullScreenImageWapper = styled.div`

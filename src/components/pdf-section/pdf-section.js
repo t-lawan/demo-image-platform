@@ -43,7 +43,7 @@ const PDFImage = styled(GatsbyImage)`
 
 const PDFText = styled.p`
   /* font-size: 1.667vw !important; */
-  font-size: 1.4vw;
+  font-size: 1.2vw;
 `
 
 const Title = styled(PDFText)`

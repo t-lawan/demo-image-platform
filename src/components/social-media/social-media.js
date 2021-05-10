@@ -35,7 +35,8 @@ const SocialMediaImage = styled.img`
 `
 
 const MailMediaImage = styled(SocialMediaImage)`
-  background: red;
+  /* background: red; */
+  width: 43% !important;
 `
 
 const SocialMedia = props => {

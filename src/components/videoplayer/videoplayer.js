@@ -10,16 +10,19 @@ const VideoTextOverlay = styled.div`
 `
 
 const VideoPlayerWrapper = styled.div`
-    width: 100%;
     height: ${props => (props.showControls ? `95%` : "auto")};
+
+    width: 100%;
 `
 
 const VideoPlayerElement = styled(ReactPlayer)`
   /* width: 100vw !important; */
   width: 100% !important;
   /* height:auto !important; */
-  height:100% !important;
-  @media (max-width: ${size.mobileL}) {
+  /* height:100% !important; */
+  height: 100vh !important;  
+
+  @media (max-width: ${size.tablet}) {
     height: 100vh !important;  
   }
 `
